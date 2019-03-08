@@ -17,6 +17,8 @@ echo "Open Settings > Device Options and tap repeatedly on Serial Number until '
 echo "Enable ADB and check 'Always allow from this computer.' and 'OK' when prompted."
 echo "Done."
 
+_pause
+
 _pause(){
  read -n1 -rsp $'Press any key to continue or Ctrl+C to exit...\n'
 }
