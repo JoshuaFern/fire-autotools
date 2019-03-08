@@ -17,7 +17,7 @@
 |   └── update-kindle-*.bin // Supply your own update image.
 ├── apks // Bundled app files for automatic installation & caching updates.
 |   └── autotools_readme.txt // App update information.
-├── root // Rooting utilities.
+├── rooting // Rooting utilities.
 |   ├── arm 
 |   |   └── mtk-su // Rooting utility.
 |   ├── arm64
