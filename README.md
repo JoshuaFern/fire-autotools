@@ -13,12 +13,17 @@
 ```
 .
 ├── image // For adb sideloading & recovery.
-|   ├── readme.txt // Includes a link to obtain update images.
+|   ├── autotools_readme.txt // Includes a link to obtain update images.
 |   └── update-kindle-*.bin // Supply your own update image.
 ├── apks // Bundled app files for automatic installation & caching updates.
-|   └── readme.txt // App update information.
+|   └── autotools_readme.txt // App update information.
 ├── root // Rooting utilities.
-|   └── readme.txt // Root update information.
+|   ├── arm 
+|   |   └── mtk-su // Rooting utility.
+|   ├── arm64
+|   |   └── mtk-su // 64bit version
+|   ├── autotools_readme.txt // Root update information.
+|   └── readme.txt // Readme provided by the root method's author.
 ├── fireAutotools.sh // Main script file, run this.
 └── README.md // This readme.
 ```
