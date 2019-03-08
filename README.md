@@ -1,5 +1,5 @@
 # Fire Autotools (Beta)
-**Only tested on Fire (2016), use at your own risk.**
+**Only tested on Fire HD 8 (2016), use at your own risk.**
 
 ## Goals:
 * Obtain Root.
