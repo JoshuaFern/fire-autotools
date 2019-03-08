@@ -5,6 +5,7 @@
 * Obtain Root.
 * Avoid registering to Amazon and prevent ads from showing.
 * Block all Amazon apps and services from spying.
+* Minimize CPU and memory usage.
 * Replace as much as possible with lightweight Open Source alternatives.
 * Avoid breaking anything.
 
