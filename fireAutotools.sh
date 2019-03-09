@@ -268,7 +268,7 @@ adb shell su -c pm disable com.android.music # Music
 # adb shell su -c pm disable com.android.vpndialogs
 # adb shell su -c pm disable com.android.wallpapercropper
 adb shell su -c pm disable com.audible.application.kindle # Audible
-# adb shell su -c pm disable com.dolby
+adb shell su -c pm disable com.dolby # Doesn't seem to affect audio quality?
 adb shell su -c pm disable com.goodreads.kindle
 # adb shell su -c pm disable com.here.odnp.service
 # adb shell su -c pm disable com.ivona.orchestrator
