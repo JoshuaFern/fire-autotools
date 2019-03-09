@@ -296,7 +296,7 @@ echo "${bold}This will install the Material Design Xposed Installer and give ins
 _pause
 adb install ./apks/XposedInstaller*.apk
 echo "${bold}Please open the app, go to the official tab and install the latest ARM64 version.${normal}"
-echo "${bold}You will recieve an error during install. This is normal, continue after this has happened..${normal}"
+echo "${bold}You will recieve an error during install. This is normal, continue only after this has happened.${normal}"
 _pause
 adb shell su -c svc wifi disable
 adb shell su -c mount -o remount -rw /system
