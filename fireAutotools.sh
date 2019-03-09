@@ -46,15 +46,7 @@ _pause
 # ----------------------------------------------
 two(){
 echo "${bold}Welcome to Stage 2: Automated Rooting Process${normal}"
-echo "${bold}This rooting method is reported to work on:${normal}"
-echo "${bold}Fire HD 8 8th gen (2018)${normal}"
-echo "${bold}Fire HD 8 7th gen (2017)${normal}"
-echo "${bold}Fire HD 8 6th gen (2016)${normal}"
-echo "${bold}Fire HD 10 7th gen (2017)${normal}"
-echo "${bold}Fire TV 2 (2015)${normal}"
-echo "${bold}ASUS Zenpad Z380M${normal}"
-echo "${bold}BQ Aquaris M8${normal}"
-echo "${bold}Use at your own risk.${normal}"
+echo "${bold}Thanks to diplomatic on xda for this method.${normal}"
 _pause
 adb shell rm data/local/tmp/mtk-su
 adb push ./rooting/arm64/su ./rooting/arm64/supolicy ./rooting/arm64/libsupol.so ./rooting/arm64/mtk-su ./rooting/install.sh /data/local/tmp
@@ -64,15 +56,22 @@ echo "${bold}You should end up at a root command prompt, execute this command:${
 echo "${bold}exec /data/local/tmp/install.sh${normal}"
 adb shell ./data/local/tmp/mtk-su
 echo "${bold}If you saw permission errors the root failed, try again from Stage 2.${normal}"
-echo "${bold}We're about to install the SuperSU apk, exit at this point if you want to install something yourself.${normal}"
+echo "${bold}We're about to install the SuperSU Free apk, exit at this point if you want to install something yourself.${normal}"
 _pause
 echo "${bold}Installing SuperSU...${normal}"
 adb install ./rooting/eu.chainfire.supersu.282.apk
 echo "${bold}Open SuperSU app and update the binary, reboot when prompted.${normal}"
-echo "${bold}Set SuperSU permission mode to 'Grant' the default prompts don't work on FireOS.${normal}"
+echo "${bold}Set SuperSU default access mode to 'Grant' the prompt mode doesn't work on FireOS.${normal}"
 echo "${bold}Done. Continue to Stage 3.${normal}"
 _pause
 }
+
+# ----------------------------------------------
+# Stage #3: Bloat Removal
+# ----------------------------------------------
+three(){
+echo "${bold}Welcome to Stage 3: Bloat Removal${normal}"
+echo "${bold}Thanks to diplomatic on xda for this method.${normal}"
 
 read_options(){
 	local choice
