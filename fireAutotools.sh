@@ -201,7 +201,7 @@ adb shell su -c pm disable com.amazon.photos.importer
 # adb shell su -c pm disable com.amazon.providers.contentsupport
 # adb shell su -c pm disable com.amazon.readynowcore
 # adb shell su -c pm disable com.amazon.recess
-# adb shell su -c pm disable com.amazon.redstone
+adb shell su -c pm disable com.amazon.redstone # Keyboard
 # adb shell su -c pm disable com.amazon.securitysyncclient
 # adb shell su -c pm disable com.amazon.settings.systemupdates
 # adb shell su -c pm disable com.amazon.sharingservice.android.client.proxy
@@ -274,8 +274,8 @@ adb shell su -c pm disable com.goodreads.kindle
 # adb shell su -c pm disable com.ivona.tts.oem
 adb shell su -c pm disable com.kingsoft.office.amz
 # adb shell su -c pm disable com.svox.pico
-# adb shell su -c pm disable jp.co.omronsoft.iwnnime.languagepack.zhcn_az
-# adb shell su -c pm disable jp.co.omronsoft.iwnnime.mlaz
+adb shell su -c pm disable jp.co.omronsoft.iwnnime.languagepack.zhcn_az
+adb shell su -c pm disable jp.co.omronsoft.iwnnime.mlaz
 adb shell su -c pm disable org.mopria.printplugin
 
 adb install ./apks/ru.henridellal.emerald_*.apk # Emerald Launcher
