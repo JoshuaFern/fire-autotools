@@ -64,7 +64,7 @@ adb shell ./data/local/tmp/mtk-su
 echo "${bold}We're about to install the SuperSU Free apk, exit at this point if you want to install something yourself.${normal}"
 _pause
 echo "${bold}Installing SuperSU...${normal}"
-adb install ./rooting/eu.chainfire.supersu.282.apk
+adb install ./rooting/eu.chainfire.supersu.*.apk
 echo "${bold}Open SuperSU app and update the binary using normal mode, reboot when prompted.${normal}"
 echo "${bold}Set SuperSU default access mode to 'Grant' the prompt mode doesn't work on FireOS.${normal}"
 echo "${bold}Done. Continue to Stage 3.${normal}"
@@ -78,7 +78,9 @@ three(){
 echo "${bold}Welcome to Stage 3: Bloat Removal & Security${normal}"
 echo "${bold}This will attempt to disable and replace as much as possible without breaking anything.${normal}"
 echo "${bold}It will also install Emerald Launcher and AnySoftKeyboard so you're not left with an unusable device.${normal}"
+echo "${bold}You may replace these later.${normal}"
 _pause
+adb shell su -c svc wifi disable
 adb shell su -c pm disable amazon.alexa.tablet
 # adb shell su -c pm disable amazon.fireos
 adb shell su -c pm disable amazon.jackson19
@@ -88,27 +90,27 @@ adb shell su -c pm disable amazon.jackson19
 # adb shell su -c pm disable com.amazon.accessorynotifier
 # adb shell su -c pm disable com.amazon.acos.providers.UnifiedSettingsProvider
 # adb shell su -c pm disable com.amazon.advertisingidsettings
-# adb shell su -c pm disable com.amazon.ags.app
+adb shell su -c pm disable com.amazon.ags.app
 # adb shell su -c pm disable com.amazon.alexa.externalmediaplayer.fireos
 # adb shell su -c pm disable com.amazon.alta.h2clientservice
 adb shell su -c pm disable com.amazon.android.marketplace
 # adb shell su -c pm disable com.amazon.application.compatibility.enforcer
 # adb shell su -c pm disable com.amazon.application.compatibility.enforcer.sdk.library
 # adb shell su -c pm disable com.amazon.assetsync.service
-# adb shell su -c pm disable com.amazon.avod
+adb shell su -c pm disable com.amazon.avod
 # adb shell su -c pm disable com.amazon.bluetoothinternals
 adb shell su -c pm disable com.amazon.calculator # Calculator
 adb shell su -c pm disable com.amazon.camera # Camera
 # adb shell su -c pm disable com.amazon.cardinal
 # adb shell su -c pm disable com.amazon.client.metrics
 # adb shell su -c pm disable com.amazon.client.metrics.api
-# adb shell su -c pm disable com.amazon.cloud9
+adb shell su -c pm disable com.amazon.cloud9
 # adb shell su -c pm disable com.amazon.cloud9.contentservice
 # adb shell su -c pm disable com.amazon.cloud9.kids
 # adb shell su -c pm disable com.amazon.cloud9.systembrowserprovider
 # adb shell su -c pm disable com.amazon.communication.discovery
 # adb shell su -c pm disable com.amazon.connectivitydiag
-# adb shell su -c pm disable com.amazon.csapp
+adb shell su -c pm disable com.amazon.csapp
 # adb shell su -c pm disable com.amazon.dcp
 # adb shell su -c pm disable com.amazon.dcp.contracts.framework.library
 # adb shell su -c pm disable com.amazon.dcp.contracts.library
@@ -138,7 +140,7 @@ adb shell su -c pm disable com.amazon.dp.fbcontacts # Facebook Contacts
 adb shell su -c pm disable com.amazon.firelauncher # Fire Launcher
 # adb shell su -c pm disable com.amazon.firepowersettings
 # adb shell su -c pm disable com.amazon.frameworksettings
-# adb shell su -c pm disable com.amazon.geo.client.maps
+adb shell su -c pm disable com.amazon.geo.client.maps
 # adb shell su -c pm disable com.amazon.geo.mapsv2
 # adb shell su -c pm disable com.amazon.geo.mapsv2.services
 # adb shell su -c pm disable com.amazon.gloria.graphiq
@@ -147,13 +149,13 @@ adb shell su -c pm disable com.amazon.firelauncher # Fire Launcher
 # adb shell su -c pm disable com.amazon.identity.auth.device.authorization
 # adb shell su -c pm disable com.amazon.imp
 # adb shell su -c pm disable com.amazon.kcp.tutorial
-# adb shell su -c pm disable com.amazon.kindle
+adb shell su -c pm disable com.amazon.kindle
 # adb shell su -c pm disable com.amazon.kindle.cms
 # adb shell su -c pm disable com.amazon.kindle.devicecontrols
-# adb shell su -c pm disable com.amazon.kindle.kso
+adb shell su -c pm disable com.amazon.kindle.kso
 adb shell su -c pm disable com.amazon.kindle.otter.oobe
 adb shell su -c pm disable com.amazon.kindle.otter.oobe.forced.ota
-# adb shell su -c pm disable com.amazon.kindle.personal_video
+adb shell su -c pm disable com.amazon.kindle.personal_video
 # adb shell su -c pm disable com.amazon.kindle.rdmdeviceadmin
 # adb shell su -c pm disable com.amazon.kindle.unifiedSearch
 adb shell su -c pm disable com.amazon.kindleautomatictimezone
@@ -162,14 +164,14 @@ adb shell su -c pm disable com.amazon.kindleautomatictimezone
 adb shell su -c pm disable com.amazon.legalsettings
 # adb shell su -c pm disable com.amazon.logan
 # adb shell su -c pm disable com.amazon.media.session.monitor
-# adb shell su -c pm disable com.amazon.mp3
+adb shell su -c pm disable com.amazon.mp3
 # adb shell su -c pm disable com.amazon.mw
 # adb shell su -c pm disable com.amazon.mw.sdk
 # adb shell su -c pm disable com.amazon.nimh
 # adb shell su -c pm disable com.amazon.ods.kindleconnect
 # adb shell su -c pm disable com.amazon.parentalcontrols
-# adb shell su -c pm disable com.amazon.photos
-# adb shell su -c pm disable com.amazon.photos.importer
+adb shell su -c pm disable com.amazon.photos
+adb shell su -c pm disable com.amazon.photos.importer
 # adb shell su -c pm disable com.amazon.platform
 # adb shell su -c pm disable com.amazon.platform.fdrw
 # adb shell su -c pm disable com.amazon.platformsettings
@@ -189,7 +191,7 @@ adb shell su -c pm disable com.amazon.legalsettings
 # adb shell su -c pm disable com.amazon.sync.service
 # adb shell su -c pm disable com.amazon.tablet.voicesettings
 # adb shell su -c pm disable com.amazon.tabletsubscriptions
-# adb shell su -c pm disable com.amazon.tahoe
+adb shell su -c pm disable com.amazon.tahoe
 # adb shell su -c pm disable com.amazon.tcomm
 # adb shell su -c pm disable com.amazon.tcomm.client
 # adb shell su -c pm disable com.amazon.tv.ottssocompanionapp
@@ -200,21 +202,21 @@ adb shell su -c pm disable com.amazon.legalsettings
 # adb shell su -c pm disable com.amazon.vans.alexatabletshopping.app
 adb shell su -c pm disable com.amazon.venezia # Amazon Appstore
 adb shell su -c pm disable com.amazon.weather # Weather
-# adb shell su -c pm disable com.amazon.webapp
+adb shell su -c pm disable com.amazon.webapp
 # adb shell su -c pm disable com.amazon.webview
 # adb shell su -c pm disable com.amazon.webview.chromium
 # adb shell su -c pm disable com.amazon.whisperlink.activityview.android
 # adb shell su -c pm disable com.amazon.whisperlink.core.android
 # adb shell su -c pm disable com.amazon.whisperplay.contracts
 # adb shell su -c pm disable com.amazon.wifilocker
-# adb shell su -c pm disable com.amazon.windowshop
-# adb shell su -c pm disable com.amazon.zico
+adb shell su -c pm disable com.amazon.windowshop
+adb shell su -c pm disable com.amazon.zico
 # adb shell su -c pm disable com.android.backupconfirm
 # adb shell su -c pm disable com.android.bluetooth
 adb shell su -c pm disable com.android.calendar # Calendar
 # adb shell su -c pm disable com.android.captiveportallogin
 # adb shell su -c pm disable com.android.certinstaller
-# adb shell su -c pm disable com.android.contacts
+adb shell su -c pm disable com.android.contacts
 # adb shell su -c pm disable com.android.defcontainer
 adb shell su -c pm disable com.android.deskclock # Clock
 # adb shell su -c pm disable com.android.documentsui
@@ -231,8 +233,8 @@ adb shell su -c pm disable com.android.music # Music
 # adb shell su -c pm disable com.android.printspooler
 # adb shell su -c pm disable com.android.providers.calendar
 # adb shell su -c pm disable com.android.providers.contacts
-# adb shell su -c pm disable com.android.providers.downloads
-# adb shell su -c pm disable com.android.providers.downloads.ui
+# adb shell su -c pm disable com.android.providers.downloads # A lot of apps use this to download, don't disable.
+# adb shell su -c pm disable com.android.providers.downloads.ui # A lot of apps use this to download, don't disable.
 # adb shell su -c pm disable com.android.providers.media
 # adb shell su -c pm disable com.android.providers.settings
 # adb shell su -c pm disable com.android.providers.userdictionary
@@ -245,12 +247,11 @@ adb shell su -c pm disable com.android.music # Music
 # adb shell su -c pm disable com.android.wallpapercropper
 adb shell su -c pm disable com.audible.application.kindle # Audible
 # adb shell su -c pm disable com.dolby
-# adb shell su -c pm disable com.github.yeriomin.yalpstore
-# adb shell su -c pm disable com.goodreads.kindle
+adb shell su -c pm disable com.goodreads.kindle
 # adb shell su -c pm disable com.here.odnp.service
 # adb shell su -c pm disable com.ivona.orchestrator
 # adb shell su -c pm disable com.ivona.tts.oem
-# adb shell su -c pm disable com.kingsoft.office.amz
+adb shell su -c pm disable com.kingsoft.office.amz
 # adb shell su -c pm disable com.svox.pico
 # adb shell su -c pm disable jp.co.omronsoft.iwnnime.languagepack.zhcn_az
 # adb shell su -c pm disable jp.co.omronsoft.iwnnime.mlaz
@@ -258,22 +259,14 @@ adb shell su -c pm disable org.mopria.printplugin
 
 adb install ./apks/ru.henridellal.emerald_*.apk # Emerald Launcher
 adb install ./apks/com.menny.android.anysoftkeyboard_*.apk # Anysoft Keyboard
-echo "${bold}Done.${normal}"
-_pause
-}
-
-# ----------------------------------------------
-# Stage #4: Install F-Droid & Privileged Extension
-# ----------------------------------------------
-four(){
-echo "${bold}Welcome to Stage 4: Install F-Droid & Privileged Extension${normal}"
-echo "${bold}This will install the F-Droid app store and the Privileged Extension to do background installs.${normal}"
-_pause
+adb install ./apks/ru.meefik.busybox_*.apk # Busybox
+adb install ./apks/org.fdroid.fdroid_*.apk # F-Droid
 adb push ./apks/org.fdroid.fdroid.privileged_2090.apk /data/local/tmp
-adb install ./apks/org.fdroid.fdroid_*.apk
 adb shell su -c mount -o remount -rw /system
 adb shell su -c mv /data/local/tmp/org.fdroid.fdroid.privileged_2090.apk /system/priv-app
-echo "${bold}Done. You can now install some applications from F-Droid, here's some ideas:${normal}"
+adb shell su -c svc power reboot
+echo "${bold}Done. Your device will reboot.${normal}"
+echo "${bold}You can now install some applications from F-Droid, here's some ideas:${normal}"
 echo "AppStore    : Yalp Store (Play Store Alternative)"
 echo "Calculator  : Equate"
 echo "Email       : FairEmail"
@@ -288,6 +281,13 @@ _pause
 }
 
 # ----------------------------------------------
+# Stage #4: Install F-Droid & Privileged Extension
+# ----------------------------------------------
+four(){
+echo "${bold}Welcome to Stage 5: Material Design Xposed Installer${normal}"
+}
+
+# ----------------------------------------------
 # Stage #5: Material Design Xposed Installer
 # ----------------------------------------------
 five(){
@@ -298,7 +298,11 @@ adb install ./apks/XposedInstaller*.apk
 echo "${bold}Please open the app, go to the official tab and install the latest ARM64 version.${normal}"
 echo "${bold}You will recieve an error during install. This is normal, continue after this has happened..${normal}"
 _pause
-echo "${bold}Done. Please reboot.${normal}"
+adb shell su -c svc wifi disable
+adb shell su -c mount -o remount -rw /system
+adb shell su -c rm /system/bin/app_process64_xposed
+adb shell su -c svc power reboot
+echo "${bold}Done. Your device will reboot.${normal}"
 _pause
 }
 
@@ -311,6 +315,7 @@ echo "${bold}This will attempt to re-enable every Amazon app.${normal}"
 echo "${bold}This may fix any issues you've found after disabling them.${normal}"
 echo "${bold}If you want to return to completely stock, use Stage 1.${normal}"
 _pause
+adb shell su -c svc wifi disable
 adb shell su -c pm enable amazon.alexa.tablet
 adb shell su -c pm enable amazon.fireos
 adb shell su -c pm enable amazon.jackson19
@@ -477,7 +482,6 @@ adb shell su -c pm enable com.android.vpndialogs
 adb shell su -c pm enable com.android.wallpapercropper
 adb shell su -c pm enable com.audible.application.kindle
 adb shell su -c pm enable com.dolby
-adb shell su -c pm enable com.github.yeriomin.yalpstore
 adb shell su -c pm enable com.goodreads.kindle
 adb shell su -c pm enable com.here.odnp.service
 adb shell su -c pm enable com.ivona.orchestrator
@@ -487,7 +491,8 @@ adb shell su -c pm enable com.svox.pico
 adb shell su -c pm enable jp.co.omronsoft.iwnnime.languagepack.zhcn_az
 adb shell su -c pm enable jp.co.omronsoft.iwnnime.mlaz
 adb shell su -c pm enable org.mopria.printplugin
-echo "${bold}Done. You may need to reboot.${normal}"
+adb shell su -c svc power reboot
+echo "${bold}Done. Your device will reboot.${normal}"
 _pause
 }
 
