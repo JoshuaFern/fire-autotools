@@ -14,12 +14,13 @@ show_menus() {
 	echo "${bold}~~~~~~~~~~~~~~~~~~~~~~~~~~~~~${normal}"
 	echo "${bold}This script assumes you have ADB.${normal}"
 	echo "${bold}Please read the instructions carefully.${normal}"
-	echo "Stage 1: Automated Recovery"
-	echo "Stage 2: Automated Rooting"
-	echo "Stage 3: Bloat Removal & Security"
-	echo "Stage 4: Install F-Droid & Privileged Extension"
-	echo "Stage 5: Material Design Xposed Installer"
-	echo "      9: Exit"
+	echo "Stage #1: Automated Recovery"
+	echo "Stage #2: Automated Rooting"
+	echo "Stage #3: Block Amazon Spying"
+	echo "Stage #4: Disable Amazon Apps & Install F-Droid"
+	echo "Stage #5: Material Design Xposed Installer"
+	echo "       6: Unfreeze Amazon Apps"
+	echo "       9: Exit"
 	echo " "
 }
 
@@ -35,7 +36,7 @@ echo "${bold}1. Enter recovery with the power button and left volume held down w
 echo "${bold}2. Select 'wipe data/factory reset' (optional)${normal}"
 echo "${bold}3. Select 'apply update from ADB'.${normal}"
 _pause
-echo "${bold}Attempting to sideload...${normal}"
+echo "Attempting to sideload..."
 adb sideload ./image/update-kindle-*.bin
 echo "${bold}Complete, select 'reboot system now'.${normal}"
 echo "${bold}Do not connect your fire to wifi on reboot.${normal}"
@@ -53,17 +54,20 @@ two(){
 echo "${bold}Welcome to Stage 2: Automated Rooting Process${normal}"
 echo "${bold}Thanks to diplomatic on xda for this method.${normal}"
 _pause
+adb shell su -c svc wifi disable
+echo "Copying root files..."
 adb shell rm /data/local/tmp/mtk-su /data/local/tmp/install.sh
 adb push ./rooting/arm64/su ./rooting/arm64/supolicy ./rooting/arm64/libsupol.so ./rooting/arm64/mtk-su ./rooting/install.sh /data/local/tmp
+echo "Setting permissions..."
 adb shell chmod 0755 /data/local/tmp/mtk-su /data/local/tmp/install.sh
-echo "${bold}Attempting to root...${normal}"
+echo "Attempting to root..."
 echo "${bold}You should end up at a root command prompt, execute this command:${normal}"
 echo "${bold}exec /data/local/tmp/install.sh${normal}"
 echo "${bold}If this command hangs or you see permission errors, rooting failed. Try again from Stage 2.${normal}"
 adb shell ./data/local/tmp/mtk-su
-echo "${bold}We're about to install the SuperSU Free apk, exit at this point if you want to install something yourself.${normal}"
+echo "${bold}We're about to install the SuperSU app, exit at this point if you want to install something yourself.${normal}"
 _pause
-echo "${bold}Installing SuperSU...${normal}"
+echo "Installing SuperSU..."
 adb install ./rooting/eu.chainfire.supersu.*.apk
 echo "${bold}Open SuperSU app and update the binary using normal mode, reboot when prompted.${normal}"
 echo "${bold}Set SuperSU default access mode to 'Grant' the prompt mode doesn't work on FireOS.${normal}"
@@ -72,10 +76,27 @@ _pause
 }
 
 # ----------------------------------------------
-# Stage #3: Bloat Removal & Security
+# Stage #3: Block Amazon Spying (Optional)
 # ----------------------------------------------
 three(){
-echo "${bold}Welcome to Stage 3: Bloat Removal & Security${normal}"
+echo "${bold}Stage #3: Block Amazon Spying${normal}"
+echo "${bold}The objective is to prevent Amazon from contacting their servers.${normal}"
+echo "${bold}To do this we will be applying a hosts file and installing NetGuard.${normal}"
+echo "${bold}To do this we will be applying a hosts file and installing NetGuard.${normal}"
+echo "Making sure device wifi is disabled..."
+adb shell su -c svc wifi disable
+echo "Applying hosts file..."
+adb push ./security/hosts /data/local/tmp
+adb shell su -c mount -o remount -rw /system
+adb shell su -c mv /data/local/tmp/hosts /etc/hosts
+echo "${bold}Hosts file applied, continue on if you want NetGuard installed too.${normal}"
+}
+
+# ----------------------------------------------
+# Stage #4: Bloat Removal & Security
+# ----------------------------------------------
+four(){
+echo "${bold}Welcome to Stage 4: Bloat Removal & Security${normal}"
 echo "${bold}This will attempt to disable and replace as much as possible without breaking anything.${normal}"
 echo "${bold}It will also install Emerald Launcher and AnySoftKeyboard so you're not left with an unusable device.${normal}"
 echo "${bold}You may replace these later.${normal}"
@@ -271,20 +292,13 @@ echo "AppStore    : Yalp Store (Play Store Alternative)"
 echo "Calculator  : Equate"
 echo "Email       : FairEmail"
 echo "File Manager: Ghost Commander"
-echo "Keyboard    : AnySoftKeyboard (Installed in Stage 3)"
+echo "Keyboard    : AnySoftKeyboard (Installed)"
 echo "MP3 Player  : Vanilla Music"
-echo "Launcher    : Emerald Launcher (Installed in Stage 3)"
+echo "Launcher    : Emerald Launcher (Installed)"
 echo "Weather     : WX"
 echo "Web Browser : Icecat"
 echo "YouTube     : SkyTube/NewPipe"
 _pause
-}
-
-# ----------------------------------------------
-# Stage #4: Install F-Droid & Privileged Extension
-# ----------------------------------------------
-four(){
-echo "${bold}Welcome to Stage 5: Material Design Xposed Installer${normal}"
 }
 
 # ----------------------------------------------
@@ -307,10 +321,10 @@ _pause
 }
 
 # ----------------------------------------------
-# Extra #1: Unfreeze Amazon Apps
+# Extra #6: Unfreeze Amazon Apps
 # ----------------------------------------------
-eone(){
-echo "${bold}Welcome to Extra #1: Unfreeze Amazon Apps${normal}"
+six(){
+echo "${bold}Welcome to Extra #6: Unfreeze Amazon Apps${normal}"
 echo "${bold}This will attempt to re-enable every Amazon app.${normal}"
 echo "${bold}This may fix any issues you've found after disabling them.${normal}"
 echo "${bold}If you want to return to completely stock, use Stage 1.${normal}"
@@ -505,6 +519,7 @@ read_options(){
 		3) three ;;
 		4) four ;;
 		5) five ;;
+		6) six ;;
 		9) exit 0;;
 		*) echo -e "${RED}Error...${STD}" && sleep 2
 	esac
