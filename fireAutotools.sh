@@ -36,7 +36,7 @@ echo "${bold}2. Select 'wipe data/factory reset' (optional)${normal}"
 echo "${bold}3. Select 'apply update from ADB'.${normal}"
 _pause
 echo "${bold}Attempting to sideload...${normal}"
-echo adb sideload ./image/update-kindle-*.bin
+adb sideload ./image/update-kindle-*.bin
 echo "${bold}Complete, select 'reboot system now'.${normal}"
 echo "${bold}Do not connect your fire to wifi on reboot.${normal}"
 echo "${bold}Select a passworded wifi, click cancel, and select 'NOT NOW' to continue without wifi.${normal}"
