@@ -256,8 +256,8 @@ adb shell su -c pm disable com.android.music # Music
 # adb shell su -c pm disable jp.co.omronsoft.iwnnime.mlaz
 adb shell su -c pm disable org.mopria.printplugin
 
-adb install ./apks/ru.henridellal.emerald_40.apk # Emerald Launcher
-adb install ./apks/com.menny.android.anysoftkeyboard_5204.apk # Anysoft Keyboard
+adb install ./apks/ru.henridellal.emerald_*.apk # Emerald Launcher
+adb install ./apks/com.menny.android.anysoftkeyboard_*.apk # Anysoft Keyboard
 }
 
 # ----------------------------------------------
