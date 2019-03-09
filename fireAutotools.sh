@@ -224,7 +224,7 @@ adb shell su -c pm disable com.amazon.weather # Weather
 # adb shell su -c pm disable com.android.keychain
 # adb shell su -c pm disable com.android.location.fused
 # adb shell su -c pm disable com.android.managedprovisioning
-adb shell su -c pm disable com.android.music
+adb shell su -c pm disable com.android.music # Music
 # adb shell su -c pm disable com.android.onetimeinitializer
 # adb shell su -c pm disable com.android.packageinstaller
 # adb shell su -c pm disable com.android.pacprocessor
