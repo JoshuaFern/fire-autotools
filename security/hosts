@@ -13,8 +13,10 @@
 0.0.0.0   clients3.google.com
 0.0.0.0   d1s31zyz7dcc2d.cloudfront.net
 0.0.0.0   d3h5bk8iotgjvw.cloudfront.net
+0.0.0.0   device-messaging-na.amazon.com
 0.0.0.0   device-metrics-us.amazon.com
 0.0.0.0   dp-gw-na.amazon.com
+0.0.0.0   dp-rsm-prod.amazon.com
 0.0.0.0   ecommstats.s3.amazonaws.com
 0.0.0.0   exitsplash.s3.amazonaws.com
 0.0.0.0   firs-ta-g7g.amazon.com
@@ -45,6 +47,7 @@
 0.0.0.0   static-shareaholic.s3.amazonaws.com
 0.0.0.0   sync.cmedia.s3.amazonaws.com
 0.0.0.0   tablet.ntp-fireos.com
+0.0.0.0   titanium.slp.pos.here.com
 0.0.0.0   tracking.opencandy.com.s3.amazonaws.com
 0.0.0.0   viewerstats.docstoc.com.s3.amazonaws.com
 0.0.0.0   vml1.s3.amazonaws.com

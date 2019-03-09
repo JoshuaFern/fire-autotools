@@ -81,15 +81,17 @@ _pause
 three(){
 echo "${bold}Stage #3: Block Amazon Spying${normal}"
 echo "${bold}The objective is to prevent Amazon from contacting their servers.${normal}"
-echo "${bold}To do this we will be applying a hosts file and installing NetGuard.${normal}"
-echo "${bold}To do this we will be applying a hosts file and installing NetGuard.${normal}"
+echo "${bold}To do this we will be applying a hosts file.${normal}"
+echo "${bold}One side effect of this process: Your wifi icon will have an exclamation mark.${normal}"
+_pause
 echo "Making sure device wifi is disabled..."
 adb shell su -c svc wifi disable
 echo "Applying hosts file..."
 adb push ./security/hosts /data/local/tmp
 adb shell su -c mount -o remount -rw /system
 adb shell su -c mv /data/local/tmp/hosts /etc/hosts
-echo "${bold}Hosts file applied, continue on if you want NetGuard installed too.${normal}"
+adb shell su -c svc power reboot
+echo "${bold}Hosts file applied. Your device should reboot.${normal}"
 }
 
 # ----------------------------------------------
@@ -101,7 +103,6 @@ echo "${bold}This will attempt to disable and replace as much as possible withou
 echo "${bold}It will also install Emerald Launcher and AnySoftKeyboard so you're not left with an unusable device.${normal}"
 echo "${bold}You may replace these later.${normal}"
 _pause
-adb shell su -c svc wifi disable
 adb shell su -c pm disable amazon.alexa.tablet
 # adb shell su -c pm disable amazon.fireos
 adb shell su -c pm disable amazon.jackson19
