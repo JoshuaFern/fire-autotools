@@ -19,7 +19,16 @@ show_menus() {
 	echo "Stage 3: Bloat Removal & Security"
 	echo "Stage 4: Install F-Droid & Privileged Extension"
 	echo "Stage 5: Material Design Xposed Installer"
-	echo "      6: Exit"
+	echo "      9: Exit"
+	echo " "
+}
+show_extras() {
+	clear
+	echo "${bold}~~~~~~~~~~~~~~~~~~~~~~~~~~~~~${normal}"	
+	echo "${bold}        Extras Menu          ${normal}"
+	echo "${bold}~~~~~~~~~~~~~~~~~~~~~~~~~~~~~${normal}"
+	echo "Extra 1: Restore Amazon Apps"
+	echo "      9: Exit"
 	echo " "
 }
 
@@ -474,14 +483,15 @@ _pause
 
 read_options(){
 	local choice
-	read -p "Enter choice [ 1 - 4] " choice
+	read -p "Enter choice [ 1 - 9] " choice
 	case $choice in
 		1) one ;;
 		2) two ;;
 		3) three ;;
 		4) four ;;
 		5) five ;;
-		6) exit 0;;
+		8) exit 0;;
+		9) exit 0;;
 		*) echo -e "${RED}Error...${STD}" && sleep 2
 	esac
 }
