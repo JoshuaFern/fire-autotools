@@ -259,6 +259,7 @@ adb shell su -c pm disable org.mopria.printplugin
 adb install ./apks/ru.henridellal.emerald_*.apk # Emerald Launcher
 adb install ./apks/com.menny.android.anysoftkeyboard_*.apk # Anysoft Keyboard
 echo "${bold}Done.${normal}"
+_pause
 }
 
 # ----------------------------------------------
@@ -268,9 +269,10 @@ four(){
 echo "${bold}Welcome to Stage 4: Install F-Droid & Privileged Extension${normal}"
 echo "${bold}This will install the F-Droid app store and the Privileged Extension to do background installs.${normal}"
 _pause
-adb push ./apks/org.fdroid.privileged_*.apk /data/local/tmp
+adb push ./apks/org.fdroid.fdroid.privileged_2090.apk /data/local/tmp
 adb install ./apks/org.fdroid.fdroid_*.apk
-adb shell mv /data/local/tmp/org.fdroid.privileged_*.apk /system/priv-app
+adb shell su -c mount -o remount -rw /system
+adb shell su -c mv /data/local/tmp/org.fdroid.fdroid.privileged_2090.apk /system/priv-app
 echo "${bold}Done. You can now install some applications from F-Droid, here's some ideas:${normal}"
 echo "AppStore    : Yalp Store (Play Store Alternative)"
 echo "Calculator  : Equate"
@@ -282,6 +284,7 @@ echo "Launcher    : Emerald Launcher (Installed in Stage 3)"
 echo "Weather     : WX"
 echo "Web Browser : Icecat"
 echo "YouTube     : SkyTube/NewPipe"
+_pause
 }
 
 # ----------------------------------------------
@@ -296,6 +299,7 @@ echo "${bold}Please open the app, go to the official tab and install the latest 
 echo "${bold}You will recieve an error during install. This is normal, continue after this has happened..${normal}"
 _pause
 echo "${bold}Done. Please reboot.${normal}"
+_pause
 }
 
 # ----------------------------------------------
