@@ -79,7 +79,7 @@ echo "${bold}Welcome to Stage 3: Bloat Removal & Security${normal}"
 echo "${bold}This will attempt to disable and replace as much as possible without breaking anything.${normal}"
 echo "${bold}It will also install Emerald Launcher and AnySoftKeyboard so you're not left with an unusable device.${normal}"
 _pause
-# adb shell su -c pm disable amazon.alexa.tablet
+adb shell su -c pm disable amazon.alexa.tablet
 # adb shell su -c pm disable amazon.fireos
 adb shell su -c pm disable amazon.jackson19
 # adb shell su -c pm disable amazon.speech.sim
@@ -98,7 +98,7 @@ adb shell su -c pm disable com.amazon.android.marketplace
 # adb shell su -c pm disable com.amazon.avod
 # adb shell su -c pm disable com.amazon.bluetoothinternals
 adb shell su -c pm disable com.amazon.calculator # Calculator
-# adb shell su -c pm disable com.amazon.camera
+adb shell su -c pm disable com.amazon.camera # Camera
 # adb shell su -c pm disable com.amazon.cardinal
 # adb shell su -c pm disable com.amazon.client.metrics
 # adb shell su -c pm disable com.amazon.client.metrics.api
@@ -112,7 +112,7 @@ adb shell su -c pm disable com.amazon.calculator # Calculator
 # adb shell su -c pm disable com.amazon.dcp
 # adb shell su -c pm disable com.amazon.dcp.contracts.framework.library
 # adb shell su -c pm disable com.amazon.dcp.contracts.library
-# adb shell su -c pm disable com.amazon.dee.app # Amazon Alexa
+adb shell su -c pm disable com.amazon.dee.app # Amazon Alexa
 # adb shell su -c pm disable com.amazon.device.backup
 # adb shell su -c pm disable com.amazon.device.backup.sdk.internal.library
 # adb shell su -c pm disable com.amazon.device.bluetoothdfu
@@ -151,15 +151,15 @@ adb shell su -c pm disable com.amazon.firelauncher # Fire Launcher
 # adb shell su -c pm disable com.amazon.kindle.cms
 # adb shell su -c pm disable com.amazon.kindle.devicecontrols
 # adb shell su -c pm disable com.amazon.kindle.kso
-# adb shell su -c pm disable com.amazon.kindle.otter.oobe
-# adb shell su -c pm disable com.amazon.kindle.otter.oobe.forced.ota
+adb shell su -c pm disable com.amazon.kindle.otter.oobe
+adb shell su -c pm disable com.amazon.kindle.otter.oobe.forced.ota
 # adb shell su -c pm disable com.amazon.kindle.personal_video
 # adb shell su -c pm disable com.amazon.kindle.rdmdeviceadmin
 # adb shell su -c pm disable com.amazon.kindle.unifiedSearch
-# adb shell su -c pm disable com.amazon.kindleautomatictimezone
+adb shell su -c pm disable com.amazon.kindleautomatictimezone
 # adb shell su -c pm disable com.amazon.knight.speechui
 # adb shell su -c pm disable com.amazon.kor.demo
-# adb shell su -c pm disable com.amazon.legalsettings
+adb shell su -c pm disable com.amazon.legalsettings
 # adb shell su -c pm disable com.amazon.logan
 # adb shell su -c pm disable com.amazon.media.session.monitor
 # adb shell su -c pm disable com.amazon.mp3
@@ -211,14 +211,14 @@ adb shell su -c pm disable com.amazon.weather # Weather
 # adb shell su -c pm disable com.amazon.zico
 # adb shell su -c pm disable com.android.backupconfirm
 # adb shell su -c pm disable com.android.bluetooth
-# adb shell su -c pm disable com.android.calendar
+adb shell su -c pm disable com.android.calendar # Calendar
 # adb shell su -c pm disable com.android.captiveportallogin
 # adb shell su -c pm disable com.android.certinstaller
 # adb shell su -c pm disable com.android.contacts
 # adb shell su -c pm disable com.android.defcontainer
-# adb shell su -c pm disable com.android.deskclock
+adb shell su -c pm disable com.android.deskclock # Clock
 # adb shell su -c pm disable com.android.documentsui
-# adb shell su -c pm disable com.android.email
+adb shell su -c pm disable com.android.email # Email
 # adb shell su -c pm disable com.android.externalstorage
 # adb shell su -c pm disable com.android.htmlviewer
 # adb shell su -c pm disable com.android.keychain
@@ -243,7 +243,7 @@ adb shell su -c pm disable com.android.music # Music
 # adb shell su -c pm disable com.android.systemui
 # adb shell su -c pm disable com.android.vpndialogs
 # adb shell su -c pm disable com.android.wallpapercropper
-# adb shell su -c pm disable com.audible.application.kindle
+adb shell su -c pm disable com.audible.application.kindle # Audible
 # adb shell su -c pm disable com.dolby
 # adb shell su -c pm disable com.github.yeriomin.yalpstore
 # adb shell su -c pm disable com.goodreads.kindle
@@ -258,6 +258,7 @@ adb shell su -c pm disable org.mopria.printplugin
 
 adb install ./apks/ru.henridellal.emerald_*.apk # Emerald Launcher
 adb install ./apks/com.menny.android.anysoftkeyboard_*.apk # Anysoft Keyboard
+echo "${bold}Done.${normal}"
 }
 
 # ----------------------------------------------
