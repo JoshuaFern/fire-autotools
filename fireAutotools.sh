@@ -59,13 +59,13 @@ adb shell chmod 0755 /data/local/tmp/mtk-su /data/local/tmp/install.sh
 echo "${bold}Attempting to root...${normal}"
 echo "${bold}You should end up at a root command prompt, execute this command:${normal}"
 echo "${bold}exec /data/local/tmp/install.sh${normal}"
+echo "${bold}If this command hangs or you see permission errors, rooting failed. Try again from Stage 2.${normal}"
 adb shell ./data/local/tmp/mtk-su
-echo "${bold}If you saw permission errors the root failed, try again from Stage 2.${normal}"
 echo "${bold}We're about to install the SuperSU Free apk, exit at this point if you want to install something yourself.${normal}"
 _pause
 echo "${bold}Installing SuperSU...${normal}"
 adb install ./rooting/eu.chainfire.supersu.282.apk
-echo "${bold}Open SuperSU app and update the binary, reboot when prompted.${normal}"
+echo "${bold}Open SuperSU app and update the binary using normal mode, reboot when prompted.${normal}"
 echo "${bold}Set SuperSU default access mode to 'Grant' the prompt mode doesn't work on FireOS.${normal}"
 echo "${bold}Done. Continue to Stage 3.${normal}"
 _pause
