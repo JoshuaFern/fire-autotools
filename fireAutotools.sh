@@ -80,14 +80,17 @@ _pause
 # ----------------------------------------------
 three(){
 echo "${bold}Stage #3: Block Amazon Spying${normal}"
-echo "${bold}The objective is to prevent Amazon from contacting their servers.${normal}"
-echo "${bold}To do this we will be applying a hosts file.${normal}"
-echo "${bold}One side effect of this process: Your wifi icon will have an exclamation mark.${normal}"
+echo "${bold}Amazon Services run in the background of your tablet .${normal}"
+echo "${bold}Blocking Amazon services from the internet can be a bit tricky, so we'll take a multi-layered approach.${normal}"
+echo "${bold}1. Install a host file, this will block most of the domains that Amazon services usually connect to.${normal}"
+echo "${bold}   (One side effect of this process: Your wifi icon will have an exclamation mark even when connected correctly.)${normal}"
+echo "${bold}2. Install a Firewall${normal}"
+echo "${bold}3. Prevent any data from leaking in the time space between booting your tablet and the firewall starting.${normal}"
 _pause
 echo "Making sure device wifi is disabled..."
 adb shell su -c svc wifi disable
 echo "Applying hosts file..."
-adb push ./security/hosts /data/local/tmp
+adb push ./other/hosts /data/local/tmp
 adb shell su -c mount -o remount -rw /system
 adb shell su -c mv /data/local/tmp/hosts /etc/hosts
 adb shell su -c svc power reboot
