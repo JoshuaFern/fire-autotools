@@ -94,7 +94,8 @@ adb push ./other/hosts /data/local/tmp
 adb shell su -c mount -o remount -rw /system
 adb shell su -c mv /data/local/tmp/hosts /etc/hosts
 adb shell su -c svc power reboot
-echo "${bold}Hosts file applied. Your device should reboot.${normal}"
+echo "${bold}Installing AFWall.${normal}"
+adb install 
 }
 
 # ----------------------------------------------
