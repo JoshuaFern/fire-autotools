@@ -9,6 +9,7 @@ normal=$(tput sgr0)
 # function to display menus
 show_menus() {
 	clear
+	echo " "
 	echo "${bold}~~~~~~~~~~~~~~~~~~~~~~~~~~~~~${normal}"	
 	echo "${bold}       Fire Autotools        ${normal}"
 	echo "${bold}~~~~~~~~~~~~~~~~~~~~~~~~~~~~~${normal}"
@@ -19,7 +20,7 @@ show_menus() {
 	echo "Stage #3: Block Amazon Spying"
 	echo "Stage #4: Disable Amazon Apps & Install F-Droid"
 	echo "Stage #5: Material Design Xposed Installer"
-	echo "       6: Unfreeze Amazon Apps"
+	echo "       6: Unfreeze Amazon Apps (Undo Stage #3)"
 	echo "       9: Exit"
 	echo " "
 }
@@ -43,7 +44,7 @@ echo "${bold}Do not connect your fire to wifi on reboot.${normal}"
 echo "${bold}Select a passworded wifi, click cancel, and select 'NOT NOW' to continue without wifi.${normal}"
 echo "${bold}Open Settings > Device Options and tap repeatedly on Serial Number until 'Developer Options' appears.${normal}"
 echo "${bold}Enable ADB and check 'Always allow from this computer.' and 'OK' when prompted.${normal}"
-echo "${bold}Done. Continue to Stage 2.${normal}"
+echo "${bold}Done. Continue to Stage 2: Rooting.${normal}"
 _pause
 }
 
@@ -52,7 +53,7 @@ _pause
 # ----------------------------------------------
 two(){
 echo "${bold}Welcome to Stage 2: Automated Rooting Process${normal}"
-echo "${bold}Thanks to diplomatic on xda for this method.${normal}"
+echo "${bold}Thanks to diplomatic for this method.${normal}"
 _pause
 adb shell su -c svc wifi disable
 echo "Copying root files..."
@@ -71,7 +72,7 @@ echo "Installing SuperSU..."
 adb install ./rooting/eu.chainfire.supersu.*.apk
 echo "${bold}Open SuperSU app and update the binary using normal mode, reboot when prompted.${normal}"
 echo "${bold}Set SuperSU default access mode to 'Grant' the prompt mode doesn't work on FireOS.${normal}"
-echo "${bold}Done. Continue to Stage 3.${normal}"
+echo "${bold}Done. Continue to Stage 3: Disable Spying.${normal}"
 _pause
 }
 
@@ -80,12 +81,10 @@ _pause
 # ----------------------------------------------
 three(){
 echo "${bold}Stage #3: Block Amazon Spying${normal}"
-echo "${bold}Amazon Services run in the background of your tablet .${normal}"
 echo "${bold}Blocking Amazon services from the internet can be a bit tricky, so we'll take a multi-layered approach.${normal}"
-echo "${bold}1. Install a host file, this will block most of the domains that Amazon services usually connect to.${normal}"
+echo "${bold}1. Install a host file, this will block many of the domains that Amazon services usually connect to.${normal}"
 echo "${bold}   (One side effect of this process: Your wifi icon will have an exclamation mark even when connected correctly.)${normal}"
-echo "${bold}2. Install a Firewall${normal}"
-echo "${bold}3. Prevent any data from leaking in the time space between booting your tablet and the firewall starting.${normal}"
+echo "${bold}2. Install a Firewall (AFWall)${normal}"
 _pause
 echo "Making sure device wifi is disabled..."
 adb shell su -c svc wifi disable
@@ -93,9 +92,13 @@ echo "Applying hosts file..."
 adb push ./other/hosts /data/local/tmp
 adb shell su -c mount -o remount -rw /system
 adb shell su -c mv /data/local/tmp/hosts /etc/hosts
+echo "Installing AFWall."
+adb install ./apks/dev.ukanth.ufirewall_*.apk
 adb shell su -c svc power reboot
-echo "${bold}Installing AFWall.${normal}"
-adb install 
+echo "${bold}Rebooting... It's now safe to connect to wifi.${normal}"
+echo "${bold}Beware that data may leak to servers not in the hosts file during a narrow timeframe between booting and the firewall starting.${normal}"
+echo "${bold}You can mitigate this by turning off wifi before rebooting.${normal}"
+echo "${bold}Done. Continue to Stage 4: Bloat Removal.${normal}"
 }
 
 # ----------------------------------------------
@@ -107,6 +110,7 @@ echo "${bold}This will attempt to disable and replace as much as possible withou
 echo "${bold}It will also install Emerald Launcher and AnySoftKeyboard so you're not left with an unusable device.${normal}"
 echo "${bold}You may replace these later.${normal}"
 _pause
+echo "Disabling Amazon Apps..."
 adb shell su -c pm disable amazon.alexa.tablet
 # adb shell su -c pm disable amazon.fireos
 adb shell su -c pm disable amazon.jackson19
@@ -283,6 +287,7 @@ adb shell su -c pm disable jp.co.omronsoft.iwnnime.languagepack.zhcn_az
 adb shell su -c pm disable jp.co.omronsoft.iwnnime.mlaz
 adb shell su -c pm disable org.mopria.printplugin
 
+echo "Installing replacement apps..."
 adb install ./apks/ru.henridellal.emerald_*.apk # Emerald Launcher
 adb install ./apks/com.menny.android.anysoftkeyboard_*.apk # Anysoft Keyboard
 adb install ./apks/ru.meefik.busybox_*.apk # Busybox
@@ -312,16 +317,21 @@ _pause
 five(){
 echo "${bold}Welcome to Stage 5: Material Design Xposed Installer${normal}"
 echo "${bold}This will install the Material Design Xposed Installer and give instructions on how to use it.${normal}"
+echo "${bold}You will need tablet Wifi connected for this process.${normal}"
 _pause
 adb install ./apks/XposedInstaller*.apk
 echo "${bold}Please open the app, go to the official tab and install the latest ARM64 version.${normal}"
 echo "${bold}You will recieve an error during install. This is normal, continue only after this has happened.${normal}"
 _pause
+echo "Disabling wifi..."
 adb shell su -c svc wifi disable
+echo "Mounting /system read/write..."
 adb shell su -c mount -o remount -rw /system
+echo "Fixing xposed..."
 adb shell su -c rm /system/bin/app_process64_xposed
 adb shell su -c svc power reboot
 echo "${bold}Done. Your device will reboot.${normal}"
+echo "${bold}Check the app and make sure it has a green checkmark.${normal}"
 _pause
 }
 
@@ -334,7 +344,9 @@ echo "${bold}This will attempt to re-enable every Amazon app.${normal}"
 echo "${bold}This may fix any issues you've found after disabling them.${normal}"
 echo "${bold}If you want to return to completely stock, use Stage 1.${normal}"
 _pause
+echo "Disabling wifi..."
 adb shell su -c svc wifi disable
+echo "Enabling Amazon Apps..."
 adb shell su -c pm enable amazon.alexa.tablet
 adb shell su -c pm enable amazon.fireos
 adb shell su -c pm enable amazon.jackson19
