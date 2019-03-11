@@ -29,7 +29,7 @@ show_menus() {
 # Stage #1: Automated Recovery
 # ----------------------------------------------
 one(){
-echo "${bold}Welcome to Stage 1: Automated Recovery${normal}"
+echo "${bold}Welcome to Stage #1: Automated Recovery${normal}"
 echo "${bold}https://www.amazon.com/gp/help/customer/display.html/ref=hp_bc_nav?ie=UTF8&nodeId=200529680${normal}"
 echo "${bold}Place the image for your device in the ./image/ folder. Do not attempt to downgrade to an older version.${normal}"
 echo "${bold}Be warned that the rooting method could be patched in future versions. 5.3.6.4 is the current version.${normal}"
@@ -52,7 +52,7 @@ _pause
 # Stage #2: Automated Rooting
 # ----------------------------------------------
 two(){
-echo "${bold}Welcome to Stage 2: Automated Rooting Process${normal}"
+echo "${bold}Welcome to Stage #2: Automated Rooting${normal}"
 echo "${bold}Thanks to diplomatic for this method.${normal}"
 _pause
 adb shell su -c svc wifi disable
@@ -102,10 +102,10 @@ echo "${bold}Done. Continue to Stage 4: Bloat Removal.${normal}"
 }
 
 # ----------------------------------------------
-# Stage #4: Bloat Removal & Security
+# Stage #4: Disable Amazon Apps & Install F-Droid
 # ----------------------------------------------
 four(){
-echo "${bold}Welcome to Stage 4: Bloat Removal & Security${normal}"
+echo "${bold}Welcome to Stage #4: Disable Amazon Apps & Install F-Droid${normal}"
 echo "${bold}This will attempt to disable and replace as much as possible without breaking anything.${normal}"
 echo "${bold}It will also install Emerald Launcher and AnySoftKeyboard so you're not left with an unusable device.${normal}"
 echo "${bold}You may replace these later.${normal}"
@@ -312,10 +312,10 @@ _pause
 }
 
 # ----------------------------------------------
-# Stage #5: Material Design Xposed Installer
+# Stage #5: Xposed Framework Installer
 # ----------------------------------------------
 five(){
-echo "${bold}Welcome to Stage 5: Material Design Xposed Installer${normal}"
+echo "${bold}Welcome to Stage #5: Xposed Framework Installer${normal}"
 echo "${bold}This will install the Material Design Xposed Installer and give instructions on how to use it.${normal}"
 echo "${bold}You will need tablet Wifi connected for this process.${normal}"
 _pause
@@ -331,7 +331,7 @@ echo "Fixing xposed..."
 adb shell su -c rm /system/bin/app_process64_xposed
 adb shell su -c svc power reboot
 echo "${bold}Done. Your device will reboot.${normal}"
-echo "${bold}Check the app and make sure it has a green checkmark.${normal}"
+echo "${bold}Check inside the app for a green checkmark.${normal}"
 _pause
 }
 
