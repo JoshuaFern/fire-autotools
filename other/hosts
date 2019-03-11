@@ -15,6 +15,7 @@
 0.0.0.0   cdn.installationsafe.net.s3.amazonaws.com
 0.0.0.0   chl.la
 0.0.0.0   clients3.google.com
+0.0.0.0   clock.team-cymru.org
 0.0.0.0   d1s31zyz7dcc2d.cloudfront.net
 0.0.0.0   d3h5bk8iotgjvw.cloudfront.net
 0.0.0.0   dd27528.kasserver.com
@@ -31,9 +32,11 @@
 0.0.0.0   fls-na.amazon-adsystem.com
 0.0.0.0   gatekeeper.tss.net
 0.0.0.0   global.configuration-vending.service.amazonsilk.com
+0.0.0.0   ha81.smartwebdesign.com
 0.0.0.0   haggar.mcl.gg
 0.0.0.0   helium.constant.com
 0.0.0.0   htmlads.s3.amazonaws.com
+0.0.0.0   int42.org
 0.0.0.0   ir-de.amazon-adsystem.com
 0.0.0.0   ir-na.amazon-adsystem.com
 0.0.0.0   ir-uk.amazon-adsystem.com
@@ -76,6 +79,7 @@
 0.0.0.0   tablet.ntp-fireos.com
 0.0.0.0   time.no-such-agency.net
 0.0.0.0   time.richiemcintosh.com
+0.0.0.0   time.tritn.com
 0.0.0.0   titanium.slp.pos.here.com
 0.0.0.0   tock.no-such-agency.net
 0.0.0.0   tracking.opencandy.com.s3.amazonaws.com
