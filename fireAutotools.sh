@@ -19,7 +19,7 @@ show_menus() {
 	echo "Stage #2: Automated Rooting"
 	echo "Stage #3: Block Amazon Spying"
 	echo "Stage #4: Disable Amazon Apps & Install F-Droid"
-	echo "Stage #5: Material Design Xposed Installer"
+	echo "Stage #5: Xposed Framework Installer"
 	echo "       6: Unfreeze Amazon Apps (Undo Stage #3)"
 	echo "       9: Exit"
 	echo " "
