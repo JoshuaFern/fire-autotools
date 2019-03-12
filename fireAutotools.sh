@@ -112,14 +112,14 @@ echo "${bold}You may replace these later.${normal}"
 _pause
 echo "Disabling Amazon Apps..."
 adb shell su -c pm disable amazon.alexa.tablet
-# adb shell su -c pm disable amazon.fireos
+# adb shell su -c pm disable amazon.fireos # Bootloop, don't disable.
 adb shell su -c pm disable amazon.jackson19
 # adb shell su -c pm disable amazon.speech.sim
 # adb shell su -c pm disable android
 # adb shell su -c pm disable android.amazon.perm
 # adb shell su -c pm disable com.amazon.accessorynotifier
 # adb shell su -c pm disable com.amazon.acos.providers.UnifiedSettingsProvider
-# adb shell su -c pm disable com.amazon.advertisingidsettings
+adb shell su -c pm disable com.amazon.advertisingidsettings
 adb shell su -c pm disable com.amazon.ags.app
 # adb shell su -c pm disable com.amazon.alexa.externalmediaplayer.fireos
 # adb shell su -c pm disable com.amazon.alta.h2clientservice
