@@ -287,18 +287,23 @@ adb shell su -c pm disable jp.co.omronsoft.iwnnime.languagepack.zhcn_az # Fire K
 adb shell su -c pm disable jp.co.omronsoft.iwnnime.mlaz # Fire Keyboard (Asian)
 # adb shell su -c pm disable org.mopria.printplugin # Mopria Print Service
 
-echo "Installing replacement apps..."
+echo "Installing Emerald Launcher..."
 adb install ./apks/ru.henridellal.emerald_*.apk # Emerald Launcher
+echo "Installing Anysoft Keyboard..."
 adb install ./apks/com.menny.android.anysoftkeyboard_*.apk # Anysoft Keyboard
+echo "Installing Busybox Installer..."
 adb install ./apks/ru.meefik.busybox_*.apk # Busybox
+echo "Installing F-Droid..."
 adb install ./apks/org.fdroid.fdroid_*.apk # F-Droid
+echo "Installing F-Droid Privileged Extension..."
 adb push ./apks/org.fdroid.fdroid.privileged_2090.apk /data/local/tmp
 adb shell su -c mount -o remount -rw /system
 adb shell su -c mv /data/local/tmp/org.fdroid.fdroid.privileged_2090.apk /system/priv-app
 adb shell su -c svc power reboot
 echo "${bold}Done. Your device will reboot.${normal}"
 echo "${bold}You can now install some applications from F-Droid, here's some ideas:${normal}"
-echo "AppStore    : Yalp Store (Play Store Alternative)"
+echo "AppStore    : Yalp Store/Aurora Store (Play Store Alternatives)"
+echo "Books       : Book Reader"
 echo "Calculator  : Equate"
 echo "Email       : FairEmail"
 echo "File Manager: Ghost Commander"
@@ -306,8 +311,9 @@ echo "Keyboard    : AnySoftKeyboard (Installed)"
 echo "MP3 Player  : Vanilla Music"
 echo "Launcher    : Emerald Launcher (Installed)"
 echo "Weather     : WX"
-echo "Web Browser : Icecat"
+echo "Web Browser : Icecat/Fennec/Privacy Browser"
 echo "YouTube     : SkyTube/NewPipe"
+echo "${bold}Use the Busybox Application to install it on your device.${normal}"
 _pause
 }
 
