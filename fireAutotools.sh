@@ -1,3 +1,14 @@
+#
+# This program is free software; you can redistribute it and/or
+# modify it under the terms of the GNU General Public License
+# as published by the Free Software Foundation; either version 2
+# of the License, or (at your option) any later version.
+#
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+#
 #!/bin/bash
 
 _pause(){
@@ -106,7 +117,7 @@ echo "${bold}Done. Continue to Stage 4: Bloat Removal.${normal}"
 # ----------------------------------------------
 four(){
 echo "${bold}Welcome to Stage #4: Disable Amazon Apps & Install F-Droid${normal}"
-echo "${bold}This will attempt to disable and replace as much as possible without breaking anything.${normal}"
+echo "${bold}This will attempt to disable as much as possible without breaking anything.${normal}"
 echo "${bold}It will also install Emerald Launcher and AnySoftKeyboard so you're not left with an unusable device.${normal}"
 echo "${bold}You may replace these later.${normal}"
 _pause
@@ -157,8 +168,8 @@ adb shell su -c pm disable com.amazon.dee.app # Amazon Alexa
 adb shell su -c pm disable com.amazon.device.sale.service # Local Recommendations Service
 # adb shell su -c pm disable com.amazon.device.settings # Amazon Device Settings
 # adb shell su -c pm disable com.amazon.device.settings.sdk.internal.library # Amazon Device Settings Internal SDK
-# adb shell su -c pm disable com.amazon.device.software.ota # DeviceSoftwareOTA
-# adb shell su -c pm disable com.amazon.device.software.ota.override # System Updates
+adb shell su -c pm disable com.amazon.device.software.ota # DeviceSoftwareOTA
+adb shell su -c pm disable com.amazon.device.software.ota.override # System Updates
 # adb shell su -c pm disable com.amazon.device.sync # Amazon Whispersync DX
 # adb shell su -c pm disable com.amazon.device.sync.sdk.internal # Amazon Whispersync SDK
 # adb shell su -c pm disable com.amazon.digital.asset.ownership.app # DigitalAssetOwnershipAndroidClient
@@ -184,7 +195,7 @@ adb shell su -c pm disable com.amazon.kindle # Amazon Kindle
 # adb shell su -c pm disable com.amazon.kindle.devicecontrols # Fire Whispercast
 adb shell su -c pm disable com.amazon.kindle.kso # Special Offers
 adb shell su -c pm disable com.amazon.kindle.otter.oobe # Device Setup
-# adb shell su -c pm disable com.amazon.kindle.otter.oobe.forced.ota # Forced OTA
+adb shell su -c pm disable com.amazon.kindle.otter.oobe.forced.ota # Forced OTA
 adb shell su -c pm disable com.amazon.kindle.personal_video # My Videos
 # adb shell su -c pm disable com.amazon.kindle.rdmdeviceadmin # Remote Device Management Application
 adb shell su -c pm disable com.amazon.kindle.unifiedSearch # Unified Search
@@ -212,7 +223,7 @@ adb shell su -c pm disable com.amazon.readynowcore # On Deck
 adb shell su -c pm disable com.amazon.recess # Amazon Recess
 adb shell su -c pm disable com.amazon.redstone # Fire Standard Keyboard
 # adb shell su -c pm disable com.amazon.securitysyncclient # SecuritySyncClient
-# adb shell su -c pm disable com.amazon.settings.systemupdates # System Updates
+adb shell su -c pm disable com.amazon.settings.systemupdates # System Updates
 # adb shell su -c pm disable com.amazon.sharingservice.android.client.proxy # SharingServiceAndroidClientProxy
 # adb shell su -c pm disable com.amazon.shpm # Shipmode
 # adb shell su -c pm disable com.amazon.socialplatform # Manage Social Networks
@@ -305,7 +316,7 @@ echo "${bold}You can now install some applications from F-Droid, here's some ide
 echo "AppStore    : Yalp Store/Aurora Store (Play Store Alternatives)"
 echo "Books       : Book Reader"
 echo "Calculator  : Equate"
-echo "Email       : FairEmail"
+echo "Email       : FairEmail/Tutanota"
 echo "File Manager: Ghost Commander"
 echo "Keyboard    : AnySoftKeyboard (Installed)"
 echo "MP3 Player  : Vanilla Music"
