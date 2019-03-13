@@ -20,7 +20,6 @@ show_menus() {
 	echo "Stage #3: Block Amazon Spying"
 	echo "Stage #4: Disable Amazon Apps & Install F-Droid"
 	echo "Stage #5: Xposed Framework Installer"
-	echo "       6: Unfreeze Amazon Apps (Undo Stage #3)"
 	echo "       9: Exit"
 	echo " "
 }
@@ -55,6 +54,7 @@ two(){
 echo "${bold}Welcome to Stage #2: Automated Rooting${normal}"
 echo "${bold}Thanks to diplomatic for this method.${normal}"
 _pause
+echo "Making sure wifi is disabled..."
 adb shell su -c svc wifi disable
 echo "Copying root files..."
 adb shell rm /data/local/tmp/mtk-su /data/local/tmp/install.sh
@@ -92,7 +92,7 @@ echo "Applying hosts file..."
 adb push ./other/hosts /data/local/tmp
 adb shell su -c mount -o remount -rw /system
 adb shell su -c mv /data/local/tmp/hosts /etc/hosts
-echo "Installing AFWall."
+echo "Installing AFWall..."
 adb install ./apks/dev.ukanth.ufirewall_*.apk
 adb shell su -c svc power reboot
 echo "${bold}Rebooting... It's now safe to connect to wifi.${normal}"
@@ -114,11 +114,11 @@ echo "Disabling Amazon Apps..."
 adb shell su -c pm disable amazon.alexa.tablet
 # adb shell su -c pm disable amazon.fireos # Bootloop, don't disable.
 adb shell su -c pm disable amazon.jackson19
-# adb shell su -c pm disable amazon.speech.sim
-# adb shell su -c pm disable android
-# adb shell su -c pm disable android.amazon.perm
-# adb shell su -c pm disable com.amazon.accessorynotifier
-# adb shell su -c pm disable com.amazon.acos.providers.UnifiedSettingsProvider
+adb shell su -c pm disable amazon.speech.sim
+# adb shell su -c pm disable android # Bootloop?
+# adb shell su -c pm disable android.amazon.perm # Bootloop?
+adb shell su -c pm disable com.amazon.accessorynotifier
+adb shell su -c pm disable com.amazon.acos.providers.UnifiedSettingsProvider
 adb shell su -c pm disable com.amazon.advertisingidsettings
 adb shell su -c pm disable com.amazon.ags.app
 # adb shell su -c pm disable com.amazon.alexa.externalmediaplayer.fireos
@@ -128,7 +128,7 @@ adb shell su -c pm disable com.amazon.android.marketplace
 # adb shell su -c pm disable com.amazon.application.compatibility.enforcer.sdk.library
 # adb shell su -c pm disable com.amazon.assetsync.service
 adb shell su -c pm disable com.amazon.avod
-# adb shell su -c pm disable com.amazon.bluetoothinternals
+adb shell su -c pm disable com.amazon.bluetoothinternals
 adb shell su -c pm disable com.amazon.calculator # Calculator
 adb shell su -c pm disable com.amazon.camera # Camera
 # adb shell su -c pm disable com.amazon.cardinal
@@ -276,7 +276,7 @@ adb shell su -c pm disable com.android.music # Music
 # adb shell su -c pm disable com.android.vpndialogs
 # adb shell su -c pm disable com.android.wallpapercropper
 adb shell su -c pm disable com.audible.application.kindle # Audible
-adb shell su -c pm disable com.dolby # Doesn't seem to affect audio quality?
+adb shell su -c pm disable com.dolby # Dolby
 adb shell su -c pm disable com.goodreads.kindle
 # adb shell su -c pm disable com.here.odnp.service
 # adb shell su -c pm disable com.ivona.orchestrator
@@ -336,195 +336,10 @@ _pause
 }
 
 # ----------------------------------------------
-# Extra #6: Unfreeze Amazon Apps
+# Stage #6:
 # ----------------------------------------------
 six(){
-echo "${bold}Welcome to Extra #6: Unfreeze Amazon Apps${normal}"
-echo "${bold}This will attempt to re-enable every Amazon app.${normal}"
-echo "${bold}This may fix any issues you've found after disabling them.${normal}"
-echo "${bold}If you want to return to completely stock, use Stage 1.${normal}"
-_pause
-echo "Disabling wifi..."
-adb shell su -c svc wifi disable
-echo "Enabling Amazon Apps..."
-adb shell su -c pm enable amazon.alexa.tablet
-adb shell su -c pm enable amazon.fireos
-adb shell su -c pm enable amazon.jackson19
-adb shell su -c pm enable amazon.speech.sim
-adb shell su -c pm enable android
-adb shell su -c pm enable android.amazon.perm
-adb shell su -c pm enable com.amazon.accessorynotifier
-adb shell su -c pm enable com.amazon.acos.providers.UnifiedSettingsProvider
-adb shell su -c pm enable com.amazon.advertisingidsettings
-adb shell su -c pm enable com.amazon.ags.app
-adb shell su -c pm enable com.amazon.alexa.externalmediaplayer.fireos
-adb shell su -c pm enable com.amazon.alta.h2clientservice
-adb shell su -c pm enable com.amazon.android.marketplace
-adb shell su -c pm enable com.amazon.application.compatibility.enforcer
-adb shell su -c pm enable com.amazon.application.compatibility.enforcer.sdk.library
-adb shell su -c pm enable com.amazon.assetsync.service
-adb shell su -c pm enable com.amazon.avod
-adb shell su -c pm enable com.amazon.bluetoothinternals
-adb shell su -c pm enable com.amazon.calculator
-adb shell su -c pm enable com.amazon.camera
-adb shell su -c pm enable com.amazon.cardinal
-adb shell su -c pm enable com.amazon.client.metrics
-adb shell su -c pm enable com.amazon.client.metrics.api
-adb shell su -c pm enable com.amazon.cloud9
-adb shell su -c pm enable com.amazon.cloud9.contentservice
-adb shell su -c pm enable com.amazon.cloud9.kids
-adb shell su -c pm enable com.amazon.cloud9.systembrowserprovider
-adb shell su -c pm enable com.amazon.communication.discovery
-adb shell su -c pm enable com.amazon.connectivitydiag
-adb shell su -c pm enable com.amazon.csapp
-adb shell su -c pm enable com.amazon.dcp
-adb shell su -c pm enable com.amazon.dcp.contracts.framework.library
-adb shell su -c pm enable com.amazon.dcp.contracts.library
-adb shell su -c pm enable com.amazon.dee.app
-adb shell su -c pm enable com.amazon.device.backup
-adb shell su -c pm enable com.amazon.device.backup.sdk.internal.library
-adb shell su -c pm enable com.amazon.device.bluetoothdfu
-adb shell su -c pm enable com.amazon.device.crashmanager
-adb shell su -c pm enable com.amazon.device.logmanager
-adb shell su -c pm enable com.amazon.device.messaging
-adb shell su -c pm enable com.amazon.device.messaging.sdk.internal.library
-adb shell su -c pm enable com.amazon.device.messaging.sdk.library
-adb shell su -c pm enable com.amazon.device.metrics
-adb shell su -c pm enable com.amazon.device.sale.service
-adb shell su -c pm enable com.amazon.device.settings
-adb shell su -c pm enable com.amazon.device.settings.sdk.internal.library
-adb shell su -c pm enable com.amazon.device.software.ota
-adb shell su -c pm enable com.amazon.device.software.ota.override
-adb shell su -c pm enable com.amazon.device.sync
-adb shell su -c pm enable com.amazon.device.sync.sdk.internal
-adb shell su -c pm enable com.amazon.digital.asset.ownership.app
-adb shell su -c pm enable com.amazon.dp.contacts
-adb shell su -c pm enable com.amazon.dp.fbcontacts
-adb shell su -c pm enable com.amazon.dp.logger
-adb shell su -c pm enable com.amazon.dynamicupdationservice
-adb shell su -c pm enable com.amazon.fireinputdevices
-adb shell su -c pm enable com.amazon.firelauncher
-adb shell su -c pm enable com.amazon.firepowersettings
-adb shell su -c pm enable com.amazon.frameworksettings
-adb shell su -c pm enable com.amazon.geo.client.maps
-adb shell su -c pm enable com.amazon.geo.mapsv2
-adb shell su -c pm enable com.amazon.geo.mapsv2.services
-adb shell su -c pm enable com.amazon.gloria.graphiq
-adb shell su -c pm enable com.amazon.gloria.smarthome
-adb shell su -c pm enable com.amazon.h2settingsfortablet
-adb shell su -c pm enable com.amazon.identity.auth.device.authorization
-adb shell su -c pm enable com.amazon.imp
-adb shell su -c pm enable com.amazon.kcp.tutorial
-adb shell su -c pm enable com.amazon.kindle
-adb shell su -c pm enable com.amazon.kindle.cms
-adb shell su -c pm enable com.amazon.kindle.devicecontrols
-adb shell su -c pm enable com.amazon.kindle.kso
-adb shell su -c pm enable com.amazon.kindle.otter.oobe
-adb shell su -c pm enable com.amazon.kindle.otter.oobe.forced.ota
-adb shell su -c pm enable com.amazon.kindle.personal_video
-adb shell su -c pm enable com.amazon.kindle.rdmdeviceadmin
-adb shell su -c pm enable com.amazon.kindle.unifiedSearch
-adb shell su -c pm enable com.amazon.kindleautomatictimezone
-adb shell su -c pm enable com.amazon.knight.speechui
-adb shell su -c pm enable com.amazon.kor.demo
-adb shell su -c pm enable com.amazon.legalsettings
-adb shell su -c pm enable com.amazon.logan
-adb shell su -c pm enable com.amazon.media.session.monitor
-adb shell su -c pm enable com.amazon.mp3
-adb shell su -c pm enable com.amazon.mw
-adb shell su -c pm enable com.amazon.mw.sdk
-adb shell su -c pm enable com.amazon.nimh
-adb shell su -c pm enable com.amazon.ods.kindleconnect
-adb shell su -c pm enable com.amazon.parentalcontrols
-adb shell su -c pm enable com.amazon.photos
-adb shell su -c pm enable com.amazon.photos.importer
-adb shell su -c pm enable com.amazon.platform
-adb shell su -c pm enable com.amazon.platform.fdrw
-adb shell su -c pm enable com.amazon.platformsettings
-adb shell su -c pm enable com.amazon.pm
-adb shell su -c pm enable com.amazon.providers
-adb shell su -c pm enable com.amazon.providers.contentsupport
-adb shell su -c pm enable com.amazon.readynowcore
-adb shell su -c pm enable com.amazon.recess
-adb shell su -c pm enable com.amazon.redstone
-adb shell su -c pm enable com.amazon.securitysyncclient
-adb shell su -c pm enable com.amazon.settings.systemupdates
-adb shell su -c pm enable com.amazon.sharingservice.android.client.proxy
-adb shell su -c pm enable com.amazon.shpm
-adb shell su -c pm enable com.amazon.socialplatform
-adb shell su -c pm enable com.amazon.storagemanager
-adb shell su -c pm enable com.amazon.sync.provider.ipc
-adb shell su -c pm enable com.amazon.sync.service
-adb shell su -c pm enable com.amazon.tablet.voicesettings
-adb shell su -c pm enable com.amazon.tabletsubscriptions
-adb shell su -c pm enable com.amazon.tahoe
-adb shell su -c pm enable com.amazon.tcomm
-adb shell su -c pm enable com.amazon.tcomm.client
-adb shell su -c pm enable com.amazon.tv.ottssocompanionapp
-adb shell su -c pm enable com.amazon.unifiedshare.actionchooser
-adb shell su -c pm enable com.amazon.unifiedsharegoodreads
-adb shell su -c pm enable com.amazon.unifiedsharesinaweibo
-adb shell su -c pm enable com.amazon.unifiedsharetwitter
-adb shell su -c pm enable com.amazon.vans.alexatabletshopping.app
-adb shell su -c pm enable com.amazon.venezia
-adb shell su -c pm enable com.amazon.weather
-adb shell su -c pm enable com.amazon.webapp
-adb shell su -c pm enable com.amazon.webview
-adb shell su -c pm enable com.amazon.webview.chromium
-adb shell su -c pm enable com.amazon.whisperlink.activityview.android
-adb shell su -c pm enable com.amazon.whisperlink.core.android
-adb shell su -c pm enable com.amazon.whisperplay.contracts
-adb shell su -c pm enable com.amazon.wifilocker
-adb shell su -c pm enable com.amazon.windowshop
-adb shell su -c pm enable com.amazon.zico
-adb shell su -c pm enable com.android.backupconfirm
-adb shell su -c pm enable com.android.bluetooth
-adb shell su -c pm enable com.android.calendar
-adb shell su -c pm enable com.android.captiveportallogin
-adb shell su -c pm enable com.android.certinstaller
-adb shell su -c pm enable com.android.contacts
-adb shell su -c pm enable com.android.defcontainer
-adb shell su -c pm enable com.android.deskclock
-adb shell su -c pm enable com.android.documentsui
-adb shell su -c pm enable com.android.email
-adb shell su -c pm enable com.android.externalstorage
-adb shell su -c pm enable com.android.htmlviewer
-adb shell su -c pm enable com.android.keychain
-adb shell su -c pm enable com.android.location.fused
-adb shell su -c pm enable com.android.managedprovisioning
-adb shell su -c pm enable com.android.music
-adb shell su -c pm enable com.android.onetimeinitializer
-adb shell su -c pm enable com.android.packageinstaller
-adb shell su -c pm enable com.android.pacprocessor
-adb shell su -c pm enable com.android.printspooler
-adb shell su -c pm enable com.android.providers.calendar
-adb shell su -c pm enable com.android.providers.contacts
-adb shell su -c pm enable com.android.providers.downloads
-adb shell su -c pm enable com.android.providers.downloads.ui
-adb shell su -c pm enable com.android.providers.media
-adb shell su -c pm enable com.android.providers.settings
-adb shell su -c pm enable com.android.providers.userdictionary
-adb shell su -c pm enable com.android.proxyhandler
-adb shell su -c pm enable com.android.settings
-adb shell su -c pm enable com.android.sharedstoragebackup
-adb shell su -c pm enable com.android.shell
-adb shell su -c pm enable com.android.systemui
-adb shell su -c pm enable com.android.vpndialogs
-adb shell su -c pm enable com.android.wallpapercropper
-adb shell su -c pm enable com.audible.application.kindle
-adb shell su -c pm enable com.dolby
-adb shell su -c pm enable com.goodreads.kindle
-adb shell su -c pm enable com.here.odnp.service
-adb shell su -c pm enable com.ivona.orchestrator
-adb shell su -c pm enable com.ivona.tts.oem
-adb shell su -c pm enable com.kingsoft.office.amz
-adb shell su -c pm enable com.svox.pico
-adb shell su -c pm enable jp.co.omronsoft.iwnnime.languagepack.zhcn_az
-adb shell su -c pm enable jp.co.omronsoft.iwnnime.mlaz
-adb shell su -c pm enable org.mopria.printplugin
-adb shell su -c svc power reboot
-echo "${bold}Done. Your device will reboot.${normal}"
-_pause
+
 }
 
 read_options(){
