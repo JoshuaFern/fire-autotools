@@ -41,3 +41,11 @@ Run: ```./fireAutotools.sh```
 ├── fireAutotools.sh
 └── README.md
 ```
+
+## Workarounds
+### Unable to set timezone.
+Sometimes you may be unable to change the timezone in the settings. We can do it manually with ADB.
+
+```adb shell su -c setprop persist.sys.timezone "America/Los_Angeles"```
+
+Reboot. See this page for a list of timezones: https://en.wikipedia.org/wiki/List_of_tz_database_time_zones

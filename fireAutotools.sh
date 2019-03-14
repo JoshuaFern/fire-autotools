@@ -203,7 +203,7 @@ adb shell su -c pm disable com.amazon.kindle.unifiedSearch # Unified Search
 # adb shell su -c pm disable com.amazon.knight.speechui # SpeechUi
 # adb shell su -c pm disable com.amazon.kor.demo # Amazon Retail Demo
 # adb shell su -c pm disable com.amazon.legalsettings # Legal Notices
-# adb shell su -c pm disable com.amazon.logan # VoiceView
+adb shell su -c pm disable com.amazon.logan # VoiceView
 # adb shell su -c pm disable com.amazon.media.session.monitor # MediaSessionMonitor
 adb shell su -c pm disable com.amazon.mp3 # Music
 # adb shell su -c pm disable com.amazon.mw
@@ -317,7 +317,8 @@ echo "AppStore    : Yalp Store/Aurora Store (Play Store Alternatives)"
 echo "Books       : Book Reader"
 echo "Calculator  : Equate"
 echo "Camera      : Open Camera/Simple Camera"
-echo "Email       : FairEmail/Tutanota"
+echo "Clock       : Simple Clock"
+echo "Email       : FairEmail/Tutanota/K9"
 echo "File Manager: Ghost Commander"
 echo "Keyboard    : AnySoftKeyboard (Installed)"
 echo "MP3 Player  : Vanilla Music"
