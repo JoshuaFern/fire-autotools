@@ -123,8 +123,8 @@ echo "${bold}You may replace these later.${normal}"
 _pause
 echo "Disabling Amazon Apps..."
 adb shell su -c pm disable amazon.alexa.tablet # Alexa Cards
-# adb shell su -c pm disable amazon.fireos # (Do not disable)
-# adb shell su -c pm disable amazon.jackson19
+# adb shell su -c pm disable amazon.fireos # (Do not disable, bootloop.)
+adb shell su -c pm disable amazon.jackson19
 # adb shell su -c pm disable amazon.speech.sim # SpeechInteractionManager
 # adb shell su -c pm disable android # System
 # adb shell su -c pm disable android.amazon.perm # Fire
@@ -158,13 +158,13 @@ adb shell su -c pm disable com.amazon.dcp.contracts.library # DCP Platform Contr
 adb shell su -c pm disable com.amazon.dee.app # Amazon Alexa
 # adb shell su -c pm disable com.amazon.device.backup # Backup and Restore
 # adb shell su -c pm disable com.amazon.device.backup.sdk.internal.library # Amazon Backup and Restore Internal SDK
-# adb shell su -c pm disable com.amazon.device.bluetoothdfu # Amazon Bluetooth DFU
+adb shell su -c pm disable com.amazon.device.bluetoothdfu # Amazon Bluetooth DFU
 # adb shell su -c pm disable com.amazon.device.crashmanager # CrashManager
 # adb shell su -c pm disable com.amazon.device.logmanager # Log Manager
 # adb shell su -c pm disable com.amazon.device.messaging # Amazon Device Messaging (ADM)
 # adb shell su -c pm disable com.amazon.device.messaging.sdk.internal.library # Amazon Device Messaging Internal SDK
 # adb shell su -c pm disable com.amazon.device.messaging.sdk.library # Amazon Device Messaging SDK
-# adb shell su -c pm disable com.amazon.device.metrics # AmazonDeviceMetrics
+adb shell su -c pm disable com.amazon.device.metrics # AmazonDeviceMetrics
 adb shell su -c pm disable com.amazon.device.sale.service # Local Recommendations Service
 # adb shell su -c pm disable com.amazon.device.settings # Amazon Device Settings
 # adb shell su -c pm disable com.amazon.device.settings.sdk.internal.library # Amazon Device Settings Internal SDK
@@ -245,7 +245,7 @@ adb shell su -c pm disable com.amazon.venezia # Appstore
 adb shell su -c pm disable com.amazon.weather # Weather
 adb shell su -c pm disable com.amazon.webapp # Kindle Store
 # adb shell su -c pm disable com.amazon.webview # AmazonKKWebViewLib
-# adb shell su -c pm disable com.amazon.webview.chromium # Amazon System WebView
+# adb shell su -c pm disable com.amazon.webview.chromium # Amazon System WebView (Do not disable, breaks apps.)
 # adb shell su -c pm disable com.amazon.whisperlink.activityview.android # Whisperlink Activity View
 # adb shell su -c pm disable com.amazon.whisperlink.core.android # WhisperPlay Daemon
 adb shell su -c pm disable com.amazon.whisperplay.contracts # Whisperlink SDK
@@ -274,8 +274,8 @@ adb shell su -c pm disable com.android.music # Music
 # adb shell su -c pm disable com.android.printspooler # Print Spooler
 # adb shell su -c pm disable com.android.providers.calendar # Calendar Storage
 # adb shell su -c pm disable com.android.providers.contacts # Contacts Storage
-# adb shell su -c pm disable com.android.providers.downloads # Download Manager
-# adb shell su -c pm disable com.android.providers.downloads.ui # Downloads
+# adb shell su -c pm disable com.android.providers.downloads # Download Manager (Do not disable, breaks apps.)
+adb shell su -c pm disable com.android.providers.downloads.ui # Downloads
 # adb shell su -c pm disable com.android.providers.media # Media Storage
 # adb shell su -c pm disable com.android.providers.settings # Settings Storage
 # adb shell su -c pm disable com.android.providers.userdictionary # User Dictionary
@@ -287,16 +287,16 @@ adb shell su -c pm disable com.android.music # Music
 # adb shell su -c pm disable com.android.vpndialogs # VpnDialogs
 # adb shell su -c pm disable com.android.wallpapercropper
 adb shell su -c pm disable com.audible.application.kindle # Audible
-# adb shell su -c pm disable com.dolby # Dolby Service
+adb shell su -c pm disable com.dolby # Dolby Service
 adb shell su -c pm disable com.goodreads.kindle # Goodreads
-# adb shell su -c pm disable com.here.odnp.service # HERE Positioning
+adb shell su -c pm disable com.here.odnp.service # HERE Positioning
 adb shell su -c pm disable com.ivona.orchestrator # IvonaTTSOrchestrator
 adb shell su -c pm disable com.ivona.tts.oem # IVONA TTS
 adb shell su -c pm disable com.kingsoft.office.amz # WPS Office for Amazon
-# adb shell su -c pm disable com.svox.pico # Pico TTS
+adb shell su -c pm disable com.svox.pico # Pico TTS
 adb shell su -c pm disable jp.co.omronsoft.iwnnime.languagepack.zhcn_az # Fire Keyboard Simplified Chinese Pack
 adb shell su -c pm disable jp.co.omronsoft.iwnnime.mlaz # Fire Keyboard (Asian)
-# adb shell su -c pm disable org.mopria.printplugin # Mopria Print Service
+adb shell su -c pm disable org.mopria.printplugin # Mopria Print Service
 
 echo "Installing Emerald Launcher..."
 adb install ./apks/ru.henridellal.emerald_*.apk # Emerald Launcher
@@ -316,6 +316,7 @@ echo "${bold}You can now install some applications from F-Droid, here's some ide
 echo "AppStore    : Yalp Store/Aurora Store (Play Store Alternatives)"
 echo "Books       : Book Reader"
 echo "Calculator  : Equate"
+echo "Camera      : Open Camera/Simple Camera"
 echo "Email       : FairEmail/Tutanota"
 echo "File Manager: Ghost Commander"
 echo "Keyboard    : AnySoftKeyboard (Installed)"
