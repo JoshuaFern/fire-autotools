@@ -141,7 +141,7 @@ adb shell su -c pm disable com.amazon.alta.h2clientservice # H2Application
 adb shell su -c pm disable com.amazon.avod # Video
 # adb shell su -c pm disable com.amazon.bluetoothinternals # Amazon - Bluetooth Internals
 adb shell su -c pm disable com.amazon.calculator # Calculator
-# adb shell su -c pm disable com.amazon.camera # Camera
+adb shell su -c pm disable com.amazon.camera # Camera
 adb shell su -c pm disable com.amazon.cardinal # Alexa Video Player
 # adb shell su -c pm disable com.amazon.client.metrics # Amazon Metrics Service Application
 # adb shell su -c pm disable com.amazon.client.metrics.api
@@ -251,7 +251,7 @@ adb shell su -c pm disable com.amazon.webapp # Kindle Store
 adb shell su -c pm disable com.amazon.whisperplay.contracts # Whisperlink SDK
 # adb shell su -c pm disable com.amazon.wifilocker # WiFi Locker
 adb shell su -c pm disable com.amazon.windowshop # Shop Amazon
-# adb shell su -c pm disable com.amazon.zico # Documents
+adb shell su -c pm disable com.amazon.zico # Documents
 # adb shell su -c pm disable com.android.backupconfirm
 # adb shell su -c pm disable com.android.bluetooth # Bluetooth Share
 adb shell su -c pm disable com.android.calendar # Calendar
@@ -260,7 +260,7 @@ adb shell su -c pm disable com.android.calendar # Calendar
 adb shell su -c pm disable com.android.contacts # Contacts
 # adb shell su -c pm disable com.android.defcontainer # Package Access Helper
 adb shell su -c pm disable com.android.deskclock # Clock
-# adb shell su -c pm disable com.android.documentsui # Documents
+adb shell su -c pm disable com.android.documentsui # Documents
 adb shell su -c pm disable com.android.email # Email
 # adb shell su -c pm disable com.android.externalstorage # External Storage
 # adb shell su -c pm disable com.android.htmlviewer # HTML Viewer
