@@ -7,7 +7,7 @@ I am not responsible for bricked devices, dead SD cards, thermonuclear war, or y
 * Easy Sideloading & Recovery
 * Obtain Root
 * Block all Amazon apps and services from spying.
-* Disable Amazon Bloat to minimize CPU and memory usage.
+* Disable Amazon Bloat to minimize CPU usage, memory usage, and disk space.
 * Use Open Source alternatives when available.
 * Install Xposed Framework.
 
