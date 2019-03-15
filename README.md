@@ -3,7 +3,11 @@
 
 I am not responsible for bricked devices, dead SD cards, thermonuclear war, or you getting fired because the alarm app failed. Please do some research if you have any concerns about features included in this script BEFORE using it! YOU are choosing to make these modifications, and if you point the finger at me for messing up your device, I will laugh at you.
 
-## Goals
+## Description
+
+Fire Autotools is a simple shell script that I made for myself to automate the process of recovering and setting up my device. I have made this script publicly avalible for anyone to use. The current 
+
+### Goals
 * Easy Sideloading & Recovery
 * Obtain Root
 * Block all Amazon apps and services from spying.
