@@ -12,9 +12,20 @@ I am not responsible for bricked devices, dead SD cards, thermonuclear war, or y
 * Install Xposed Framework.
 
 ## Quick Usage Guide
+### Dependencies
 Fire Autotools assumes you have ADB installed already.
 
 To install ADB on Arch Linux: ```sudo pacman -S android-tools```
+
+### Setup
+If you wish to use sideloading / recovery, please place the correct ROM for your device in the ./image folder.
+
+You can find the image for your device here: https://www.amazon.com/gp/help/customer/display.html/ref=hp_bc_nav?ie=UTF8&nodeId=200529680
+
+Do not use a lower version than your currently installed version or try to use an image from the wrong device. Be aware the current root method may not work on upcoming versions.
+
+
+### Running
 
 Make script executable: ```chmod +x ./fireAutotools.sh```
 
