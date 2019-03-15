@@ -45,9 +45,16 @@ Run: ```./fireAutotools.sh```
 ```
 
 ## Workarounds
-### Unable to set timezone.
+### Unable to set Time Zone
 Sometimes you may be unable to change the timezone in the settings. We can do it manually with ADB.
 
 ```adb shell su -c setprop persist.sys.timezone "America/Los_Angeles"```
 
 Reboot. See this page for a list of timezones: https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
+
+### Unable to use Widgets
+Widgets are unfunctional, here's the fix:
+
+```adb shell appwidget grantbind --package com.launcher.name --user 0 ```
+
+Replace "com.launcher.name" with the name of your launcher.
