@@ -187,7 +187,7 @@ adb shell su -c pm disable com.amazon.geo.mapsv2 # Map API v2: Application Suppo
 adb shell su -c pm disable com.amazon.geo.mapsv2.services # Amazon Maps Platform Services V2
 adb shell su -c pm disable com.amazon.gloria.graphiq
 adb shell su -c pm disable com.amazon.gloria.smarthome
-# adb shell su -c pm disable com.amazon.h2settingsfortablet # Profiles Settings
+adb shell su -c pm disable com.amazon.h2settingsfortablet # Profiles Settings
 adb shell su -c pm disable com.amazon.identity.auth.device.authorization # MobileAuthenticationPlatformAndroid
 adb shell su -c pm disable com.amazon.imp # Identity Mobile Platform
 adb shell su -c pm disable com.amazon.kcp.tutorial # Fire Tutorial
