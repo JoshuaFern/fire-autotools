@@ -298,7 +298,10 @@ adb shell su -c pm disable com.svox.pico # Pico TTS
 adb shell su -c pm disable jp.co.omronsoft.iwnnime.languagepack.zhcn_az # Fire Keyboard Simplified Chinese Pack
 adb shell su -c pm disable jp.co.omronsoft.iwnnime.mlaz # Fire Keyboard (Asian)
 adb shell su -c pm disable org.mopria.printplugin # Mopria Print Service
-
+echo "Remounting /system..."
+adb shell su -c mount -o remount -rw /system
+echo "Deleting apps..."
+adb shell su -c rm -r /system/priv-app/SpeechInteractionManager # Prevents a battery wasting loop.
 echo "Installing Emerald Launcher..."
 adb install ./apks/ru.henridellal.emerald_*.apk # Emerald Launcher
 echo "Installing Anysoft Keyboard..."
@@ -309,7 +312,6 @@ echo "Installing F-Droid..."
 adb install ./apks/org.fdroid.fdroid_*.apk # F-Droid
 echo "Installing F-Droid Privileged Extension..."
 adb push ./apks/org.fdroid.fdroid.privileged_2090.apk /data/local/tmp
-adb shell su -c mount -o remount -rw /system
 adb shell su -c mv /data/local/tmp/org.fdroid.fdroid.privileged_2090.apk /system/priv-app
 adb shell su -c svc power reboot
 echo "${bold}Done. Your device will reboot.${normal}"
