@@ -187,7 +187,7 @@ adb shell su -c pm disable com.amazon.geo.mapsv2.services # Amazon Maps Platform
 adb shell su -c pm disable com.amazon.gloria.graphiq
 adb shell su -c pm disable com.amazon.gloria.smarthome
 # adb shell su -c pm disable com.amazon.h2settingsfortablet # Profiles Settings
-# adb shell su -c pm disable com.amazon.identity.auth.device.authorization # MobileAuthenticationPlatformAndroid
+adb shell su -c pm disable com.amazon.identity.auth.device.authorization # MobileAuthenticationPlatformAndroid
 adb shell su -c pm disable com.amazon.imp # Identity Mobile Platform
 adb shell su -c pm disable com.amazon.kcp.tutorial # Fire Tutorial
 adb shell su -c pm disable com.amazon.kindle # Amazon Kindle
@@ -208,7 +208,7 @@ adb shell su -c pm disable com.amazon.logan # VoiceView
 adb shell su -c pm disable com.amazon.mp3 # Music
 # adb shell su -c pm disable com.amazon.mw
 # adb shell su -c pm disable com.amazon.mw.sdk
-# adb shell su -c pm disable com.amazon.nimh # Arcus Android Client
+adb shell su -c pm disable com.amazon.nimh # Arcus Android Client
 adb shell su -c pm disable com.amazon.ods.kindleconnect # Mayday
 adb shell su -c pm disable com.amazon.parentalcontrols # Parental Controls
 adb shell su -c pm disable com.amazon.photos # Amazon Photos
@@ -222,7 +222,7 @@ adb shell su -c pm disable com.amazon.pm # Parental Monitoring Service
 adb shell su -c pm disable com.amazon.readynowcore # On Deck
 adb shell su -c pm disable com.amazon.recess # Amazon Recess
 adb shell su -c pm disable com.amazon.redstone # Fire Standard Keyboard
-# adb shell su -c pm disable com.amazon.securitysyncclient # SecuritySyncClient
+adb shell su -c pm disable com.amazon.securitysyncclient # SecuritySyncClient
 adb shell su -c pm disable com.amazon.settings.systemupdates # System Updates
 adb shell su -c pm disable com.amazon.sharingservice.android.client.proxy # SharingServiceAndroidClientProxy
 adb shell su -c pm disable com.amazon.shpm # Shipmode
