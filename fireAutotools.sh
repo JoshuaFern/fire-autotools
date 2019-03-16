@@ -275,20 +275,20 @@ adb shell su -c pm disable com.android.pacprocessor # PacProcessor
 adb shell su -c pm disable com.android.printspooler # Print Spooler
 adb shell su -c pm disable com.android.providers.calendar # Calendar Storage
 adb shell su -c pm disable com.android.providers.contacts # Contacts Storage
-# adb shell su -c pm disable com.android.providers.downloads # Download Manager (Do not disable, breaks apps.)
+# adb shell su -c pm disable com.android.providers.downloads # Download Manager (Do not disable, breaks apps ability to download.)
 adb shell su -c pm disable com.android.providers.downloads.ui # Downloads
 adb shell su -c pm disable com.android.providers.media # Media Storage
 # adb shell su -c pm disable com.android.providers.settings # Settings Storage
 adb shell su -c pm disable com.android.providers.userdictionary # User Dictionary
 adb shell su -c pm disable com.android.proxyhandler # ProxyHandler
-# adb shell su -c pm disable com.android.settings # Settings
+# adb shell su -c pm disable com.android.settings # Settings (You can disable this if you don't want to use the settings app.)
 adb shell su -c pm disable com.android.sharedstoragebackup
 # adb shell su -c pm disable com.android.shell # Shell
 # adb shell su -c pm disable com.android.systemui # System UI (Don't disable)
-# adb shell su -c pm disable com.android.vpndialogs # VpnDialogs
+adb shell su -c pm disable com.android.vpndialogs # VpnDialogs (You can disable this if you don't want to use VPN functionality.)
 adb shell su -c pm disable com.android.wallpapercropper
 adb shell su -c pm disable com.audible.application.kindle # Audible
-adb shell su -c pm disable com.dolby # Dolby Service
+adb shell su -c pm disable com.dolby # Dolby Service (Unable to disable)
 adb shell su -c pm disable com.goodreads.kindle # Goodreads
 adb shell su -c pm disable com.here.odnp.service # HERE Positioning
 adb shell su -c pm disable com.ivona.orchestrator # IvonaTTSOrchestrator
