@@ -135,7 +135,7 @@ adb shell su -c pm disable com.amazon.ags.app # Amazon GameCircle
 adb shell su -c pm disable com.amazon.alexa.externalmediaplayer.fireos
 adb shell su -c pm disable com.amazon.alta.h2clientservice # H2Application
 adb shell su -c pm disable com.amazon.android.marketplace # Marketplace Service Receiver
-# adb shell su -c pm disable com.amazon.application.compatibility.enforcer # Application Compatibility Enforcer
+adb shell su -c pm disable com.amazon.application.compatibility.enforcer # Application Compatibility Enforcer
 adb shell su -c pm disable com.amazon.application.compatibility.enforcer.sdk.library # Fire Application Compatibility Enforcer SDK
 adb shell su -c pm disable com.amazon.assetsync.service # AssetSyncService
 adb shell su -c pm disable com.amazon.avod # Video
