@@ -234,8 +234,8 @@ adb shell su -c pm disable com.amazon.sync.service # Content Sync Framework
 adb shell su -c pm disable com.amazon.tablet.voicesettings # FireTabletVoiceSettings
 adb shell su -c pm disable com.amazon.tabletsubscriptions # Tabletsubscriptions
 adb shell su -c pm disable com.amazon.tahoe # FreeTime
-# adb shell su -c pm disable com.amazon.tcomm # Amazon Communication Services
-# adb shell su -c pm disable com.amazon.tcomm.client # Amazon Communication Services Client Library
+adb shell su -c pm disable com.amazon.tcomm # Amazon Communication Services
+adb shell su -c pm disable com.amazon.tcomm.client # Amazon Communication Services Client Library
 adb shell su -c pm disable com.amazon.tv.ottssocompanionapp # OttSsoCompanionApp
 adb shell su -c pm disable com.amazon.unifiedshare.actionchooser # Chooser Menu
 adb shell su -c pm disable com.amazon.unifiedsharegoodreads # Amazon Goodreads Share
