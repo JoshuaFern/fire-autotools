@@ -117,7 +117,7 @@ echo "${bold}Done. Continue to Stage 4: Bloat Removal.${normal}"
 # ----------------------------------------------
 four(){
 echo "${bold}Welcome to Stage #4: Disable Amazon Apps & Install F-Droid${normal}"
-echo "${bold}This will attempt to agressively disable as much as possible without breaking anything.${normal}"
+echo "${bold}This will attempt to agressively disable as much as possible without breaking core functionality.${normal}"
 echo "${bold}It will also install Emerald Launcher and AnySoftKeyboard so you're not left with an unusable device.${normal}"
 echo "${bold}You may replace these later.${normal}"
 _pause
@@ -128,7 +128,7 @@ adb shell su -c pm disable amazon.jackson19
 adb shell su -c pm disable amazon.speech.sim # SpeechInteractionManager
 # adb shell su -c pm disable android # System
 # adb shell su -c pm disable android.amazon.perm # Fire
-# adb shell su -c pm disable com.amazon.accessorynotifier # Accessory Notifier
+adb shell su -c pm disable com.amazon.accessorynotifier # Accessory Notifier
 # adb shell su -c pm disable com.amazon.acos.providers.UnifiedSettingsProvider
 adb shell su -c pm disable com.amazon.advertisingidsettings # Advertising ID
 adb shell su -c pm disable com.amazon.ags.app # Amazon GameCircle
@@ -139,7 +139,7 @@ adb shell su -c pm disable com.amazon.alta.h2clientservice # H2Application
 # adb shell su -c pm disable com.amazon.application.compatibility.enforcer.sdk.library # Fire Application Compatibility Enforcer SDK
 # adb shell su -c pm disable com.amazon.assetsync.service # AssetSyncService
 adb shell su -c pm disable com.amazon.avod # Video
-# adb shell su -c pm disable com.amazon.bluetoothinternals # Amazon - Bluetooth Internals
+adb shell su -c pm disable com.amazon.bluetoothinternals # Amazon - Bluetooth Internals
 adb shell su -c pm disable com.amazon.calculator # Calculator
 adb shell su -c pm disable com.amazon.camera # Camera
 adb shell su -c pm disable com.amazon.cardinal # Alexa Video Player
@@ -249,7 +249,7 @@ adb shell su -c pm disable com.amazon.webapp # Kindle Store
 # adb shell su -c pm disable com.amazon.whisperlink.activityview.android # Whisperlink Activity View
 # adb shell su -c pm disable com.amazon.whisperlink.core.android # WhisperPlay Daemon
 adb shell su -c pm disable com.amazon.whisperplay.contracts # Whisperlink SDK
-# adb shell su -c pm disable com.amazon.wifilocker # WiFi Locker
+adb shell su -c pm disable com.amazon.wifilocker # WiFi Locker
 adb shell su -c pm disable com.amazon.windowshop # Shop Amazon
 adb shell su -c pm disable com.amazon.zico # Documents
 # adb shell su -c pm disable com.android.backupconfirm
