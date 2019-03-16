@@ -117,7 +117,7 @@ echo "${bold}Done. Continue to Stage 4: Bloat Removal.${normal}"
 # ----------------------------------------------
 four(){
 echo "${bold}Welcome to Stage #4: Disable Amazon Apps & Install F-Droid${normal}"
-echo "${bold}This will attempt to disable as much as possible without breaking anything.${normal}"
+echo "${bold}This will attempt to agressively disable as much as possible without breaking anything.${normal}"
 echo "${bold}It will also install Emerald Launcher and AnySoftKeyboard so you're not left with an unusable device.${normal}"
 echo "${bold}You may replace these later.${normal}"
 _pause
@@ -197,7 +197,7 @@ adb shell su -c pm disable com.amazon.kindle.kso # Special Offers
 adb shell su -c pm disable com.amazon.kindle.otter.oobe # Device Setup
 adb shell su -c pm disable com.amazon.kindle.otter.oobe.forced.ota # Forced OTA
 adb shell su -c pm disable com.amazon.kindle.personal_video # My Videos
-# adb shell su -c pm disable com.amazon.kindle.rdmdeviceadmin # Remote Device Management Application
+adb shell su -c pm disable com.amazon.kindle.rdmdeviceadmin # Remote Device Management Application
 adb shell su -c pm disable com.amazon.kindle.unifiedSearch # Unified Search
 adb shell su -c pm disable com.amazon.kindleautomatictimezone # Auto Timezone Service
 adb shell su -c pm disable com.amazon.knight.speechui # SpeechUi
@@ -216,7 +216,7 @@ adb shell su -c pm disable com.amazon.photos.importer # Photo Importer
 # adb shell su -c pm disable com.amazon.platform # Amazon Platform
 adb shell su -c pm disable com.amazon.platform.fdrw # Factory Data Reset Whitelist Manager
 # adb shell su -c pm disable com.amazon.platformsettings # Platform Remote Settings
-# adb shell su -c pm disable com.amazon.pm # Parental Monitoring Service
+adb shell su -c pm disable com.amazon.pm # Parental Monitoring Service
 # adb shell su -c pm disable com.amazon.providers # White Listed URL Provider
 # adb shell su -c pm disable com.amazon.providers.contentsupport # Content Support Manager
 adb shell su -c pm disable com.amazon.readynowcore # On Deck
@@ -225,7 +225,7 @@ adb shell su -c pm disable com.amazon.redstone # Fire Standard Keyboard
 # adb shell su -c pm disable com.amazon.securitysyncclient # SecuritySyncClient
 adb shell su -c pm disable com.amazon.settings.systemupdates # System Updates
 # adb shell su -c pm disable com.amazon.sharingservice.android.client.proxy # SharingServiceAndroidClientProxy
-# adb shell su -c pm disable com.amazon.shpm # Shipmode
+adb shell su -c pm disable com.amazon.shpm # Shipmode
 # adb shell su -c pm disable com.amazon.socialplatform # Manage Social Networks
 # adb shell su -c pm disable com.amazon.storagemanager # Storage Management
 # adb shell su -c pm disable com.amazon.sync.provider.ipc # Sync Provider Executor
