@@ -257,7 +257,7 @@ adb shell su -c pm disable com.android.backupconfirm
 adb shell su -c pm disable com.android.bluetooth # Bluetooth Share
 adb shell su -c pm disable com.android.calendar # Calendar
 adb shell su -c pm disable com.android.captiveportallogin # CaptivePortalLogin
-# adb shell su -c pm disable com.android.certinstaller # Certificate Installer
+adb shell su -c pm disable com.android.certinstaller # Certificate Installer
 adb shell su -c pm disable com.android.contacts # Contacts
 # adb shell su -c pm disable com.android.defcontainer # Package Access Helper
 adb shell su -c pm disable com.android.deskclock # Clock
@@ -273,8 +273,8 @@ adb shell su -c pm disable com.android.onetimeinitializer # One Time Init
 # adb shell su -c pm disable com.android.packageinstaller # Package Installer (Don't disable, can't install apps.)
 # adb shell su -c pm disable com.android.pacprocessor # PacProcessor
 adb shell su -c pm disable com.android.printspooler # Print Spooler
-# adb shell su -c pm disable com.android.providers.calendar # Calendar Storage
-# adb shell su -c pm disable com.android.providers.contacts # Contacts Storage
+adb shell su -c pm disable com.android.providers.calendar # Calendar Storage
+adb shell su -c pm disable com.android.providers.contacts # Contacts Storage
 # adb shell su -c pm disable com.android.providers.downloads # Download Manager (Do not disable, breaks apps.)
 adb shell su -c pm disable com.android.providers.downloads.ui # Downloads
 # adb shell su -c pm disable com.android.providers.media # Media Storage
