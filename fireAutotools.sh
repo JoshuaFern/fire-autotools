@@ -178,9 +178,9 @@ adb shell su -c pm disable com.amazon.dp.contacts # Contact Sync Adapter
 adb shell su -c pm disable com.amazon.dp.fbcontacts # Facebook Sync Adapter
 adb shell su -c pm disable com.amazon.dp.logger
 adb shell su -c pm disable com.amazon.dynamicupdationservice # Dynamic Updation Service
-# adb shell su -c pm disable com.amazon.fireinputdevices # Fire Input Devices
+adb shell su -c pm disable com.amazon.fireinputdevices # Fire Input Devices
 adb shell su -c pm disable com.amazon.firelauncher # Home Pages
-# adb shell su -c pm disable com.amazon.firepowersettings # Power
+adb shell su -c pm disable com.amazon.firepowersettings # Power
 # adb shell su -c pm disable com.amazon.frameworksettings # Blue Shade
 adb shell su -c pm disable com.amazon.geo.client.maps # Maps
 adb shell su -c pm disable com.amazon.geo.mapsv2 # Map API v2: Application Support
