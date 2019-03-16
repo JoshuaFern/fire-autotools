@@ -170,9 +170,9 @@ adb shell su -c pm disable com.amazon.device.sale.service # Local Recommendation
 # adb shell su -c pm disable com.amazon.device.settings.sdk.internal.library # Amazon Device Settings Internal SDK
 adb shell su -c pm disable com.amazon.device.software.ota # DeviceSoftwareOTA
 adb shell su -c pm disable com.amazon.device.software.ota.override # System Updates
-# adb shell su -c pm disable com.amazon.device.sync # Amazon Whispersync DX
-# adb shell su -c pm disable com.amazon.device.sync.sdk.internal # Amazon Whispersync SDK
-# adb shell su -c pm disable com.amazon.digital.asset.ownership.app # DigitalAssetOwnershipAndroidClient
+adb shell su -c pm disable com.amazon.device.sync # Amazon Whispersync DX
+adb shell su -c pm disable com.amazon.device.sync.sdk.internal # Amazon Whispersync SDK
+adb shell su -c pm disable com.amazon.digital.asset.ownership.app # DigitalAssetOwnershipAndroidClient
 adb shell su -c pm disable com.amazon.dp.contacts # Contact Sync Adapter
 adb shell su -c pm disable com.amazon.dp.fbcontacts # Facebook Sync Adapter
 adb shell su -c pm disable com.amazon.dp.logger
@@ -229,7 +229,7 @@ adb shell su -c pm disable com.amazon.shpm # Shipmode
 adb shell su -c pm disable com.amazon.socialplatform # Manage Social Networks
 # adb shell su -c pm disable com.amazon.storagemanager # Storage Management
 adb shell su -c pm disable com.amazon.sync.provider.ipc # Sync Provider Executor
-# adb shell su -c pm disable com.amazon.sync.service # Content Sync Framework
+adb shell su -c pm disable com.amazon.sync.service # Content Sync Framework
 adb shell su -c pm disable com.amazon.tablet.voicesettings # FireTabletVoiceSettings
 adb shell su -c pm disable com.amazon.tabletsubscriptions # Tabletsubscriptions
 adb shell su -c pm disable com.amazon.tahoe # FreeTime
