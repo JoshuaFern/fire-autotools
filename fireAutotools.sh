@@ -167,8 +167,8 @@ adb shell su -c pm disable com.amazon.device.messaging.sdk.internal.library # Am
 adb shell su -c pm disable com.amazon.device.messaging.sdk.library # Amazon Device Messaging SDK
 adb shell su -c pm disable com.amazon.device.metrics # AmazonDeviceMetrics
 adb shell su -c pm disable com.amazon.device.sale.service # Local Recommendations Service
-# adb shell su -c pm disable com.amazon.device.settings # Amazon Device Settings
-# adb shell su -c pm disable com.amazon.device.settings.sdk.internal.library # Amazon Device Settings Internal SDK
+adb shell su -c pm disable com.amazon.device.settings # Amazon Device Settings
+adb shell su -c pm disable com.amazon.device.settings.sdk.internal.library # Amazon Device Settings Internal SDK
 adb shell su -c pm disable com.amazon.device.software.ota # DeviceSoftwareOTA
 adb shell su -c pm disable com.amazon.device.software.ota.override # System Updates
 adb shell su -c pm disable com.amazon.device.sync # Amazon Whispersync DX
