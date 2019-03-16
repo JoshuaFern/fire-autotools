@@ -254,9 +254,9 @@ adb shell su -c pm disable com.amazon.wifilocker # WiFi Locker
 adb shell su -c pm disable com.amazon.windowshop # Shop Amazon
 adb shell su -c pm disable com.amazon.zico # Documents
 adb shell su -c pm disable com.android.backupconfirm
-# adb shell su -c pm disable com.android.bluetooth # Bluetooth Share
+adb shell su -c pm disable com.android.bluetooth # Bluetooth Share
 adb shell su -c pm disable com.android.calendar # Calendar
-# adb shell su -c pm disable com.android.captiveportallogin # CaptivePortalLogin
+adb shell su -c pm disable com.android.captiveportallogin # CaptivePortalLogin
 # adb shell su -c pm disable com.android.certinstaller # Certificate Installer
 adb shell su -c pm disable com.android.contacts # Contacts
 # adb shell su -c pm disable com.android.defcontainer # Package Access Helper
@@ -266,13 +266,13 @@ adb shell su -c pm disable com.android.email # Email
 # adb shell su -c pm disable com.android.externalstorage # External Storage
 # adb shell su -c pm disable com.android.htmlviewer # HTML Viewer
 # adb shell su -c pm disable com.android.keychain # Key Chain
-# adb shell su -c pm disable com.android.location.fused # Fused Location
+adb shell su -c pm disable com.android.location.fused # Fused Location
 # adb shell su -c pm disable com.android.managedprovisioning # Device Provisioner
 adb shell su -c pm disable com.android.music # Music
 adb shell su -c pm disable com.android.onetimeinitializer # One Time Init
 # adb shell su -c pm disable com.android.packageinstaller # Package Installer (Don't disable, can't install apps.)
 # adb shell su -c pm disable com.android.pacprocessor # PacProcessor
-# adb shell su -c pm disable com.android.printspooler # Print Spooler
+adb shell su -c pm disable com.android.printspooler # Print Spooler
 # adb shell su -c pm disable com.android.providers.calendar # Calendar Storage
 # adb shell su -c pm disable com.android.providers.contacts # Contacts Storage
 # adb shell su -c pm disable com.android.providers.downloads # Download Manager (Do not disable, breaks apps.)
