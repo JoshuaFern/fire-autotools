@@ -149,15 +149,15 @@ adb shell su -c pm disable com.amazon.cloud9 # Silk Browser
 adb shell su -c pm disable com.amazon.cloud9.contentservice # Silk Content Service
 adb shell su -c pm disable com.amazon.cloud9.kids # Kids Web Browser
 adb shell su -c pm disable com.amazon.cloud9.systembrowserprovider # System Browser Provider
-# adb shell su -c pm disable com.amazon.communication.discovery
-# adb shell su -c pm disable com.amazon.connectivitydiag
+adb shell su -c pm disable com.amazon.communication.discovery
+adb shell su -c pm disable com.amazon.connectivitydiag
 adb shell su -c pm disable com.amazon.csapp # Help
-# adb shell su -c pm disable com.amazon.dcp # Amazon Device Middleware Debugging Tool
-# adb shell su -c pm disable com.amazon.dcp.contracts.framework.library # DCP Contracts Framework
+adb shell su -c pm disable com.amazon.dcp # Amazon Device Middleware Debugging Tool
+adb shell su -c pm disable com.amazon.dcp.contracts.framework.library # DCP Contracts Framework
 adb shell su -c pm disable com.amazon.dcp.contracts.library # DCP Platform Contracts
 adb shell su -c pm disable com.amazon.dee.app # Amazon Alexa
-# adb shell su -c pm disable com.amazon.device.backup # Backup and Restore
-# adb shell su -c pm disable com.amazon.device.backup.sdk.internal.library # Amazon Backup and Restore Internal SDK
+adb shell su -c pm disable com.amazon.device.backup # Backup and Restore
+adb shell su -c pm disable com.amazon.device.backup.sdk.internal.library # Amazon Backup and Restore Internal SDK
 adb shell su -c pm disable com.amazon.device.bluetoothdfu # Amazon Bluetooth DFU
 adb shell su -c pm disable com.amazon.device.crashmanager # CrashManager
 adb shell su -c pm disable com.amazon.device.logmanager # Log Manager
