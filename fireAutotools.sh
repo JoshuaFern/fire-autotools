@@ -301,7 +301,10 @@ adb shell su -c pm disable org.mopria.printplugin # Mopria Print Service
 echo "Remounting /system..."
 adb shell su -c mount -o remount -rw /system
 echo "Deleting apps..."
-adb shell su -c rm -r /system/priv-app/SpeechInteractionManager # Prevents a battery wasting loop.
+adb shell su -c rm -r /system/priv-app/SpeechInteractionManager
+adb shell su -c rm -r /system/priv-app/com.amazon.tcomm
+adb shell su -c rm -r /system/priv-app/com.amazon.imp
+adb shell su -c rm -r /system/priv-app/com.amazon.assetsync.service
 echo "Installing Emerald Launcher..."
 adb install ./apks/ru.henridellal.emerald_*.apk # Emerald Launcher
 echo "Installing Anysoft Keyboard..."
