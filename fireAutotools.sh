@@ -214,7 +214,7 @@ adb shell su -c pm disable com.amazon.ods.kindleconnect # Mayday
 adb shell su -c pm disable com.amazon.parentalcontrols # Parental Controls
 adb shell su -c pm disable com.amazon.photos # Amazon Photos
 adb shell su -c pm disable com.amazon.photos.importer # Photo Importer
-# adb shell su -c pm disable com.amazon.platform # Amazon Platform
+adb shell su -c pm disable com.amazon.platform # Amazon Platform
 adb shell su -c pm disable com.amazon.platform.fdrw # Factory Data Reset Whitelist Manager
 adb shell su -c pm disable com.amazon.platformsettings # Platform Remote Settings
 adb shell su -c pm disable com.amazon.pm # Parental Monitoring Service
