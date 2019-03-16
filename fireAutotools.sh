@@ -132,7 +132,7 @@ adb shell su -c pm disable amazon.speech.sim # SpeechInteractionManager
 # adb shell su -c pm disable com.amazon.acos.providers.UnifiedSettingsProvider
 adb shell su -c pm disable com.amazon.advertisingidsettings # Advertising ID
 adb shell su -c pm disable com.amazon.ags.app # Amazon GameCircle
-# adb shell su -c pm disable com.amazon.alexa.externalmediaplayer.fireos
+adb shell su -c pm disable com.amazon.alexa.externalmediaplayer.fireos
 adb shell su -c pm disable com.amazon.alta.h2clientservice # H2Application
 # adb shell su -c pm disable com.amazon.android.marketplace # Marketplace Service Receiver
 # adb shell su -c pm disable com.amazon.application.compatibility.enforcer # Application Compatibility Enforcer
@@ -224,11 +224,11 @@ adb shell su -c pm disable com.amazon.recess # Amazon Recess
 adb shell su -c pm disable com.amazon.redstone # Fire Standard Keyboard
 # adb shell su -c pm disable com.amazon.securitysyncclient # SecuritySyncClient
 adb shell su -c pm disable com.amazon.settings.systemupdates # System Updates
-# adb shell su -c pm disable com.amazon.sharingservice.android.client.proxy # SharingServiceAndroidClientProxy
+adb shell su -c pm disable com.amazon.sharingservice.android.client.proxy # SharingServiceAndroidClientProxy
 adb shell su -c pm disable com.amazon.shpm # Shipmode
 adb shell su -c pm disable com.amazon.socialplatform # Manage Social Networks
 # adb shell su -c pm disable com.amazon.storagemanager # Storage Management
-# adb shell su -c pm disable com.amazon.sync.provider.ipc # Sync Provider Executor
+adb shell su -c pm disable com.amazon.sync.provider.ipc # Sync Provider Executor
 # adb shell su -c pm disable com.amazon.sync.service # Content Sync Framework
 # adb shell su -c pm disable com.amazon.tablet.voicesettings # FireTabletVoiceSettings
 adb shell su -c pm disable com.amazon.tabletsubscriptions # Tabletsubscriptions
@@ -283,7 +283,7 @@ adb shell su -c pm disable com.android.providers.downloads.ui # Downloads
 # adb shell su -c pm disable com.android.settings # Settings
 # adb shell su -c pm disable com.android.sharedstoragebackup
 # adb shell su -c pm disable com.android.shell # Shell
-# adb shell su -c pm disable com.android.systemui # System UI
+# adb shell su -c pm disable com.android.systemui # System UI (Don't disable)
 # adb shell su -c pm disable com.android.vpndialogs # VpnDialogs
 # adb shell su -c pm disable com.android.wallpapercropper
 adb shell su -c pm disable com.audible.application.kindle # Audible
