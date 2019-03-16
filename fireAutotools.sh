@@ -271,7 +271,7 @@ adb shell su -c pm disable com.android.location.fused # Fused Location
 adb shell su -c pm disable com.android.music # Music
 adb shell su -c pm disable com.android.onetimeinitializer # One Time Init
 # adb shell su -c pm disable com.android.packageinstaller # Package Installer (Don't disable, can't install apps.)
-# adb shell su -c pm disable com.android.pacprocessor # PacProcessor
+adb shell su -c pm disable com.android.pacprocessor # PacProcessor
 adb shell su -c pm disable com.android.printspooler # Print Spooler
 adb shell su -c pm disable com.android.providers.calendar # Calendar Storage
 adb shell su -c pm disable com.android.providers.contacts # Contacts Storage
@@ -279,14 +279,14 @@ adb shell su -c pm disable com.android.providers.contacts # Contacts Storage
 adb shell su -c pm disable com.android.providers.downloads.ui # Downloads
 # adb shell su -c pm disable com.android.providers.media # Media Storage
 # adb shell su -c pm disable com.android.providers.settings # Settings Storage
-# adb shell su -c pm disable com.android.providers.userdictionary # User Dictionary
-# adb shell su -c pm disable com.android.proxyhandler # ProxyHandler
+adb shell su -c pm disable com.android.providers.userdictionary # User Dictionary
+adb shell su -c pm disable com.android.proxyhandler # ProxyHandler
 # adb shell su -c pm disable com.android.settings # Settings
-# adb shell su -c pm disable com.android.sharedstoragebackup
+adb shell su -c pm disable com.android.sharedstoragebackup
 # adb shell su -c pm disable com.android.shell # Shell
 # adb shell su -c pm disable com.android.systemui # System UI (Don't disable)
 # adb shell su -c pm disable com.android.vpndialogs # VpnDialogs
-# adb shell su -c pm disable com.android.wallpapercropper
+adb shell su -c pm disable com.android.wallpapercropper
 adb shell su -c pm disable com.audible.application.kindle # Audible
 adb shell su -c pm disable com.dolby # Dolby Service
 adb shell su -c pm disable com.goodreads.kindle # Goodreads
