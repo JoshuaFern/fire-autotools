@@ -128,7 +128,7 @@ adb shell su -c pm disable amazon.alexa.tablet # Alexa Cards
 adb shell su -c pm disable amazon.jackson19
 adb shell su -c pm disable amazon.speech.sim # SpeechInteractionManager
 # adb shell su -c pm disable android # System
-# adb shell su -c pm disable android.amazon.perm # Fire
+adb shell su -c pm disable android.amazon.perm # Fire
 adb shell su -c pm disable com.amazon.accessorynotifier # Accessory Notifier
 adb shell su -c pm disable com.amazon.acos.providers.UnifiedSettingsProvider
 adb shell su -c pm disable com.amazon.advertisingidsettings # Advertising ID
