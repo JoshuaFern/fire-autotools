@@ -265,7 +265,7 @@ adb shell su -c pm disable com.android.documentsui # Documents
 adb shell su -c pm disable com.android.email # Email
 # adb shell su -c pm disable com.android.externalstorage # External Storage
 adb shell su -c pm disable com.android.htmlviewer # HTML Viewer
-# adb shell su -c pm disable com.android.keychain # Key Chain
+adb shell su -c pm disable com.android.keychain # Key Chain
 adb shell su -c pm disable com.android.location.fused # Fused Location
 # adb shell su -c pm disable com.android.managedprovisioning # Device Provisioner
 adb shell su -c pm disable com.android.music # Music
@@ -277,7 +277,7 @@ adb shell su -c pm disable com.android.providers.calendar # Calendar Storage
 adb shell su -c pm disable com.android.providers.contacts # Contacts Storage
 # adb shell su -c pm disable com.android.providers.downloads # Download Manager (Do not disable, breaks apps.)
 adb shell su -c pm disable com.android.providers.downloads.ui # Downloads
-# adb shell su -c pm disable com.android.providers.media # Media Storage
+adb shell su -c pm disable com.android.providers.media # Media Storage
 # adb shell su -c pm disable com.android.providers.settings # Settings Storage
 adb shell su -c pm disable com.android.providers.userdictionary # User Dictionary
 adb shell su -c pm disable com.android.proxyhandler # ProxyHandler
