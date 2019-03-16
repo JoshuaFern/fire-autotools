@@ -191,7 +191,7 @@ adb shell su -c pm disable com.amazon.identity.auth.device.authorization # Mobil
 adb shell su -c pm disable com.amazon.imp # Identity Mobile Platform
 adb shell su -c pm disable com.amazon.kcp.tutorial # Fire Tutorial
 adb shell su -c pm disable com.amazon.kindle # Amazon Kindle
-# adb shell su -c pm disable com.amazon.kindle.cms # Content Management Service
+adb shell su -c pm disable com.amazon.kindle.cms # Content Management Service
 # adb shell su -c pm disable com.amazon.kindle.devicecontrols # Fire Whispercast
 adb shell su -c pm disable com.amazon.kindle.kso # Special Offers
 adb shell su -c pm disable com.amazon.kindle.otter.oobe # Device Setup
@@ -204,10 +204,10 @@ adb shell su -c pm disable com.amazon.knight.speechui # SpeechUi
 adb shell su -c pm disable com.amazon.kor.demo # Amazon Retail Demo
 adb shell su -c pm disable com.amazon.legalsettings # Legal Notices
 adb shell su -c pm disable com.amazon.logan # VoiceView
-# adb shell su -c pm disable com.amazon.media.session.monitor # MediaSessionMonitor
+adb shell su -c pm disable com.amazon.media.session.monitor # MediaSessionMonitor
 adb shell su -c pm disable com.amazon.mp3 # Music
-# adb shell su -c pm disable com.amazon.mw
-# adb shell su -c pm disable com.amazon.mw.sdk
+adb shell su -c pm disable com.amazon.mw
+adb shell su -c pm disable com.amazon.mw.sdk
 adb shell su -c pm disable com.amazon.nimh # Arcus Android Client
 adb shell su -c pm disable com.amazon.ods.kindleconnect # Mayday
 adb shell su -c pm disable com.amazon.parentalcontrols # Parental Controls
@@ -230,7 +230,7 @@ adb shell su -c pm disable com.amazon.socialplatform # Manage Social Networks
 # adb shell su -c pm disable com.amazon.storagemanager # Storage Management
 adb shell su -c pm disable com.amazon.sync.provider.ipc # Sync Provider Executor
 # adb shell su -c pm disable com.amazon.sync.service # Content Sync Framework
-# adb shell su -c pm disable com.amazon.tablet.voicesettings # FireTabletVoiceSettings
+adb shell su -c pm disable com.amazon.tablet.voicesettings # FireTabletVoiceSettings
 adb shell su -c pm disable com.amazon.tabletsubscriptions # Tabletsubscriptions
 adb shell su -c pm disable com.amazon.tahoe # FreeTime
 # adb shell su -c pm disable com.amazon.tcomm # Amazon Communication Services
