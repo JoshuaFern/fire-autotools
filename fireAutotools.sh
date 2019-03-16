@@ -184,11 +184,11 @@ adb shell su -c pm disable com.amazon.firelauncher # Home Pages
 adb shell su -c pm disable com.amazon.geo.client.maps # Maps
 adb shell su -c pm disable com.amazon.geo.mapsv2 # Map API v2: Application Support
 adb shell su -c pm disable com.amazon.geo.mapsv2.services # Amazon Maps Platform Services V2
-# adb shell su -c pm disable com.amazon.gloria.graphiq
-# adb shell su -c pm disable com.amazon.gloria.smarthome
+adb shell su -c pm disable com.amazon.gloria.graphiq
+adb shell su -c pm disable com.amazon.gloria.smarthome
 # adb shell su -c pm disable com.amazon.h2settingsfortablet # Profiles Settings
 # adb shell su -c pm disable com.amazon.identity.auth.device.authorization # MobileAuthenticationPlatformAndroid
-# adb shell su -c pm disable com.amazon.imp # Identity Mobile Platform
+adb shell su -c pm disable com.amazon.imp # Identity Mobile Platform
 adb shell su -c pm disable com.amazon.kcp.tutorial # Fire Tutorial
 adb shell su -c pm disable com.amazon.kindle # Amazon Kindle
 # adb shell su -c pm disable com.amazon.kindle.cms # Content Management Service
@@ -235,7 +235,7 @@ adb shell su -c pm disable com.amazon.tabletsubscriptions # Tabletsubscriptions
 adb shell su -c pm disable com.amazon.tahoe # FreeTime
 # adb shell su -c pm disable com.amazon.tcomm # Amazon Communication Services
 # adb shell su -c pm disable com.amazon.tcomm.client # Amazon Communication Services Client Library
-# adb shell su -c pm disable com.amazon.tv.ottssocompanionapp # OttSsoCompanionApp
+adb shell su -c pm disable com.amazon.tv.ottssocompanionapp # OttSsoCompanionApp
 adb shell su -c pm disable com.amazon.unifiedshare.actionchooser # Chooser Menu
 adb shell su -c pm disable com.amazon.unifiedsharegoodreads # Amazon Goodreads Share
 adb shell su -c pm disable com.amazon.unifiedsharesinaweibo # Amazon Sina Weibo Share
