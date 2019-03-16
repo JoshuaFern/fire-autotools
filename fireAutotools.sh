@@ -125,7 +125,7 @@ echo "Disabling Amazon Apps..."
 adb shell su -c pm disable amazon.alexa.tablet # Alexa Cards
 # adb shell su -c pm disable amazon.fireos # (Do not disable, bootloop.)
 adb shell su -c pm disable amazon.jackson19
-# adb shell su -c pm disable amazon.speech.sim # SpeechInteractionManager
+adb shell su -c pm disable amazon.speech.sim # SpeechInteractionManager
 # adb shell su -c pm disable android # System
 # adb shell su -c pm disable android.amazon.perm # Fire
 # adb shell su -c pm disable com.amazon.accessorynotifier # Accessory Notifier
@@ -143,12 +143,12 @@ adb shell su -c pm disable com.amazon.avod # Video
 adb shell su -c pm disable com.amazon.calculator # Calculator
 adb shell su -c pm disable com.amazon.camera # Camera
 adb shell su -c pm disable com.amazon.cardinal # Alexa Video Player
-# adb shell su -c pm disable com.amazon.client.metrics # Amazon Metrics Service Application
-# adb shell su -c pm disable com.amazon.client.metrics.api
+adb shell su -c pm disable com.amazon.client.metrics # Amazon Metrics Service Application
+adb shell su -c pm disable com.amazon.client.metrics.api
 adb shell su -c pm disable com.amazon.cloud9 # Silk Browser
 adb shell su -c pm disable com.amazon.cloud9.contentservice # Silk Content Service
-# adb shell su -c pm disable com.amazon.cloud9.kids # Kids Web Browser
-# adb shell su -c pm disable com.amazon.cloud9.systembrowserprovider # System Browser Provider
+adb shell su -c pm disable com.amazon.cloud9.kids # Kids Web Browser
+adb shell su -c pm disable com.amazon.cloud9.systembrowserprovider # System Browser Provider
 # adb shell su -c pm disable com.amazon.communication.discovery
 # adb shell su -c pm disable com.amazon.connectivitydiag
 adb shell su -c pm disable com.amazon.csapp # Help
@@ -159,8 +159,8 @@ adb shell su -c pm disable com.amazon.dee.app # Amazon Alexa
 # adb shell su -c pm disable com.amazon.device.backup # Backup and Restore
 # adb shell su -c pm disable com.amazon.device.backup.sdk.internal.library # Amazon Backup and Restore Internal SDK
 adb shell su -c pm disable com.amazon.device.bluetoothdfu # Amazon Bluetooth DFU
-# adb shell su -c pm disable com.amazon.device.crashmanager # CrashManager
-# adb shell su -c pm disable com.amazon.device.logmanager # Log Manager
+adb shell su -c pm disable com.amazon.device.crashmanager # CrashManager
+adb shell su -c pm disable com.amazon.device.logmanager # Log Manager
 # adb shell su -c pm disable com.amazon.device.messaging # Amazon Device Messaging (ADM)
 # adb shell su -c pm disable com.amazon.device.messaging.sdk.internal.library # Amazon Device Messaging Internal SDK
 # adb shell su -c pm disable com.amazon.device.messaging.sdk.library # Amazon Device Messaging SDK
@@ -182,8 +182,8 @@ adb shell su -c pm disable com.amazon.firelauncher # Home Pages
 # adb shell su -c pm disable com.amazon.firepowersettings # Power
 # adb shell su -c pm disable com.amazon.frameworksettings # Blue Shade
 adb shell su -c pm disable com.amazon.geo.client.maps # Maps
-# adb shell su -c pm disable com.amazon.geo.mapsv2 # Map API v2: Application Support
-# adb shell su -c pm disable com.amazon.geo.mapsv2.services # Amazon Maps Platform Services V2
+adb shell su -c pm disable com.amazon.geo.mapsv2 # Map API v2: Application Support
+adb shell su -c pm disable com.amazon.geo.mapsv2.services # Amazon Maps Platform Services V2
 # adb shell su -c pm disable com.amazon.gloria.graphiq
 # adb shell su -c pm disable com.amazon.gloria.smarthome
 # adb shell su -c pm disable com.amazon.h2settingsfortablet # Profiles Settings
@@ -199,10 +199,10 @@ adb shell su -c pm disable com.amazon.kindle.otter.oobe.forced.ota # Forced OTA
 adb shell su -c pm disable com.amazon.kindle.personal_video # My Videos
 # adb shell su -c pm disable com.amazon.kindle.rdmdeviceadmin # Remote Device Management Application
 adb shell su -c pm disable com.amazon.kindle.unifiedSearch # Unified Search
-# adb shell su -c pm disable com.amazon.kindleautomatictimezone # Auto Timezone Service
-# adb shell su -c pm disable com.amazon.knight.speechui # SpeechUi
-# adb shell su -c pm disable com.amazon.kor.demo # Amazon Retail Demo
-# adb shell su -c pm disable com.amazon.legalsettings # Legal Notices
+adb shell su -c pm disable com.amazon.kindleautomatictimezone # Auto Timezone Service
+adb shell su -c pm disable com.amazon.knight.speechui # SpeechUi
+adb shell su -c pm disable com.amazon.kor.demo # Amazon Retail Demo
+adb shell su -c pm disable com.amazon.legalsettings # Legal Notices
 adb shell su -c pm disable com.amazon.logan # VoiceView
 # adb shell su -c pm disable com.amazon.media.session.monitor # MediaSessionMonitor
 adb shell su -c pm disable com.amazon.mp3 # Music
@@ -236,7 +236,7 @@ adb shell su -c pm disable com.amazon.tahoe # FreeTime
 # adb shell su -c pm disable com.amazon.tcomm # Amazon Communication Services
 # adb shell su -c pm disable com.amazon.tcomm.client # Amazon Communication Services Client Library
 # adb shell su -c pm disable com.amazon.tv.ottssocompanionapp # OttSsoCompanionApp
-# adb shell su -c pm disable com.amazon.unifiedshare.actionchooser # Chooser Menu
+adb shell su -c pm disable com.amazon.unifiedshare.actionchooser # Chooser Menu
 adb shell su -c pm disable com.amazon.unifiedsharegoodreads # Amazon Goodreads Share
 adb shell su -c pm disable com.amazon.unifiedsharesinaweibo # Amazon Sina Weibo Share
 adb shell su -c pm disable com.amazon.unifiedsharetwitter # Amazon Twitter Share
@@ -314,6 +314,7 @@ adb shell su -c svc power reboot
 echo "${bold}Done. Your device will reboot.${normal}"
 echo "${bold}You can now install some applications from F-Droid, here's some ideas:${normal}"
 echo "AppStore    : Yalp Store/Aurora Store (Play Store Alternatives)"
+echo "Backup      : oandbackup"
 echo "Books       : Book Reader"
 echo "Calculator  : Equate"
 echo "Camera      : Open Camera/Simple Camera"
@@ -321,6 +322,7 @@ echo "Clock       : Simple Clock"
 echo "Email       : FairEmail/Tutanota/K9"
 echo "File Manager: Ghost Commander"
 echo "Keyboard    : AnySoftKeyboard (Installed)"
+echo "Maps        : OsmAnd"
 echo "MP3 Player  : Vanilla Music"
 echo "Launcher    : Emerald Launcher (Installed)"
 echo "Weather     : WX"
