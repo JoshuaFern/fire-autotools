@@ -122,6 +122,7 @@ echo "${bold}It will also install Emerald Launcher and AnySoftKeyboard so you're
 echo "${bold}You may replace these later.${normal}"
 _pause
 echo "Disabling Amazon Apps..."
+# Some services will continue starting even when disabled.
 adb shell su -c pm disable amazon.alexa.tablet # Alexa Cards
 # adb shell su -c pm disable amazon.fireos # (Do not disable, bootloop.)
 adb shell su -c pm disable amazon.jackson19
@@ -269,7 +270,7 @@ adb shell su -c pm disable com.android.email # Email
 # adb shell su -c pm disable com.android.managedprovisioning # Device Provisioner
 adb shell su -c pm disable com.android.music # Music
 adb shell su -c pm disable com.android.onetimeinitializer # One Time Init
-# adb shell su -c pm disable com.android.packageinstaller # Package Installer
+# adb shell su -c pm disable com.android.packageinstaller # Package Installer (Don't disable, can't install apps.)
 # adb shell su -c pm disable com.android.pacprocessor # PacProcessor
 # adb shell su -c pm disable com.android.printspooler # Print Spooler
 # adb shell su -c pm disable com.android.providers.calendar # Calendar Storage
