@@ -228,7 +228,7 @@ adb shell su -c pm disable com.amazon.settings.systemupdates # System Updates
 adb shell su -c pm disable com.amazon.sharingservice.android.client.proxy # SharingServiceAndroidClientProxy
 adb shell su -c pm disable com.amazon.shpm # Shipmode
 adb shell su -c pm disable com.amazon.socialplatform # Manage Social Networks
-# adb shell su -c pm disable com.amazon.storagemanager # Storage Management
+adb shell su -c pm disable com.amazon.storagemanager # Storage Management
 adb shell su -c pm disable com.amazon.sync.provider.ipc # Sync Provider Executor
 adb shell su -c pm disable com.amazon.sync.service # Content Sync Framework
 adb shell su -c pm disable com.amazon.tablet.voicesettings # FireTabletVoiceSettings
