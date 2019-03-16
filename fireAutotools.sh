@@ -162,9 +162,9 @@ adb shell su -c pm disable com.amazon.device.backup.sdk.internal.library # Amazo
 adb shell su -c pm disable com.amazon.device.bluetoothdfu # Amazon Bluetooth DFU
 adb shell su -c pm disable com.amazon.device.crashmanager # CrashManager
 adb shell su -c pm disable com.amazon.device.logmanager # Log Manager
-# adb shell su -c pm disable com.amazon.device.messaging # Amazon Device Messaging (ADM)
-# adb shell su -c pm disable com.amazon.device.messaging.sdk.internal.library # Amazon Device Messaging Internal SDK
-# adb shell su -c pm disable com.amazon.device.messaging.sdk.library # Amazon Device Messaging SDK
+adb shell su -c pm disable com.amazon.device.messaging # Amazon Device Messaging (ADM)
+adb shell su -c pm disable com.amazon.device.messaging.sdk.internal.library # Amazon Device Messaging Internal SDK
+adb shell su -c pm disable com.amazon.device.messaging.sdk.library # Amazon Device Messaging SDK
 adb shell su -c pm disable com.amazon.device.metrics # AmazonDeviceMetrics
 adb shell su -c pm disable com.amazon.device.sale.service # Local Recommendations Service
 # adb shell su -c pm disable com.amazon.device.settings # Amazon Device Settings
@@ -247,13 +247,13 @@ adb shell su -c pm disable com.amazon.weather # Weather
 adb shell su -c pm disable com.amazon.webapp # Kindle Store
 # adb shell su -c pm disable com.amazon.webview # AmazonKKWebViewLib
 # adb shell su -c pm disable com.amazon.webview.chromium # Amazon System WebView (Do not disable, breaks apps.)
-# adb shell su -c pm disable com.amazon.whisperlink.activityview.android # Whisperlink Activity View
+adb shell su -c pm disable com.amazon.whisperlink.activityview.android # Whisperlink Activity View
 # adb shell su -c pm disable com.amazon.whisperlink.core.android # WhisperPlay Daemon
 adb shell su -c pm disable com.amazon.whisperplay.contracts # Whisperlink SDK
 adb shell su -c pm disable com.amazon.wifilocker # WiFi Locker
 adb shell su -c pm disable com.amazon.windowshop # Shop Amazon
 adb shell su -c pm disable com.amazon.zico # Documents
-# adb shell su -c pm disable com.android.backupconfirm
+adb shell su -c pm disable com.android.backupconfirm
 # adb shell su -c pm disable com.android.bluetooth # Bluetooth Share
 adb shell su -c pm disable com.android.calendar # Calendar
 # adb shell su -c pm disable com.android.captiveportallogin # CaptivePortalLogin
