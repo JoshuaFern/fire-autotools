@@ -264,7 +264,7 @@ adb shell su -c pm disable com.android.deskclock # Clock
 adb shell su -c pm disable com.android.documentsui # Documents
 adb shell su -c pm disable com.android.email # Email
 # adb shell su -c pm disable com.android.externalstorage # External Storage
-# adb shell su -c pm disable com.android.htmlviewer # HTML Viewer
+adb shell su -c pm disable com.android.htmlviewer # HTML Viewer
 # adb shell su -c pm disable com.android.keychain # Key Chain
 adb shell su -c pm disable com.android.location.fused # Fused Location
 # adb shell su -c pm disable com.android.managedprovisioning # Device Provisioner
