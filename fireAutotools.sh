@@ -88,7 +88,7 @@ _pause
 }
 
 # ----------------------------------------------
-# Stage #3: Block Amazon Spying (Optional)
+# Stage #3: Block Amazon Spying
 # ----------------------------------------------
 three(){
 echo "${bold}Stage #3: Block Amazon Spying${normal}"
