@@ -210,7 +210,7 @@ adb shell su -c pm disable com.amazon.mp3 # Music
 # adb shell su -c pm disable com.amazon.mw.sdk
 # adb shell su -c pm disable com.amazon.nimh # Arcus Android Client
 adb shell su -c pm disable com.amazon.ods.kindleconnect # Mayday
-# adb shell su -c pm disable com.amazon.parentalcontrols # Parental Controls
+adb shell su -c pm disable com.amazon.parentalcontrols # Parental Controls
 adb shell su -c pm disable com.amazon.photos # Amazon Photos
 adb shell su -c pm disable com.amazon.photos.importer # Photo Importer
 # adb shell su -c pm disable com.amazon.platform # Amazon Platform
@@ -226,7 +226,7 @@ adb shell su -c pm disable com.amazon.redstone # Fire Standard Keyboard
 adb shell su -c pm disable com.amazon.settings.systemupdates # System Updates
 # adb shell su -c pm disable com.amazon.sharingservice.android.client.proxy # SharingServiceAndroidClientProxy
 adb shell su -c pm disable com.amazon.shpm # Shipmode
-# adb shell su -c pm disable com.amazon.socialplatform # Manage Social Networks
+adb shell su -c pm disable com.amazon.socialplatform # Manage Social Networks
 # adb shell su -c pm disable com.amazon.storagemanager # Storage Management
 # adb shell su -c pm disable com.amazon.sync.provider.ipc # Sync Provider Executor
 # adb shell su -c pm disable com.amazon.sync.service # Content Sync Framework
@@ -268,7 +268,7 @@ adb shell su -c pm disable com.android.email # Email
 # adb shell su -c pm disable com.android.location.fused # Fused Location
 # adb shell su -c pm disable com.android.managedprovisioning # Device Provisioner
 adb shell su -c pm disable com.android.music # Music
-# adb shell su -c pm disable com.android.onetimeinitializer # One Time Init
+adb shell su -c pm disable com.android.onetimeinitializer # One Time Init
 # adb shell su -c pm disable com.android.packageinstaller # Package Installer
 # adb shell su -c pm disable com.android.pacprocessor # PacProcessor
 # adb shell su -c pm disable com.android.printspooler # Print Spooler
