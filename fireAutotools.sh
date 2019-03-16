@@ -193,7 +193,7 @@ adb shell su -c pm disable com.amazon.imp # Identity Mobile Platform
 adb shell su -c pm disable com.amazon.kcp.tutorial # Fire Tutorial
 adb shell su -c pm disable com.amazon.kindle # Amazon Kindle
 adb shell su -c pm disable com.amazon.kindle.cms # Content Management Service
-# adb shell su -c pm disable com.amazon.kindle.devicecontrols # Fire Whispercast
+adb shell su -c pm disable com.amazon.kindle.devicecontrols # Fire Whispercast
 adb shell su -c pm disable com.amazon.kindle.kso # Special Offers
 adb shell su -c pm disable com.amazon.kindle.otter.oobe # Device Setup
 adb shell su -c pm disable com.amazon.kindle.otter.oobe.forced.ota # Forced OTA
@@ -248,7 +248,7 @@ adb shell su -c pm disable com.amazon.webapp # Kindle Store
 # adb shell su -c pm disable com.amazon.webview # AmazonKKWebViewLib
 # adb shell su -c pm disable com.amazon.webview.chromium # Amazon System WebView (Do not disable, breaks apps.)
 adb shell su -c pm disable com.amazon.whisperlink.activityview.android # Whisperlink Activity View
-# adb shell su -c pm disable com.amazon.whisperlink.core.android # WhisperPlay Daemon
+adb shell su -c pm disable com.amazon.whisperlink.core.android # WhisperPlay Daemon
 adb shell su -c pm disable com.amazon.whisperplay.contracts # Whisperlink SDK
 adb shell su -c pm disable com.amazon.wifilocker # WiFi Locker
 adb shell su -c pm disable com.amazon.windowshop # Shop Amazon
