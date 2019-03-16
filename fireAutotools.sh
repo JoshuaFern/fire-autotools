@@ -130,7 +130,7 @@ adb shell su -c pm disable amazon.speech.sim # SpeechInteractionManager
 # adb shell su -c pm disable android # System
 # adb shell su -c pm disable android.amazon.perm # Fire
 adb shell su -c pm disable com.amazon.accessorynotifier # Accessory Notifier
-# adb shell su -c pm disable com.amazon.acos.providers.UnifiedSettingsProvider
+adb shell su -c pm disable com.amazon.acos.providers.UnifiedSettingsProvider
 adb shell su -c pm disable com.amazon.advertisingidsettings # Advertising ID
 adb shell su -c pm disable com.amazon.ags.app # Amazon GameCircle
 adb shell su -c pm disable com.amazon.alexa.externalmediaplayer.fireos
@@ -218,8 +218,8 @@ adb shell su -c pm disable com.amazon.photos.importer # Photo Importer
 adb shell su -c pm disable com.amazon.platform.fdrw # Factory Data Reset Whitelist Manager
 # adb shell su -c pm disable com.amazon.platformsettings # Platform Remote Settings
 adb shell su -c pm disable com.amazon.pm # Parental Monitoring Service
-# adb shell su -c pm disable com.amazon.providers # White Listed URL Provider
-# adb shell su -c pm disable com.amazon.providers.contentsupport # Content Support Manager
+adb shell su -c pm disable com.amazon.providers # White Listed URL Provider
+adb shell su -c pm disable com.amazon.providers.contentsupport # Content Support Manager
 adb shell su -c pm disable com.amazon.readynowcore # On Deck
 adb shell su -c pm disable com.amazon.recess # Amazon Recess
 adb shell su -c pm disable com.amazon.redstone # Fire Standard Keyboard
