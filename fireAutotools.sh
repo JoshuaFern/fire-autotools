@@ -95,7 +95,7 @@ echo "${bold}Stage #3: Block Amazon Spying${normal}"
 echo "${bold}Blocking Amazon services from the internet can be a bit tricky, so we'll take a multi-layered approach.${normal}"
 echo "${bold}1. Install a host file, this will block many of the domains that Amazon services usually connect to.${normal}"
 echo "${bold}   (One side effect of this process: Your wifi icon will have an exclamation mark even when connected correctly.)${normal}"
-echo "${bold}2. Install a Firewall (AFWall)${normal}"
+echo "${bold}2. Install an iptables Firewall (AFWall)${normal}"
 _pause
 echo "Making sure device wifi is disabled..."
 adb shell su -c svc wifi disable
@@ -119,7 +119,7 @@ four(){
 echo "${bold}Welcome to Stage #4: Disable Amazon Apps & Install F-Droid${normal}"
 echo "${bold}This will attempt to agressively disable as much as possible without breaking core functionality.${normal}"
 echo "${bold}It will also install Emerald Launcher and AnySoftKeyboard so you're not left with an unusable device.${normal}"
-echo "${bold}You may replace these later.${normal}"
+echo "${bold}You may replace these later, but be careful not to leave your device without a keyboard and launcher.${normal}"
 _pause
 echo "Disabling Amazon Apps..."
 # Some services will continue starting even when disabled.
@@ -245,8 +245,8 @@ adb shell su -c pm disable com.amazon.vans.alexatabletshopping.app # AlexaShoppi
 adb shell su -c pm disable com.amazon.venezia # Appstore
 adb shell su -c pm disable com.amazon.weather # Weather
 adb shell su -c pm disable com.amazon.webapp # Kindle Store
-# adb shell su -c pm disable com.amazon.webview # AmazonKKWebViewLib
-# adb shell su -c pm disable com.amazon.webview.chromium # Amazon System WebView (Do not disable, breaks apps.)
+adb shell su -c pm disable com.amazon.webview # AmazonKKWebViewLib
+adb shell su -c pm disable com.amazon.webview.chromium # Amazon System WebView
 adb shell su -c pm disable com.amazon.whisperlink.activityview.android # Whisperlink Activity View
 adb shell su -c pm disable com.amazon.whisperlink.core.android # WhisperPlay Daemon
 adb shell su -c pm disable com.amazon.whisperplay.contracts # Whisperlink SDK
@@ -259,7 +259,7 @@ adb shell su -c pm disable com.android.calendar # Calendar
 adb shell su -c pm disable com.android.captiveportallogin # CaptivePortalLogin
 adb shell su -c pm disable com.android.certinstaller # Certificate Installer
 adb shell su -c pm disable com.android.contacts # Contacts
-# adb shell su -c pm disable com.android.defcontainer # Package Access Helper
+# adb shell su -c pm disable com.android.defcontainer # Package Access Helper (Don't disable)
 adb shell su -c pm disable com.android.deskclock # Clock
 adb shell su -c pm disable com.android.documentsui # Documents
 adb shell su -c pm disable com.android.email # Email
@@ -272,12 +272,12 @@ adb shell su -c pm disable com.android.music # Music
 adb shell su -c pm disable com.android.onetimeinitializer # One Time Init
 # adb shell su -c pm disable com.android.packageinstaller # Package Installer (Don't disable, can't install apps.)
 adb shell su -c pm disable com.android.pacprocessor # PacProcessor
-adb shell su -c pm disable com.android.printspooler # Print Spooler
+# adb shell su -c pm disable com.android.printspooler # Print Spooler (Printing probably won't work without this)
 adb shell su -c pm disable com.android.providers.calendar # Calendar Storage
 adb shell su -c pm disable com.android.providers.contacts # Contacts Storage
 # adb shell su -c pm disable com.android.providers.downloads # Download Manager (Do not disable, breaks apps ability to download.)
 adb shell su -c pm disable com.android.providers.downloads.ui # Downloads
-adb shell su -c pm disable com.android.providers.media # Media Storage
+# adb shell su -c pm disable com.android.providers.media # Media Storage (Ringtones won't work without this)
 # adb shell su -c pm disable com.android.providers.settings # Settings Storage
 adb shell su -c pm disable com.android.providers.userdictionary # User Dictionary
 adb shell su -c pm disable com.android.proxyhandler # ProxyHandler
@@ -288,7 +288,7 @@ adb shell su -c pm disable com.android.sharedstoragebackup
 # adb shell su -c pm disable com.android.vpndialogs # VpnDialogs (Removes VPN functionality.)
 adb shell su -c pm disable com.android.wallpapercropper
 adb shell su -c pm disable com.audible.application.kindle # Audible
-adb shell su -c pm disable com.dolby # Dolby Service (Unable to disable)
+adb shell su -c pm disable com.dolby # Dolby Service (Starts even when disabled.)
 adb shell su -c pm disable com.goodreads.kindle # Goodreads
 adb shell su -c pm disable com.here.odnp.service # HERE Positioning
 adb shell su -c pm disable com.ivona.orchestrator # IvonaTTSOrchestrator
@@ -301,6 +301,7 @@ adb shell su -c pm disable org.mopria.printplugin # Mopria Print Service
 echo "Remounting /system..."
 adb shell su -c mount -o remount -rw /system
 echo "Deleting apps..."
+# These apps like to run despite being disabled, so we're going to delete them.
 adb shell su -c rm -r /system/priv-app/SpeechInteractionManager
 adb shell su -c rm -r /system/priv-app/com.amazon.tcomm
 adb shell su -c rm -r /system/priv-app/com.amazon.imp
@@ -334,7 +335,8 @@ echo "Launcher    : Emerald Launcher (Installed)"
 echo "Weather     : WX"
 echo "Web Browser : Icecat/Fennec/Privacy Browser"
 echo "YouTube     : SkyTube/NewPipe"
-echo "${bold}Use the Busybox Application to install it on your device.${normal}"
+echo "${bold}Use the Busybox App to install it on your device.${normal}"
+echo "${bold}Remember to allow apps you want to use the internet through AFWall firewall.${normal}"
 _pause
 }
 
@@ -358,7 +360,7 @@ echo "Fixing xposed..."
 adb shell su -c rm /system/bin/app_process64_xposed
 adb shell su -c svc power reboot
 echo "${bold}Done. Your device will reboot.${normal}"
-echo "${bold}Check inside the app for a green checkmark.${normal}"
+echo "${bold}Check inside the app for a green checkmark and then you can install any modules you want to use.${normal}"
 _pause
 }
 
