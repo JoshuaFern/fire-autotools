@@ -122,7 +122,7 @@ echo "${bold}It will also install Emerald Launcher and AnySoftKeyboard so you're
 echo "${bold}You may replace these later, but be careful not to leave your device without a keyboard and launcher.${normal}"
 _pause
 echo "Disabling Amazon Apps..."
-# Some services will continue starting even when disabled.
+# Some services will continue starting even when disabled, we can delete them.
 adb shell su -c pm disable amazon.alexa.tablet # Alexa Cards
 # adb shell su -c pm disable amazon.fireos # (Do not disable, bootloop.)
 adb shell su -c pm disable amazon.jackson19
@@ -301,7 +301,7 @@ adb shell su -c pm disable org.mopria.printplugin # Mopria Print Service
 echo "Remounting /system..."
 adb shell su -c mount -o remount -rw /system
 echo "Deleting apps..."
-# These apps like to run despite being disabled, so we're going to delete them.
+# These apps like to run despite being disabled, so we can delete them.
 adb shell su -c rm -r /system/priv-app/SpeechInteractionManager
 adb shell su -c rm -r /system/priv-app/com.amazon.tcomm
 adb shell su -c rm -r /system/priv-app/com.amazon.imp
@@ -312,6 +312,8 @@ echo "Installing Anysoft Keyboard..."
 adb install ./apks/com.menny.android.anysoftkeyboard_*.apk # Anysoft Keyboard
 echo "Installing Busybox Installer..."
 adb install ./apks/ru.meefik.busybox_*.apk # Busybox
+echo "Installing WebView..."
+adb install ./apks/arm64_SystemWebView.apk # Bromite Webview
 echo "Installing F-Droid..."
 adb install ./apks/org.fdroid.fdroid_*.apk # F-Droid
 echo "Installing F-Droid Privileged Extension..."
