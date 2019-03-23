@@ -257,7 +257,7 @@ adb shell su -c pm disable com.amazon.device.metrics
 adb shell su -c rm -r /system/app/AmazonDeviceMetrics
 # Local Recommendations Service
 adb shell su -c pm disable com.amazon.device.sale.service
-adb shell su -c rm -r /system/priv-app/FireTVSaleService
+adb shell su -c rm -r /system/priv-app/FireTvSaleService
 # Amazon Device Settings
 adb shell su -c pm disable com.amazon.device.settings
 adb shell su -c rm -r /system/priv-app/RemoteSettingsAndroid
