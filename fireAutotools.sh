@@ -574,8 +574,8 @@ adb shell su -c rm -r /system/priv-app/OneTimeInitializer
 adb shell su -c pm disable com.android.pacprocessor
 adb shell su -c rm -r /system/app/PacProcessor
 # Print Spooler
-# adb shell su -c pm disable com.android.printspooler
-# adb shell su -c rm -r /system/priv-app/PrintSpooler
+adb shell su -c pm disable com.android.printspooler
+adb shell su -c rm -r /system/priv-app/PrintSpooler
 # Calendar Storage
 adb shell su -c pm disable com.android.providers.calendar
 adb shell su -c rm -r /system/priv-app/com.android.providers.calendar
@@ -588,9 +588,9 @@ adb shell su -c rm -r /system/priv-app/com.android.providers.contacts
 # Downloads
 adb shell su -c pm disable com.android.providers.downloads.ui
 adb shell su -c rm -r /system/priv-app/DownloadProviderUi
-# Media Storage (Ringtones won't work without this)
-# adb shell su -c pm disable com.android.providers.media
-# adb shell su -c rm -r /system/priv-app/MediaProvider
+# Media Storage
+adb shell su -c pm disable com.android.providers.media
+adb shell su -c rm -r /system/priv-app/MediaProvider
 # Settings Storage
 # adb shell su -c pm disable com.android.providers.settings
 # adb shell su -c rm -r /system/priv-app/SettingsProvider
@@ -610,8 +610,8 @@ adb shell su -c rm -r /system/priv-app/SharedStorageBackup
 # adb shell su -c pm disable com.android.shell
 # adb shell su -c rm -r /system/priv-app/Shell
 # System UI (Don't disable)
-# adb shell su -c pm disable com.android.systemui
-# adb shell su -c rm -r /system/priv-app/SystemUI
+#adb shell su -c pm disable com.android.systemui
+#adb shell su -c rm -r /system/priv-app/SystemUI
 # VpnDialogs (Removes VPN functionality.)
 # adb shell su -c pm disable com.android.vpndialogs
 # adb shell su -c rm -r /system/priv-app/VpnDialogs
