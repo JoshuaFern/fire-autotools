@@ -218,7 +218,7 @@ adb shell su -c pm disable com.amazon.csapp
 adb shell su -c rm -r /system/priv-app/com.amazon.csapp
 # Amazon Device Middleware Debugging Tool
 adb shell su -c pm disable com.amazon.dcp
-#adb shell su -c rm -r /system/priv-app/com.amazon.csapp
+adb shell su -c rm -r /system/priv-app/com.amazon.FireOsMiddlewareDebugApp
 # DCP Contracts Framework
 adb shell su -c pm disable com.amazon.dcp.contracts.framework.library
 adb shell su -c rm -r /system/priv-app/DeviceClientPlatformContractsFramework
@@ -547,8 +547,8 @@ adb shell su -c rm -r /system/app/DocumentsUI
 adb shell su -c pm disable com.android.email
 adb shell su -c rm -r /system/priv-app/com.android.email
 # External Storage
-# adb shell su -c pm disable com.android.externalstorage
-# adb shell su -c rm -r /system/priv-app/ExternalStorageProvider
+adb shell su -c pm disable com.android.externalstorage
+adb shell su -c rm -r /system/priv-app/ExternalStorageProvider
 # HTML Viewer
 adb shell su -c pm disable com.android.htmlviewer
 adb shell su -c rm -r /system/app/HTMLViewer
@@ -559,21 +559,21 @@ adb shell su -c rm -r /system/app/KeyChain
 adb shell su -c pm disable com.android.location.fused
 adb shell su -c rm -r /system/priv-app/FusedLocation
 # Device Provisioner
-# adb shell su -c pm disable com.android.managedprovisioning
-# adb shell su -c rm -r /system/priv-app/ManagedProvisioning
+adb shell su -c pm disable com.android.managedprovisioning
+adb shell su -c rm -r /system/priv-app/ManagedProvisioning
 # Music
 adb shell su -c pm disable com.android.music
 adb shell su -c rm -r /system/app/Music
 # One Time Init
 adb shell su -c pm disable com.android.onetimeinitializer
 adb shell su -c rm -r /system/priv-app/OneTimeInitializer
-# Package Installer (Don't disable, can't install apps.)
+# Package Installer
 # adb shell su -c pm disable com.android.packageinstaller
 # adb shell su -c rm -r /system/priv-app/PackageInstaller
 # PacProcessor
 adb shell su -c pm disable com.android.pacprocessor
 adb shell su -c rm -r /system/app/PacProcessor
-# Print Spooler (Printing probably won't work without this)
+# Print Spooler
 # adb shell su -c pm disable com.android.printspooler
 # adb shell su -c rm -r /system/priv-app/PrintSpooler
 # Calendar Storage
@@ -608,10 +608,10 @@ adb shell su -c pm disable com.android.sharedstoragebackup
 adb shell su -c rm -r /system/priv-app/SharedStorageBackup
 # Shell
 # adb shell su -c pm disable com.android.shell
-adb shell su -c rm -r /system/priv-app/Shell
+# adb shell su -c rm -r /system/priv-app/Shell
 # System UI (Don't disable)
 # adb shell su -c pm disable com.android.systemui
-adb shell su -c rm -r /system/priv-app/SystemUI
+# adb shell su -c rm -r /system/priv-app/SystemUI
 # VpnDialogs (Removes VPN functionality.)
 # adb shell su -c pm disable com.android.vpndialogs
 # adb shell su -c rm -r /system/priv-app/VpnDialogs
