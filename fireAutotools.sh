@@ -31,6 +31,7 @@ show_menus() {
 	echo "Stage #3: Block Amazon Spying"
 	echo "Stage #4: Disable Amazon Apps & Install F-Droid"
 	echo "Stage #5: Xposed Framework Installer"
+	echo "Debug #6: logcat"
 	echo "       9: Exit"
 	echo " "
 }
@@ -64,6 +65,7 @@ _pause
 two(){
 echo "${bold}Welcome to Stage #2: Automated Rooting${normal}"
 echo "${bold}Thanks to diplomatic for this method.${normal}"
+echo "${bold}This will likely take multiple attempts to be successful.${normal}"
 _pause
 echo "Making sure wifi is disabled..."
 adb shell su -c svc wifi disable
@@ -125,13 +127,12 @@ echo "Remounting /system..."
 adb shell su -c mount -o remount -rw /system
 echo "Removing Amazon Apps..."
 # Many services will continue starting even when disabled, we can delete them directly from system.
-# You can customize your applications by commenting out items below this line.
 # Alexa Cards
 adb shell su -c pm disable amazon.alexa.tablet
 adb shell su -c rm -r /system/priv-app/amazon.alexa.tablet
 # amazon.fireos (Do not disable.)
-# adb shell su -c pm disable amazon.fireos
-# adb shell su -c rm -r /system/framework/fireos-res/fireos-res.apk
+#adb shell su -c pm disable amazon.fireos
+#adb shell su -c rm -r /system/framework/fireos-res/fireos-res.apk
 # amazon.jackson19
 adb shell su -c pm disable amazon.jackson19
 adb shell su -c rm -r /system/priv-app/amazon.jackson-19
@@ -139,11 +140,11 @@ adb shell su -c rm -r /system/priv-app/amazon.jackson-19
 adb shell su -c pm disable amazon.speech.sim
 adb shell su -c rm -r /system/priv-app/SpeechInteractionManager
 # System (Do not disable.)
-# adb shell su -c pm disable android
-# adb shell su -c rm -r /system/framework/framework-res.apk
+#adb shell su -c pm disable android
+#adb shell su -c rm -r /system/framework/framework-res.apk
 # Fire
-adb shell su -c pm disable android.amazon.perm # Fire
-adb shell su -c rm -r /system/framework/android.amazon.perm
+#adb shell su -c pm disable android.amazon.perm # Fire
+#adb shell su -c rm -r /system/framework/android.amazon.perm
 # Accessory Notifier
 adb shell su -c pm disable com.amazon.accessorynotifier
 adb shell su -c rm -r /system/priv-app/com.amazon.accessorynotifier
@@ -218,7 +219,7 @@ adb shell su -c pm disable com.amazon.csapp
 adb shell su -c rm -r /system/priv-app/com.amazon.csapp
 # Amazon Device Middleware Debugging Tool
 adb shell su -c pm disable com.amazon.dcp
-adb shell su -c rm -r /system/priv-app/com.amazon.FireOsMiddlewareDebugApp
+adb shell su -c rm -r /system/priv-app/FireOsMiddlewareDebugApp
 # DCP Contracts Framework
 adb shell su -c pm disable com.amazon.dcp.contracts.framework.library
 adb shell su -c rm -r /system/priv-app/DeviceClientPlatformContractsFramework
@@ -403,8 +404,8 @@ adb shell su -c rm -r /system/priv-app/com.amazon.photos.importer
 adb shell su -c pm disable com.amazon.platform
 adb shell su -c rm -r /system/priv-app/AmazonPlatform-release
 # Factory Data Reset Whitelist Manager
-adb shell su -c pm disable com.amazon.platform.fdrw
-adb shell su -c rm -r /system/app/fdrw
+#adb shell su -c pm disable com.amazon.platform.fdrw
+#adb shell su -c rm -r /system/app/fdrw
 # Platform Remote Settings
 adb shell su -c pm disable com.amazon.platformsettings
 adb shell su -c rm -r /system/priv-app/com.amazon.platformsettings
@@ -535,8 +536,8 @@ adb shell su -c rm -r /system/app/CertInstaller
 adb shell su -c pm disable com.android.contacts
 adb shell su -c rm -r /system/priv-app/com.android.contacts
 # Package Access Helper (Don't disable)
-# adb shell su -c pm disable com.android.defcontainer
-# adb shell su -c rm -r /system/priv-app/DefaultContainerService
+#adb shell su -c pm disable com.android.defcontainer
+#adb shell su -c rm -r /system/priv-app/DefaultContainerService
 # Clock
 adb shell su -c pm disable com.android.deskclock
 adb shell su -c rm -r /system/priv-app/com.android.deskclock
@@ -568,8 +569,8 @@ adb shell su -c rm -r /system/app/Music
 adb shell su -c pm disable com.android.onetimeinitializer
 adb shell su -c rm -r /system/priv-app/OneTimeInitializer
 # Package Installer
-# adb shell su -c pm disable com.android.packageinstaller
-# adb shell su -c rm -r /system/priv-app/PackageInstaller
+#adb shell su -c pm disable com.android.packageinstaller
+#adb shell su -c rm -r /system/priv-app/PackageInstaller
 # PacProcessor
 adb shell su -c pm disable com.android.pacprocessor
 adb shell su -c rm -r /system/app/PacProcessor
@@ -583,8 +584,8 @@ adb shell su -c rm -r /system/priv-app/com.android.providers.calendar
 adb shell su -c pm disable com.android.providers.contacts
 adb shell su -c rm -r /system/priv-app/com.android.providers.contacts
 # Download Manager (Do not disable, breaks apps ability to download.)
-# adb shell su -c pm disable com.android.providers.downloads
-# adb shell su -c rm -r /system/priv-app/DownloadProvider
+#adb shell su -c pm disable com.android.providers.downloads
+#adb shell su -c rm -r /system/priv-app/DownloadProvider
 # Downloads
 adb shell su -c pm disable com.android.providers.downloads.ui
 adb shell su -c rm -r /system/priv-app/DownloadProviderUi
@@ -592,29 +593,29 @@ adb shell su -c rm -r /system/priv-app/DownloadProviderUi
 adb shell su -c pm disable com.android.providers.media
 adb shell su -c rm -r /system/priv-app/MediaProvider
 # Settings Storage
-# adb shell su -c pm disable com.android.providers.settings
-# adb shell su -c rm -r /system/priv-app/SettingsProvider
+adb shell su -c pm disable com.android.providers.settings
+adb shell su -c rm -r /system/priv-app/SettingsProvider
 # User Dictionary
 adb shell su -c pm disable com.android.providers.userdictionary
 adb shell su -c rm -r /system/app/UserDictionaryProvider
 # ProxyHandler
 adb shell su -c pm disable com.android.proxyhandler
 adb shell su -c rm -r /system/priv-app/ProxyHandler
-# Settings (Removes settings app.)
-# adb shell su -c pm disable com.android.settings
-# adb shell su -c rm -r /system/priv-app/FireTabletSettings
+# Settings
+#adb shell su -c pm disable com.android.settings
+#adb shell su -c rm -r /system/priv-app/FireTabletSettings
 # com.android.sharedstoragebackup
 adb shell su -c pm disable com.android.sharedstoragebackup
 adb shell su -c rm -r /system/priv-app/SharedStorageBackup
-# Shell
-# adb shell su -c pm disable com.android.shell
-# adb shell su -c rm -r /system/priv-app/Shell
-# System UI (Don't disable)
-#adb shell su -c pm disable com.android.systemui
-#adb shell su -c rm -r /system/priv-app/SystemUI
-# VpnDialogs (Removes VPN functionality.)
-# adb shell su -c pm disable com.android.vpndialogs
-# adb shell su -c rm -r /system/priv-app/VpnDialogs
+# Shell (Don't disable)
+#adb shell su -c pm disable com.android.shell
+#adb shell su -c rm -r /system/priv-app/Shell
+# System UI
+adb shell su -c pm disable com.android.systemui
+adb shell su -c rm -r /system/priv-app/SystemUI
+# VpnDialogs
+adb shell su -c pm disable com.android.vpndialogs
+adb shell su -c rm -r /system/priv-app/VpnDialogs
 # com.android.wallpapercropper
 adb shell su -c pm disable com.android.wallpapercropper
 adb shell su -c rm -r /system/priv-app/WallpaperCropper
@@ -665,27 +666,27 @@ adb shell su -c mv /data/local/tmp/webview.apk /system/app/webview
 adb install ./apks/webview.apk # Bromite Webview
 echo "Installing F-Droid..."
 adb install ./apks/org.fdroid.fdroid_*.apk # F-Droid
-echo "Installing F-Droid Privileged Extension..."
 adb push ./apks/org.fdroid.fdroid.privileged_2090.apk /data/local/tmp
 adb shell su -c mv /data/local/tmp/org.fdroid.fdroid.privileged_2090.apk /system/priv-app
 adb shell su -c svc power reboot
 echo "${bold}Done. Your device will reboot.${normal}"
 echo "${bold}You can now install some applications from F-Droid, here's some ideas:${normal}"
-echo "AppStore    : Yalp Store/Aurora Store (Play Store Alternatives)"
-echo "Backup      : oandbackup"
-echo "Books       : Book Reader"
-echo "Calculator  : Equate"
-echo "Camera      : Open Camera/Simple Camera"
-echo "Clock       : Simple Clock"
-echo "Email       : FairEmail/Tutanota/K9"
-echo "File Manager: Ghost Commander"
-echo "Keyboard    : AnySoftKeyboard (Installed)"
-echo "Maps        : OsmAnd"
-echo "MP3 Player  : Vanilla Music"
-echo "Launcher    : Emerald Launcher (Installed)"
-echo "Weather     : WX"
-echo "Web Browser : Icecat/Fennec/Privacy Browser"
-echo "YouTube     : SkyTube/NewPipe"
+echo "AppStore       : Yalp Store/Aurora Store (Play Store Alternatives)"
+echo "Backup         : oandbackup"
+echo "Books          : Book Reader"
+echo "Calculator     : Equate"
+echo "Camera         : Open Camera/Simple Camera"
+echo "Clock          : Simple Clock"
+echo "Email          : FairEmail/K9/Tutanota"
+echo "File Manager   : Ghost Commander"
+echo "Google Services: microG"
+echo "Keyboard       : AnySoftKeyboard (Installed)"
+echo "Maps           : OsmAnd"
+echo "MP3 Player     : Vanilla Music"
+echo "Launcher       : Emerald Launcher (Installed)"
+echo "Weather        : WX"
+echo "Web Browser    : Icecat/Fennec/Privacy Browser"
+echo "YouTube        : SkyTube/NewPipe"
 echo "${bold}Use the Busybox App to install it on your device.${normal}"
 echo "${bold}Remember to allow apps you want to use the internet through AFWall firewall.${normal}"
 _pause
@@ -718,9 +719,9 @@ _pause
 # ----------------------------------------------
 # Stage #6:
 # ----------------------------------------------
-#six(){
-#
-#}
+six(){
+adb logcat *:W
+}
 
 read_options(){
 	local choice
