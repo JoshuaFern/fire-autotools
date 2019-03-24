@@ -129,529 +129,529 @@ echo "Removing Amazon Apps..."
 # Many services will continue starting even when disabled, we can delete them directly from system.
 # Alexa Cards
 adb shell su -c pm disable amazon.alexa.tablet
-adb shell su -c rm -r /system/priv-app/amazon.alexa.tablet
+#adb shell su -c rm -r /system/priv-app/amazon.alexa.tablet
 # amazon.fireos (Do not disable.)
-#adb shell su -c pm disable amazon.fireos
-#adb shell su -c rm -r /system/framework/fireos-res/fireos-res.apk
+##adb shell su -c pm disable amazon.fireos
+##adb shell su -c rm -r /system/framework/fireos-res/fireos-res.apk
 # amazon.jackson19
 adb shell su -c pm disable amazon.jackson19
-adb shell su -c rm -r /system/priv-app/amazon.jackson-19
+#adb shell su -c rm -r /system/priv-app/amazon.jackson-19
 # SpeechInteractionManager
 adb shell su -c pm disable amazon.speech.sim
-adb shell su -c rm -r /system/priv-app/SpeechInteractionManager
+#adb shell su -c rm -r /system/priv-app/SpeechInteractionManager
 # System (Do not disable.)
-#adb shell su -c pm disable android
-#adb shell su -c rm -r /system/framework/framework-res.apk
+##adb shell su -c pm disable android
+##adb shell su -c rm -r /system/framework/framework-res.apk
 # Fire
 #adb shell su -c pm disable android.amazon.perm # Fire
 #adb shell su -c rm -r /system/framework/android.amazon.perm
 # Accessory Notifier
 adb shell su -c pm disable com.amazon.accessorynotifier
-adb shell su -c rm -r /system/priv-app/com.amazon.accessorynotifier
+#adb shell su -c rm -r /system/priv-app/com.amazon.accessorynotifier
 # com.amazon.acos.providers.UnifiedSettingsProvider
 adb shell su -c pm disable com.amazon.acos.providers.UnifiedSettingsProvider
-adb shell su -c rm -r /system/app/UnifiedSettingsProvider
+#adb shell su -c rm -r /system/app/UnifiedSettingsProvider
 # Advertising ID
 adb shell su -c pm disable com.amazon.advertisingidsettings
-adb shell su -c rm -r /system/priv-app/AdvertisingIdSettings
+#adb shell su -c rm -r /system/priv-app/AdvertisingIdSettings
 # Amazon GameCircle
 adb shell su -c pm disable com.amazon.ags.app
-adb shell su -c rm -r /system/priv-app/com.amazon.ags.app
+#adb shell su -c rm -r /system/priv-app/com.amazon.ags.app
 # com.amazon.alexa.externalmediaplayer.fireos
 adb shell su -c pm disable com.amazon.alexa.externalmediaplayer.fireos
-adb shell su -c rm -r /system/priv-app/com.amazon.alexa.externalmediaplayer.fireos
+#adb shell su -c rm -r /system/priv-app/com.amazon.alexa.externalmediaplayer.fireos
 # H2Application
 adb shell su -c pm disable com.amazon.alta.h2clientservice
-adb shell su -c rm -r /system/priv-app/com.amazon.h2clientservice
+#adb shell su -c rm -r /system/priv-app/com.amazon.h2clientservice
 # Marketplace Service Receiver
 adb shell su -c pm disable com.amazon.android.marketplace
-adb shell su -c rm -r /system/priv-app/marketplace_service_receiver
+#adb shell su -c rm -r /system/priv-app/marketplace_service_receiver
 # Application Compatibility Enforcer
 adb shell su -c pm disable com.amazon.application.compatibility.enforcer
-adb shell su -c rm -r /system/priv-app/FireApplicationCompatibilityEnforcer
+#adb shell su -c rm -r /system/priv-app/FireApplicationCompatibilityEnforcer
 # Fire Application Compatibility Enforcer SDK
 adb shell su -c pm disable com.amazon.application.compatibility.enforcer.sdk.library
-adb shell su -c rm -r /system/priv-app/FireApplicationCompatibilityEnforcerSDK
+#adb shell su -c rm -r /system/priv-app/FireApplicationCompatibilityEnforcerSDK
 # AssetSyncService
 adb shell su -c pm disable com.amazon.assetsync.service
-adb shell su -c rm -r /system/priv-app/com.amazon.assetsync.service
+#adb shell su -c rm -r /system/priv-app/com.amazon.assetsync.service
 # Video
 adb shell su -c pm disable com.amazon.avod
-adb shell su -c rm -r /system/priv-app/com.amazon.avod
+#adb shell su -c rm -r /system/priv-app/com.amazon.avod
 # Amazon - Bluetooth Internals
 adb shell su -c pm disable com.amazon.bluetoothinternals
-adb shell su -c rm -r /system/priv-app/BluetoothInternals
+#adb shell su -c rm -r /system/priv-app/BluetoothInternals
 # Calculator
 adb shell su -c pm disable com.amazon.calculator
-adb shell su -c rm -r /system/priv-app/com.amazon.calculator
+#adb shell su -c rm -r /system/priv-app/com.amazon.calculator
 # Camera
 adb shell su -c pm disable com.amazon.camera
-adb shell su -c rm -r /system/priv-app/Camera
+#adb shell su -c rm -r /system/priv-app/Camera
 # Alexa Video Player
 adb shell su -c pm disable com.amazon.cardinal
-adb shell su -c rm -r /system/priv-app/com.amazon.cardinal
+#adb shell su -c rm -r /system/priv-app/com.amazon.cardinal
 # Amazon Metrics Service Application
 adb shell su -c pm disable com.amazon.client.metrics
-adb shell su -c rm -r /system/priv-app/MetricsService
+#adb shell su -c rm -r /system/priv-app/MetricsService
 # com.amazon.client.metrics.api
 adb shell su -c pm disable com.amazon.client.metrics.api
-adb shell su -c rm -r /system/priv-app/MetricsApi
+#adb shell su -c rm -r /system/priv-app/MetricsApi
 # Silk Browser
 adb shell su -c pm disable com.amazon.cloud9
-adb shell su -c rm -r /system/priv-app/com.amazon.cloud9
+#adb shell su -c rm -r /system/priv-app/com.amazon.cloud9
 # Silk Content Service
 adb shell su -c pm disable com.amazon.cloud9.contentservice
-adb shell su -c rm -r /system/priv-app/com.amazon.cloud9.contentservice
+#adb shell su -c rm -r /system/priv-app/com.amazon.cloud9.contentservice
 # Kids Web Browser
 adb shell su -c pm disable com.amazon.cloud9.kids
-adb shell su -c rm -r /system/priv-app/com.amazon.cloud9.kids-stub
+#adb shell su -c rm -r /system/priv-app/com.amazon.cloud9.kids-stub
 # System Browser Provider
 adb shell su -c pm disable com.amazon.cloud9.systembrowserprovider
-adb shell su -c rm -r /system/priv-app/com.amazon.cloud9.systembrowserprovider
+#adb shell su -c rm -r /system/priv-app/com.amazon.cloud9.systembrowserprovider
 # com.amazon.communication.discovery
 adb shell su -c pm disable com.amazon.communication.discovery
-adb shell su -c rm -r /system/priv-app/com.amazon.communication.discovery
+#adb shell su -c rm -r /system/priv-app/com.amazon.communication.discovery
 # com.amazon.connectivitydiag
 adb shell su -c pm disable com.amazon.connectivitydiag
-adb shell su -c rm -r /system/priv-app/ConnectivityDiag
+#adb shell su -c rm -r /system/priv-app/ConnectivityDiag
 # Help
 adb shell su -c pm disable com.amazon.csapp
-adb shell su -c rm -r /system/priv-app/com.amazon.csapp
+#adb shell su -c rm -r /system/priv-app/com.amazon.csapp
 # Amazon Device Middleware Debugging Tool
 adb shell su -c pm disable com.amazon.dcp
-adb shell su -c rm -r /system/priv-app/FireOsMiddlewareDebugApp
+#adb shell su -c rm -r /system/priv-app/FireOsMiddlewareDebugApp
 # DCP Contracts Framework
 adb shell su -c pm disable com.amazon.dcp.contracts.framework.library
-adb shell su -c rm -r /system/priv-app/DeviceClientPlatformContractsFramework
+#adb shell su -c rm -r /system/priv-app/DeviceClientPlatformContractsFramework
 # DCP Platform Contracts
 adb shell su -c pm disable com.amazon.dcp.contracts.library
-adb shell su -c rm -r /system/priv-app/DeviceSoftwareOTAContracts
+#adb shell su -c rm -r /system/priv-app/DeviceSoftwareOTAContracts
 # Amazon Alexa
 adb shell su -c pm disable com.amazon.dee.app
-adb shell su -c rm -r /system/priv-app/com.amazon.dee.app
+#adb shell su -c rm -r /system/priv-app/com.amazon.dee.app
 # Backup and Restore
 adb shell su -c pm disable com.amazon.device.backup
-adb shell su -c rm -r /system/priv-app/DeviceBackupAndRestore-release
+#adb shell su -c rm -r /system/priv-app/DeviceBackupAndRestore-release
 # Amazon Backup and Restore Internal SDK
 adb shell su -c pm disable com.amazon.device.backup.sdk.internal.library
-adb shell su -c rm -r /system/priv-app/DeviceBackupAndRestoreInternalSDK-release
+#adb shell su -c rm -r /system/priv-app/DeviceBackupAndRestoreInternalSDK-release
 # Amazon Bluetooth DFU
 adb shell su -c pm disable com.amazon.device.bluetoothdfu
-adb shell su -c rm -r /system/priv-app/com.amazon.device.bluetoothdfu
+#adb shell su -c rm -r /system/priv-app/com.amazon.device.bluetoothdfu
 # CrashManager
 adb shell su -c pm disable com.amazon.device.crashmanager
-adb shell su -c rm -r /system/priv-app/CrashManager
+#adb shell su -c rm -r /system/priv-app/CrashManager
 # Log Manager
 adb shell su -c pm disable com.amazon.device.logmanager
-adb shell su -c rm -r /system/priv-app/LogManager-logd
+#adb shell su -c rm -r /system/priv-app/LogManager-logd
 # Amazon Device Messaging (ADM)
 adb shell su -c pm disable com.amazon.device.messaging
-adb shell su -c rm -r /system/priv-app/DeviceMessagingAndroid
+#adb shell su -c rm -r /system/priv-app/DeviceMessagingAndroid
 # Amazon Device Messaging Internal SDK
 adb shell su -c pm disable com.amazon.device.messaging.sdk.internal.library
-adb shell su -c rm -r /system/priv-app/DeviceMessagingAndroidInternalSDK
+#adb shell su -c rm -r /system/priv-app/DeviceMessagingAndroidInternalSDK
 # Amazon Device Messaging SDK
 adb shell su -c pm disable com.amazon.device.messaging.sdk.library
-adb shell su -c rm -r /system/priv-app/DeviceMessagingAndroidSDK
+#adb shell su -c rm -r /system/priv-app/DeviceMessagingAndroidSDK
 # AmazonDeviceMetrics
 adb shell su -c pm disable com.amazon.device.metrics
-adb shell su -c rm -r /system/app/AmazonDeviceMetrics
+#adb shell su -c rm -r /system/app/AmazonDeviceMetrics
 # Local Recommendations Service
 adb shell su -c pm disable com.amazon.device.sale.service
-adb shell su -c rm -r /system/priv-app/FireTvSaleService
+#adb shell su -c rm -r /system/priv-app/FireTvSaleService
 # Amazon Device Settings
 adb shell su -c pm disable com.amazon.device.settings
-adb shell su -c rm -r /system/priv-app/RemoteSettingsAndroid
+#adb shell su -c rm -r /system/priv-app/RemoteSettingsAndroid
 # Amazon Device Settings Internal SDK
 adb shell su -c pm disable com.amazon.device.settings.sdk.internal.library
-adb shell su -c rm -r /system/priv-app/RemoteSettingsInternalSDK
+#adb shell su -c rm -r /system/priv-app/RemoteSettingsInternalSDK
 # DeviceSoftwareOTA
 adb shell su -c pm disable com.amazon.device.software.ota
-adb shell su -c rm -r /system/priv-app/DeviceSoftwareOTA
+#adb shell su -c rm -r /system/priv-app/DeviceSoftwareOTA
 # System Updates
 adb shell su -c pm disable com.amazon.device.software.ota.override
-adb shell su -c rm -r /system/priv-app/DeviceSoftwareOTAIdleOverride
+#adb shell su -c rm -r /system/priv-app/DeviceSoftwareOTAIdleOverride
 # Amazon Whispersync DX
 adb shell su -c pm disable com.amazon.device.sync
-adb shell su -c rm -r /system/priv-app/com.amazon.device.sync
+#adb shell su -c rm -r /system/priv-app/com.amazon.device.sync
 # Amazon Whispersync SDK
 adb shell su -c pm disable com.amazon.device.sync.sdk.internal
-adb shell su -c rm -r /system/priv-app/com.amazon.device.sync.sdk.internal
+#adb shell su -c rm -r /system/priv-app/com.amazon.device.sync.sdk.internal
 # DigitalAssetOwnershipAndroidClient
 adb shell su -c pm disable com.amazon.digital.asset.ownership.app
-adb shell su -c rm -r /system/priv-app/com.amazon.digital.asset.ownership.app
+#adb shell su -c rm -r /system/priv-app/com.amazon.digital.asset.ownership.app
 # Contact Sync Adapter
 adb shell su -c pm disable com.amazon.dp.contacts
-adb shell su -c rm -r /system/priv-app/com.amazon.dp.contacts
+#adb shell su -c rm -r /system/priv-app/com.amazon.dp.contacts
 # Facebook Sync Adapter
 adb shell su -c pm disable com.amazon.dp.fbcontacts
-adb shell su -c rm -r /system/priv-app/com.amazon.dp.fbcontacts
+#adb shell su -c rm -r /system/priv-app/com.amazon.dp.fbcontacts
 # com.amazon.dp.logger
 adb shell su -c pm disable com.amazon.dp.logger
-adb shell su -c rm -r /system/priv-app/com.amazon.dp.logger
+#adb shell su -c rm -r /system/priv-app/com.amazon.dp.logger
 # Dynamic Updation Service
 adb shell su -c pm disable com.amazon.dynamicupdationservice
-adb shell su -c rm -r /system/priv-app/com.amazon.dynamicupdationservice
+#adb shell su -c rm -r /system/priv-app/com.amazon.dynamicupdationservice
 # Fire Input Devices
 adb shell su -c pm disable com.amazon.fireinputdevices
-adb shell su -c rm -r /system/priv-app/com.amazon.fireinputdevices
+#adb shell su -c rm -r /system/priv-app/com.amazon.fireinputdevices
 # Home Pages
 adb shell su -c pm disable com.amazon.firelauncher
-adb shell su -c rm -r /system/priv-app/com.amazon.firelauncher
+#adb shell su -c rm -r /system/priv-app/com.amazon.firelauncher
 # Power
 adb shell su -c pm disable com.amazon.firepowersettings
-adb shell su -c rm -r /system/priv-app/com.amazon.firepowersettings
+#adb shell su -c rm -r /system/priv-app/com.amazon.firepowersettings
 # Blue Shade
 adb shell su -c pm disable com.amazon.frameworksettings
-adb shell su -c rm -r /system/priv-app/com.amazon.frameworksettings
+#adb shell su -c rm -r /system/priv-app/com.amazon.frameworksettings
 # Maps
 adb shell su -c pm disable com.amazon.geo.client.maps
-adb shell su -c rm -r /system/priv-app/com.amazon.geo.client.maps
+#adb shell su -c rm -r /system/priv-app/com.amazon.geo.client.maps
 # Map API v2: Application Support
 adb shell su -c pm disable com.amazon.geo.mapsv2
-adb shell su -c rm -r /system/priv-app/MapsAPISupportLibrary-release-signed
+#adb shell su -c rm -r /system/priv-app/MapsAPISupportLibrary-release-signed
 # Amazon Maps Platform Services V2
 adb shell su -c pm disable com.amazon.geo.mapsv2.services
-adb shell su -c rm -r /system/priv-app/MapsAPIClientServices-release-signed
+#adb shell su -c rm -r /system/priv-app/MapsAPIClientServices-release-signed
 # com.amazon.gloria.graphiq
 adb shell su -c pm disable com.amazon.gloria.graphiq
-adb shell su -c rm -r /system/priv-app/com.amazon.gloria.graphiq
+#adb shell su -c rm -r /system/priv-app/com.amazon.gloria.graphiq
 # com.amazon.gloria.smarthome
 adb shell su -c pm disable com.amazon.gloria.smarthome
-adb shell su -c rm -r /system/priv-app/com.amazon.gloria.smarthome
+#adb shell su -c rm -r /system/priv-app/com.amazon.gloria.smarthome
 # Profiles Settings
 adb shell su -c pm disable com.amazon.h2settingsfortablet
-adb shell su -c rm -r /system/priv-app/com.amazon.h2settingsfortablet
+#adb shell su -c rm -r /system/priv-app/com.amazon.h2settingsfortablet
 # MobileAuthenticationPlatformAndroid
 adb shell su -c pm disable com.amazon.identity.auth.device.authorization
-adb shell su -c rm -r /system/priv-app/com.amazon.identity.auth.device.authorization
+#adb shell su -c rm -r /system/priv-app/com.amazon.identity.auth.device.authorization
 # Identity Mobile Platform
 adb shell su -c pm disable com.amazon.imp
-adb shell su -c rm -r /system/priv-app/com.amazon.imp
+#adb shell su -c rm -r /system/priv-app/com.amazon.imp
 # Fire Tutorial
 adb shell su -c pm disable com.amazon.kcp.tutorial
-adb shell su -c rm -r /system/priv-app/com.amazon.kcp.tutorial
+#adb shell su -c rm -r /system/priv-app/com.amazon.kcp.tutorial
 # Amazon Kindle
 adb shell su -c pm disable com.amazon.kindle
-adb shell su -c rm -r /system/priv-app/com.amazon.kindle
+#adb shell su -c rm -r /system/priv-app/com.amazon.kindle
 # Content Management Service
 adb shell su -c pm disable com.amazon.kindle.cms
-adb shell su -c rm -r /system/priv-app/com.amazon.kindle.cms-service
+#adb shell su -c rm -r /system/priv-app/com.amazon.kindle.cms-service
 # Fire Whispercast
 adb shell su -c pm disable com.amazon.kindle.devicecontrols
-adb shell su -c rm -r /system/priv-app/com.amazon.kindle.devicecontrols
+#adb shell su -c rm -r /system/priv-app/com.amazon.kindle.devicecontrols
 # Special Offers
 adb shell su -c pm disable com.amazon.kindle.kso
-adb shell su -c rm -r /system/priv-app/com.amazon.kindle.kso
+#adb shell su -c rm -r /system/priv-app/com.amazon.kindle.kso
 # Device Setup
 adb shell su -c pm disable com.amazon.kindle.otter.oobe
-adb shell su -c rm -r /system/priv-app/com.amazon.kindle.otter.oobe
+#adb shell su -c rm -r /system/priv-app/com.amazon.kindle.otter.oobe
 # Forced OTA
 adb shell su -c pm disable com.amazon.kindle.otter.oobe.forced.ota
-adb shell su -c rm -r /system/priv-app/com.amazon.kindle.otter.oobe.forced.ota
+#adb shell su -c rm -r /system/priv-app/com.amazon.kindle.otter.oobe.forced.ota
 # My Videos
 adb shell su -c pm disable com.amazon.kindle.personal_video
-adb shell su -c rm -r /system/priv-app/com.amazon.kindle.personal_video
+#adb shell su -c rm -r /system/priv-app/com.amazon.kindle.personal_video
 # Remote Device Management Application
 adb shell su -c pm disable com.amazon.kindle.rdmdeviceadmin
-adb shell su -c rm -r /system/priv-app/com.amazon.kindle.rdmdeviceadmin
+#adb shell su -c rm -r /system/priv-app/com.amazon.kindle.rdmdeviceadmin
 # Unified Search
 adb shell su -c pm disable com.amazon.kindle.unifiedSearch
-adb shell su -c rm -r /system/priv-app/com.amazon.kindle.unifiedSearch
+#adb shell su -c rm -r /system/priv-app/com.amazon.kindle.unifiedSearch
 # Auto Timezone Service
 adb shell su -c pm disable com.amazon.kindleautomatictimezone
-adb shell su -c rm -r /system/priv-app/com.amazon.kindleautomatictimezone
+#adb shell su -c rm -r /system/priv-app/com.amazon.kindleautomatictimezone
 # SpeechUi
 adb shell su -c pm disable com.amazon.knight.speechui
-adb shell su -c rm -r /system/priv-app/SpeechUiTablet
+#adb shell su -c rm -r /system/priv-app/SpeechUiTablet
 # Amazon Retail Demo
 adb shell su -c pm disable com.amazon.kor.demo
-adb shell su -c rm -r /system/priv-app/com.amazon.kor.demo
+#adb shell su -c rm -r /system/priv-app/com.amazon.kor.demo
 # Legal Notices
 adb shell su -c pm disable com.amazon.legalsettings
-adb shell su -c rm -r /system/priv-app/com.amazon.legalsettings
+#adb shell su -c rm -r /system/priv-app/com.amazon.legalsettings
 # VoiceView
 adb shell su -c pm disable com.amazon.logan
-adb shell su -c rm -r /system/priv-app/logan
+#adb shell su -c rm -r /system/priv-app/logan
 # MediaSessionMonitor
 adb shell su -c pm disable com.amazon.media.session.monitor
-adb shell su -c rm -r /system/priv-app/com.amazon.media.session.monitor
+#adb shell su -c rm -r /system/priv-app/com.amazon.media.session.monitor
 # Music
 adb shell su -c pm disable com.amazon.mp3
-adb shell su -c rm -r /system/priv-app/com.amazon.mp3
+#adb shell su -c rm -r /system/priv-app/com.amazon.mp3
 # com.amazon.mw
 adb shell su -c pm disable com.amazon.mw
-adb shell su -c rm -r /system/priv-app/FireflyAppFireOS-release-stub
+#adb shell su -c rm -r /system/priv-app/FireflyAppFireOS-release-stub
 # com.amazon.mw.sdk
 adb shell su -c pm disable com.amazon.mw.sdk
-adb shell su -c rm -r /system/priv-app/FireflyIdentifiesSDK-release
+#adb shell su -c rm -r /system/priv-app/FireflyIdentifiesSDK-release
 # Arcus Android Client
 adb shell su -c pm disable com.amazon.nimh
-adb shell su -c rm -r /system/priv-app/com.amazon.nimh
+#adb shell su -c rm -r /system/priv-app/com.amazon.nimh
 # Mayday
 adb shell su -c pm disable com.amazon.ods.kindleconnect
-adb shell su -c rm -r /system/priv-app/com.amazon.ods.kindleconnect
+#adb shell su -c rm -r /system/priv-app/com.amazon.ods.kindleconnect
 # Parental Controls
 adb shell su -c pm disable com.amazon.parentalcontrols
-adb shell su -c rm -r /system/priv-app/com.amazon.parentalcontrols
+#adb shell su -c rm -r /system/priv-app/com.amazon.parentalcontrols
 # Amazon Photos
 adb shell su -c pm disable com.amazon.photos
-adb shell su -c rm -r /system/priv-app/com.amazon.photos
+#adb shell su -c rm -r /system/priv-app/com.amazon.photos
 # Photo Importer
 adb shell su -c pm disable com.amazon.photos.importer
-adb shell su -c rm -r /system/priv-app/com.amazon.photos.importer
+#adb shell su -c rm -r /system/priv-app/com.amazon.photos.importer
 # Amazon Platform
 adb shell su -c pm disable com.amazon.platform
-adb shell su -c rm -r /system/priv-app/AmazonPlatform-release
+#adb shell su -c rm -r /system/priv-app/AmazonPlatform-release
 # Factory Data Reset Whitelist Manager
-#adb shell su -c pm disable com.amazon.platform.fdrw
+adb shell su -c pm disable com.amazon.platform.fdrw
 #adb shell su -c rm -r /system/app/fdrw
 # Platform Remote Settings
 adb shell su -c pm disable com.amazon.platformsettings
-adb shell su -c rm -r /system/priv-app/com.amazon.platformsettings
+#adb shell su -c rm -r /system/priv-app/com.amazon.platformsettings
 # Parental Monitoring Service
 adb shell su -c pm disable com.amazon.pm
-adb shell su -c rm -r /system/priv-app/com.amazon.pm
+#adb shell su -c rm -r /system/priv-app/com.amazon.pm
 # White Listed URL Provider
 adb shell su -c pm disable com.amazon.providers
-adb shell su -c rm -r /system/app/WhiteListedUrlProvider
+#adb shell su -c rm -r /system/app/WhiteListedUrlProvider
 # Content Support Manager
 adb shell su -c pm disable com.amazon.providers.contentsupport
-adb shell su -c rm -r /system/priv-app/ContentSupportProvider
+#adb shell su -c rm -r /system/priv-app/ContentSupportProvider
 # On Deck
 adb shell su -c pm disable com.amazon.readynowcore
-adb shell su -c rm -r /system/priv-app/ReadyNowCore-release
+#adb shell su -c rm -r /system/priv-app/ReadyNowCore-release
 # Amazon Recess
 adb shell su -c pm disable com.amazon.recess
-adb shell su -c rm -r /system/priv-app/FireRecessProxy
+#adb shell su -c rm -r /system/priv-app/FireRecessProxy
 # Fire Standard Keyboard
 adb shell su -c pm disable com.amazon.redstone
-adb shell su -c rm -r /system/priv-app/com.amazon.redstone
+#adb shell su -c rm -r /system/priv-app/com.amazon.redstone
 # SecuritySyncClient
 adb shell su -c pm disable com.amazon.securitysyncclient
-adb shell su -c rm -r /system/priv-app/com.amazon.securitysyncclient
+#adb shell su -c rm -r /system/priv-app/com.amazon.securitysyncclient
 # System Updates
 adb shell su -c pm disable com.amazon.settings.systemupdates
-adb shell su -c rm -r /system/priv-app/SystemUpdatesUI
+#adb shell su -c rm -r /system/priv-app/SystemUpdatesUI
 # SharingServiceAndroidClientProxy
 adb shell su -c pm disable com.amazon.sharingservice.android.client.proxy
-adb shell su -c rm -r /system/priv-app/com.amazon.sharingservice.android.client.proxy.release
+#adb shell su -c rm -r /system/priv-app/com.amazon.sharingservice.android.client.proxy.release
 # Shipmode
 adb shell su -c pm disable com.amazon.shpm
-adb shell su -c rm -r /system/priv-app/shipmode
+#adb shell su -c rm -r /system/priv-app/shipmode
 # Manage Social Networks
 adb shell su -c pm disable com.amazon.socialplatform
-adb shell su -c rm -r /system/priv-app/com.amazon.socialplatform
+#adb shell su -c rm -r /system/priv-app/com.amazon.socialplatform
 # Storage Management
 adb shell su -c pm disable com.amazon.storagemanager
-adb shell su -c rm -r /system/priv-app/FireStorageManager
+#adb shell su -c rm -r /system/priv-app/FireStorageManager
 # Sync Provider Executor
 adb shell su -c pm disable com.amazon.sync.provider.ipc
-adb shell su -c rm -r /system/priv-app/sync-provider_ipc-tablet-release
+#adb shell su -c rm -r /system/priv-app/sync-provider_ipc-tablet-release
 # Content Sync Framework
 adb shell su -c pm disable com.amazon.sync.service
-adb shell su -c rm -r /system/priv-app/sync-service-fireos-tablet-release
+#adb shell su -c rm -r /system/priv-app/sync-service-fireos-tablet-release
 # FireTabletVoiceSettings
 adb shell su -c pm disable com.amazon.tablet.voicesettings
-adb shell su -c rm -r /system/priv-app/com.amazon.tablet.voicesettings
+#adb shell su -c rm -r /system/priv-app/com.amazon.tablet.voicesettings
 # Tabletsubscriptions
 adb shell su -c pm disable com.amazon.tabletsubscriptions
-adb shell su -c rm -r /system/priv-app/com.amazon.tabletsubscriptions
+#adb shell su -c rm -r /system/priv-app/com.amazon.tabletsubscriptions
 # FreeTime
 adb shell su -c pm disable com.amazon.tahoe
-adb shell su -c rm -r /system/priv-app/com.amazon.tahoe
+#adb shell su -c rm -r /system/priv-app/com.amazon.tahoe
 # Amazon Communication Services
 adb shell su -c pm disable com.amazon.tcomm
-adb shell su -c rm -r /system/priv-app/com.amazon.tcomm
+#adb shell su -c rm -r /system/priv-app/com.amazon.tcomm
 # Amazon Communication Services Client Library
 adb shell su -c pm disable com.amazon.tcomm.client
-adb shell su -c rm -r /system/priv-app/com.amazon.communication
+#adb shell su -c rm -r /system/priv-app/com.amazon.communication
 # OttSsoCompanionApp
 adb shell su -c pm disable com.amazon.tv.ottssocompanionapp
-adb shell su -c rm -r /system/priv-app/com.amazon.tv.ottssocompanionapp
+#adb shell su -c rm -r /system/priv-app/com.amazon.tv.ottssocompanionapp
 # Chooser Menu
 adb shell su -c pm disable com.amazon.unifiedshare.actionchooser
-adb shell su -c rm -r /system/priv-app/UnifiedShareActivityChooser
+#adb shell su -c rm -r /system/priv-app/UnifiedShareActivityChooser
 # Amazon Goodreads Share
 adb shell su -c pm disable com.amazon.unifiedsharegoodreads
-adb shell su -c rm -r /system/priv-app/com.amazon.unifiedsharegoodreads
+#adb shell su -c rm -r /system/priv-app/com.amazon.unifiedsharegoodreads
 # Amazon Sina Weibo Share
 adb shell su -c pm disable com.amazon.unifiedsharesinaweibo
-adb shell su -c rm -r /system/priv-app/com.amazon.unifiedsharesinaweibo
+#adb shell su -c rm -r /system/priv-app/com.amazon.unifiedsharesinaweibo
 # Amazon Twitter Share
 adb shell su -c pm disable com.amazon.unifiedsharetwitter
-adb shell su -c rm -r /system/priv-app/com.amazon.unifiedsharetwitter
+#adb shell su -c rm -r /system/priv-app/com.amazon.unifiedsharetwitter
 # AlexaShoppingApp
 adb shell su -c pm disable com.amazon.vans.alexatabletshopping.app
-adb shell su -c rm -r /system/priv-app/com.amazon.vans.alexatabletshopping.app
+#adb shell su -c rm -r /system/priv-app/com.amazon.vans.alexatabletshopping.app
 # Appstore
 adb shell su -c pm disable com.amazon.venezia
-adb shell su -c rm -r /system/priv-app/com.amazon.venezia
+#adb shell su -c rm -r /system/priv-app/com.amazon.venezia
 # Weather
 adb shell su -c pm disable com.amazon.weather
-adb shell su -c rm -r /system/priv-app/com.amazon.weather
+#adb shell su -c rm -r /system/priv-app/com.amazon.weather
 # Kindle Store
 adb shell su -c pm disable com.amazon.webapp
-adb shell su -c rm -r /system/priv-app/com.amazon.webapp
+#adb shell su -c rm -r /system/priv-app/com.amazon.webapp
 # AmazonKKWebViewLib
 adb shell su -c pm disable com.amazon.webview
-adb shell su -c rm -r /system/priv-app/AmazonKKWebViewLib
+#adb shell su -c rm -r /system/priv-app/AmazonKKWebViewLib
 # Amazon System WebView
 adb shell su -c pm disable com.amazon.webview.chromium
-adb shell su -c rm -r /system/app/AmazonWebView
+#adb shell su -c rm -r /system/app/AmazonWebView
 # Whisperlink Activity View
 adb shell su -c pm disable com.amazon.whisperlink.activityview.android
-adb shell su -c rm -r /system/priv-app/WhisperplayActivityView
+#adb shell su -c rm -r /system/priv-app/WhisperplayActivityView
 # WhisperPlay Daemon
 adb shell su -c pm disable com.amazon.whisperlink.core.android
-adb shell su -c rm -r /system/priv-app/WhisperplayCore
+#adb shell su -c rm -r /system/priv-app/WhisperplayCore
 # Whisperlink SDK
 adb shell su -c pm disable com.amazon.whisperplay.contracts
-adb shell su -c rm -r /system/priv-app/WhisperlinkSdk
+#adb shell su -c rm -r /system/priv-app/WhisperlinkSdk
 # WiFi Locker
 adb shell su -c pm disable com.amazon.wifilocker
-adb shell su -c rm -r /system/priv-app/CredentialLockerAndroid-tablet-release
+#adb shell su -c rm -r /system/priv-app/CredentialLockerAndroid-tablet-release
 # Shop Amazon
 adb shell su -c pm disable com.amazon.windowshop
-adb shell su -c rm -r /system/priv-app/com.amazon.windowshop
+#adb shell su -c rm -r /system/priv-app/com.amazon.windowshop
 # Documents
 adb shell su -c pm disable com.amazon.zico
-adb shell su -c rm -r /system/priv-app/com.amazon.zico
+#adb shell su -c rm -r /system/priv-app/com.amazon.zico
 # com.android.backupconfirm
 adb shell su -c pm disable com.android.backupconfirm
-adb shell su -c rm -r /system/priv-app/BackupRestoreConfirmation
+#adb shell su -c rm -r /system/priv-app/BackupRestoreConfirmation
 # Bluetooth Share
 adb shell su -c pm disable com.android.bluetooth
-adb shell su -c rm -r /system/app/Bluetooth
+#adb shell su -c rm -r /system/app/Bluetooth
 # Calendar
 adb shell su -c pm disable com.android.calendar
-adb shell su -c rm -r /system/priv-app/com.android.calendar
+#adb shell su -c rm -r /system/priv-app/com.android.calendar
 # CaptivePortalLogin
 adb shell su -c pm disable com.android.captiveportallogin
-adb shell su -c rm -r /system/app/TabletCaptivePortalLogin
+#adb shell su -c rm -r /system/app/TabletCaptivePortalLogin
 # Certificate Installer
 adb shell su -c pm disable com.android.certinstaller
-adb shell su -c rm -r /system/app/CertInstaller
+#adb shell su -c rm -r /system/app/CertInstaller
  # Contacts
 adb shell su -c pm disable com.android.contacts
-adb shell su -c rm -r /system/priv-app/com.android.contacts
+#adb shell su -c rm -r /system/priv-app/com.android.contacts
 # Package Access Helper (Don't disable)
-#adb shell su -c pm disable com.android.defcontainer
-#adb shell su -c rm -r /system/priv-app/DefaultContainerService
+##adb shell su -c pm disable com.android.defcontainer
+##adb shell su -c rm -r /system/priv-app/DefaultContainerService
 # Clock
 adb shell su -c pm disable com.android.deskclock
-adb shell su -c rm -r /system/priv-app/com.android.deskclock
+#adb shell su -c rm -r /system/priv-app/com.android.deskclock
 # Documents
 adb shell su -c pm disable com.android.documentsui
-adb shell su -c rm -r /system/app/DocumentsUI
+#adb shell su -c rm -r /system/app/DocumentsUI
 # Email
 adb shell su -c pm disable com.android.email
-adb shell su -c rm -r /system/priv-app/com.android.email
+#adb shell su -c rm -r /system/priv-app/com.android.email
 # External Storage
 adb shell su -c pm disable com.android.externalstorage
-adb shell su -c rm -r /system/priv-app/ExternalStorageProvider
+#adb shell su -c rm -r /system/priv-app/ExternalStorageProvider
 # HTML Viewer
 adb shell su -c pm disable com.android.htmlviewer
-adb shell su -c rm -r /system/app/HTMLViewer
+#adb shell su -c rm -r /system/app/HTMLViewer
 # Key Chain
 adb shell su -c pm disable com.android.keychain
-adb shell su -c rm -r /system/app/KeyChain
+#adb shell su -c rm -r /system/app/KeyChain
 # Fused Location
 adb shell su -c pm disable com.android.location.fused
-adb shell su -c rm -r /system/priv-app/FusedLocation
+#adb shell su -c rm -r /system/priv-app/FusedLocation
 # Device Provisioner
 adb shell su -c pm disable com.android.managedprovisioning
-adb shell su -c rm -r /system/priv-app/ManagedProvisioning
+#adb shell su -c rm -r /system/priv-app/ManagedProvisioning
 # Music
 adb shell su -c pm disable com.android.music
-adb shell su -c rm -r /system/app/Music
+#adb shell su -c rm -r /system/app/Music
 # One Time Init
 adb shell su -c pm disable com.android.onetimeinitializer
-adb shell su -c rm -r /system/priv-app/OneTimeInitializer
+#adb shell su -c rm -r /system/priv-app/OneTimeInitializer
 # Package Installer
-#adb shell su -c pm disable com.android.packageinstaller
-#adb shell su -c rm -r /system/priv-app/PackageInstaller
+##adb shell su -c pm disable com.android.packageinstaller
+##adb shell su -c rm -r /system/priv-app/PackageInstaller
 # PacProcessor
 adb shell su -c pm disable com.android.pacprocessor
-adb shell su -c rm -r /system/app/PacProcessor
+#adb shell su -c rm -r /system/app/PacProcessor
 # Print Spooler
 adb shell su -c pm disable com.android.printspooler
-adb shell su -c rm -r /system/priv-app/PrintSpooler
+#adb shell su -c rm -r /system/priv-app/PrintSpooler
 # Calendar Storage
 adb shell su -c pm disable com.android.providers.calendar
-adb shell su -c rm -r /system/priv-app/com.android.providers.calendar
+#adb shell su -c rm -r /system/priv-app/com.android.providers.calendar
 # Contacts Storage
 adb shell su -c pm disable com.android.providers.contacts
-adb shell su -c rm -r /system/priv-app/com.android.providers.contacts
-# Download Manager (Do not disable, breaks apps ability to download.)
-#adb shell su -c pm disable com.android.providers.downloads
-#adb shell su -c rm -r /system/priv-app/DownloadProvider
+#adb shell su -c rm -r /system/priv-app/com.android.providers.contacts
+# Download Manager
+##adb shell su -c pm disable com.android.providers.downloads
+##adb shell su -c rm -r /system/priv-app/DownloadProvider
 # Downloads
 adb shell su -c pm disable com.android.providers.downloads.ui
-adb shell su -c rm -r /system/priv-app/DownloadProviderUi
+#adb shell su -c rm -r /system/priv-app/DownloadProviderUi
 # Media Storage
 adb shell su -c pm disable com.android.providers.media
-adb shell su -c rm -r /system/priv-app/MediaProvider
+#adb shell su -c rm -r /system/priv-app/MediaProvider
 # Settings Storage
 adb shell su -c pm disable com.android.providers.settings
-adb shell su -c rm -r /system/priv-app/SettingsProvider
+#adb shell su -c rm -r /system/priv-app/SettingsProvider
 # User Dictionary
 adb shell su -c pm disable com.android.providers.userdictionary
-adb shell su -c rm -r /system/app/UserDictionaryProvider
+#adb shell su -c rm -r /system/app/UserDictionaryProvider
 # ProxyHandler
 adb shell su -c pm disable com.android.proxyhandler
-adb shell su -c rm -r /system/priv-app/ProxyHandler
+#adb shell su -c rm -r /system/priv-app/ProxyHandler
 # Settings
 #adb shell su -c pm disable com.android.settings
 #adb shell su -c rm -r /system/priv-app/FireTabletSettings
 # com.android.sharedstoragebackup
 adb shell su -c pm disable com.android.sharedstoragebackup
-adb shell su -c rm -r /system/priv-app/SharedStorageBackup
+#adb shell su -c rm -r /system/priv-app/SharedStorageBackup
 # Shell (Don't disable)
-#adb shell su -c pm disable com.android.shell
-#adb shell su -c rm -r /system/priv-app/Shell
+##adb shell su -c pm disable com.android.shell
+##adb shell su -c rm -r /system/priv-app/Shell
 # System UI
 adb shell su -c pm disable com.android.systemui
-adb shell su -c rm -r /system/priv-app/SystemUI
+#adb shell su -c rm -r /system/priv-app/SystemUI
 # VpnDialogs
 adb shell su -c pm disable com.android.vpndialogs
-adb shell su -c rm -r /system/priv-app/VpnDialogs
+#adb shell su -c rm -r /system/priv-app/VpnDialogs
 # com.android.wallpapercropper
 adb shell su -c pm disable com.android.wallpapercropper
-adb shell su -c rm -r /system/priv-app/WallpaperCropper
+#adb shell su -c rm -r /system/priv-app/WallpaperCropper
 # Audible
 adb shell su -c pm disable com.audible.application.kindle
-adb shell su -c rm -r /system/priv-app/com.audible.application.kindle
+#adb shell su -c rm -r /system/priv-app/com.audible.application.kindle
 # Dolby Service
 adb shell su -c pm disable com.dolby
-adb shell su -c rm -r /system/vendor/app/Ds
+#adb shell su -c rm -r /system/vendor/app/Ds
 # Goodreads
 adb shell su -c pm disable com.goodreads.kindle
-adb shell su -c rm -r /system/priv-app/com.goodreads.kindle
+#adb shell su -c rm -r /system/priv-app/com.goodreads.kindle
 # HERE Positioning
 adb shell su -c pm disable com.here.odnp.service
-adb shell su -c rm -r /system/priv-app/com.nokia.odnp.service
+#adb shell su -c rm -r /system/priv-app/com.nokia.odnp.service
 # IvonaTTSOrchestrator
 adb shell su -c pm disable com.ivona.orchestrator
-adb shell su -c rm -r /system/priv-app/IvonaTtsOrchestrator
+#adb shell su -c rm -r /system/priv-app/IvonaTtsOrchestrator
 # IVONA TTS
 adb shell su -c pm disable com.ivona.tts.oem
-adb shell su -c rm -r /system/priv-app/IvonaTTS
+#adb shell su -c rm -r /system/priv-app/IvonaTTS
 # WPS Office for Amazon
 adb shell su -c pm disable com.kingsoft.office.amz
-adb shell su -c rm -r /system/priv-app/moffice_7.1_default_en00105_multidex_217792
+#adb shell su -c rm -r /system/priv-app/moffice_7.1_default_en00105_multidex_217792
 # Pico TTS
 adb shell su -c pm disable com.svox.pico
-adb shell su -c rm -r /system/app/PicoTts
+#adb shell su -c rm -r /system/app/PicoTts
 # Fire Keyboard Simplified Chinese Pack
 adb shell su -c pm disable jp.co.omronsoft.iwnnime.languagepack.zhcn_az
-adb shell su -c rm -r /system/app/jp.co.omronsoft.iwnnime.languagepack.zhcn_az
+#adb shell su -c rm -r /system/app/jp.co.omronsoft.iwnnime.languagepack.zhcn_az
 # Fire Keyboard (Asian)
 adb shell su -c pm disable jp.co.omronsoft.iwnnime.mlaz
-adb shell su -c rm -r /system/app/jp.co.omronsoft.iwnnime.mlaz
+#adb shell su -c rm -r /system/app/jp.co.omronsoft.iwnnime.mlaz
 # Mopria Print Service
 adb shell su -c pm disable org.mopria.printplugin
-adb shell su -c rm -r /system/app/MopriaPlugin
+#adb shell su -c rm -r /system/app/MopriaPlugin
 echo "Installing Emerald Launcher..."
 adb install ./apks/ru.henridellal.emerald_*.apk # Emerald Launcher
 echo "Installing Anysoft Keyboard..."
