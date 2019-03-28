@@ -116,7 +116,7 @@ echo "${bold}Done. Continue to Stage 4: Bloat Removal.${normal}"
 # ----------------------------------------------
 four(){
 echo "${bold}Welcome to Stage #4: Disable Amazon Apps & Install F-Droid${normal}"
-echo "${bold}This will attempt to agressively remove as much as possible without breaking core functionality.${normal}"
+echo "${bold}This will attempt to agressively remove and replace as much as possible without breaking core functionality.${normal}"
 echo "${bold}It will also install an open source Launcher and Keyboard so you're not left with an unusable device.${normal}"
 _pause
 echo "Waiting for Device..."
