@@ -610,7 +610,7 @@ adb shell su -c rm -r /system/priv-app/DownloadProviderUi
 ##adb shell su -c rm -r /system/priv-app/Shell
 # System UI
 ##adb shell su -c pm disable com.android.systemui
-#adb shell su -c rm -r /system/priv-app/SystemUI
+##adb shell su -c rm -r /system/priv-app/SystemUI
 # VpnDialogs
 #adb shell su -c pm disable com.android.vpndialogs
 #adb shell su -c rm -r /system/priv-app/VpnDialogs
