@@ -10,32 +10,28 @@
 # GNU General Public License for more details.
 #
 #!/bin/bash
-
 _pause(){
     read -n1 -rsp $'Press any key to continue or Ctrl+C to exit...\n'
     }
 bold=$(tput bold)
 normal=$(tput sgr0)
-
-# function to display menus
 show_menus() {
 	clear
 	echo " "
 	echo "${bold}~~~~~~~~~~~~~~~~~~~~~~~~~~~~~${normal}"	
 	echo "${bold}       Fire Autotools        ${normal}"
 	echo "${bold}~~~~~~~~~~~~~~~~~~~~~~~~~~~~~${normal}"
-	echo "${bold}This script assumes you have ADB.${normal}"
-	echo "${bold}Please read the instructions carefully.${normal}"
+	echo "${bold}Please read all instructions carefully.${normal}"
 	echo "Stage #1: Automated Recovery"
 	echo "Stage #2: Automated Rooting"
 	echo "Stage #3: Block Amazon Spying"
 	echo "Stage #4: Disable Amazon Apps & Install F-Droid"
 	echo "Stage #5: Xposed Framework Installer"
+	echo " "
 	echo "Debug #6: logcat"
 	echo "       9: Exit"
 	echo " "
 }
-
 # ----------------------------------------------
 # Stage #1: Automated Recovery
 # ----------------------------------------------
@@ -44,29 +40,30 @@ echo "${bold}Welcome to Stage #1: Automated Recovery${normal}"
 echo "${bold}https://www.amazon.com/gp/help/customer/display.html/ref=hp_bc_nav?ie=UTF8&nodeId=200529680${normal}"
 echo "${bold}Place the image for your device in the ./image/ folder. Do not attempt to downgrade to an older version.${normal}"
 echo "${bold}Be warned that the rooting method could be patched in future versions. 5.3.6.4 is the current version.${normal}"
-echo "${bold}1. Enter recovery with the power button and left volume held down with USB plugged in.${normal}"
-echo "${bold}2. Select 'wipe data/factory reset' (optional)${normal}"
+echo "${bold}1. Enter recovery from shutdown with the power button and left volume held down with USB plugged in.${normal}"
+echo "${bold}2. Select 'wipe data/factory reset' (suggested)${normal}"
 echo "${bold}3. Select 'apply update from ADB'.${normal}"
 _pause
 echo "Attempting to sideload..."
 adb sideload ./image/update-kindle-*.bin
 echo "${bold}Complete, select 'reboot system now'.${normal}"
-echo "${bold}Do not connect your fire to wifi on reboot.${normal}"
-echo "${bold}Select a passworded wifi, click cancel, and select 'NOT NOW' to continue without wifi.${normal}"
+echo "${bold}Do not connect to wifi on reboot.${normal}"
+echo "${bold}Select add, click cancel, and select 'NOT NOW' to continue without wifi.${normal}"
 echo "${bold}Open Settings > Device Options and tap repeatedly on Serial Number until 'Developer Options' appears.${normal}"
 echo "${bold}Enable ADB and check 'Always allow from this computer.' and 'OK' when prompted.${normal}"
 echo "${bold}Done. Continue to Stage 2: Rooting.${normal}"
 _pause
 }
-
 # ----------------------------------------------
 # Stage #2: Automated Rooting
 # ----------------------------------------------
 two(){
 echo "${bold}Welcome to Stage #2: Automated Rooting${normal}"
-echo "${bold}Thanks to diplomatic for this method.${normal}"
+echo "${bold}Thanks to diplomatic on XDA for this method.${normal}"
 echo "${bold}This will likely take multiple attempts to be successful.${normal}"
 _pause
+echo "Waiting for Device..."
+adb wait-for-device
 echo "Making sure wifi is disabled..."
 adb shell su -c svc wifi disable
 echo "Copying root files..."
@@ -77,18 +74,17 @@ adb shell chmod 0755 /data/local/tmp/mtk-su /data/local/tmp/install.sh
 echo "Attempting to root..."
 echo "${bold}You should end up at a root command prompt, execute this command:${normal}"
 echo "${bold}exec /data/local/tmp/install.sh${normal}"
-echo "${bold}If this command hangs or you see permission errors, rooting failed. Try again from Stage 2.${normal}"
 adb shell ./data/local/tmp/mtk-su
+echo "${bold}If this command hangs or you see permission errors, rooting failed. Try again from Stage 2.${normal}"
 echo "${bold}We're about to install the SuperSU app, exit at this point if you want to install something yourself.${normal}"
 _pause
 echo "Installing SuperSU..."
 adb install ./rooting/eu.chainfire.supersu.*.apk
-echo "${bold}Open SuperSU app and update the binary using normal mode, reboot when prompted.${normal}"
+echo "${bold}Open SuperSU app and update the binary using normal mode, you don't have to reboot when prompted.${normal}"
 echo "${bold}Set SuperSU default access mode to 'Grant' the prompt mode doesn't work on FireOS.${normal}"
 echo "${bold}Done. Continue to Stage 3: Disable Spying.${normal}"
 _pause
 }
-
 # ----------------------------------------------
 # Stage #3: Block Amazon Spying
 # ----------------------------------------------
@@ -97,8 +93,10 @@ echo "${bold}Stage #3: Block Amazon Spying${normal}"
 echo "${bold}Blocking Amazon services from the internet can be a bit tricky, so we'll take a multi-layered approach.${normal}"
 echo "${bold}1. Install a host file, this will block many of the domains that Amazon services usually connect to.${normal}"
 echo "${bold}   (One side effect of this process: Your wifi icon will have an exclamation mark even when connected correctly.)${normal}"
-echo "${bold}2. Install an iptables Firewall (AFWall)${normal}"
+echo "${bold}2. Install an iptables Firewall (AFWall+)${normal}"
 _pause
+echo "Waiting for Device..."
+adb wait-for-device
 echo "Making sure device wifi is disabled..."
 adb shell su -c svc wifi disable
 echo "Applying hosts file..."
@@ -113,16 +111,16 @@ echo "${bold}Beware that data may leak to servers not in the hosts file during a
 echo "${bold}You can mitigate this by turning off wifi before rebooting.${normal}"
 echo "${bold}Done. Continue to Stage 4: Bloat Removal.${normal}"
 }
-
 # ----------------------------------------------
 # Stage #4: Disable Amazon Apps & Install F-Droid
 # ----------------------------------------------
 four(){
 echo "${bold}Welcome to Stage #4: Disable Amazon Apps & Install F-Droid${normal}"
-echo "${bold}This will attempt to agressively disable as much as possible without breaking core functionality.${normal}"
-echo "${bold}If anything does break, it's up to you to diagnose the issue and resolve it.${normal}"
-echo "${bold}It will also install Emerald Launcher and AnySoftKeyboard so you're not left with an unusable device.${normal}"
+echo "${bold}This will attempt to agressively remove as much as possible without breaking core functionality.${normal}"
+echo "${bold}It will also install an open source Launcher and Keyboard so you're not left with an unusable device.${normal}"
 _pause
+echo "Waiting for Device..."
+adb wait-for-device
 echo "Remounting /system..."
 adb shell su -c mount -o remount -rw /system
 echo "Removing Amazon Apps..."
@@ -652,9 +650,10 @@ adb shell su -c rm -r /system/app/jp.co.omronsoft.iwnnime.mlaz
 # Mopria Print Service
 #adb shell su -c pm disable org.mopria.printplugin
 adb shell su -c rm -r /system/app/MopriaPlugin
-echo "Installing Emerald Launcher..."
-adb install ./apks/ru.henridellal.emerald_*.apk # Emerald Launcher
-echo "Installing Anysoft Keyboard..."
+echo "Installing Launcher..."
+adb install ./apks/org.zimmob.zimlx_*.apk # ZimLX
+adb shell appwidget grantbind --package org.zimmob.zimlx --user 0
+echo "Installing Keyboard..."
 adb install ./apks/com.menny.android.anysoftkeyboard_*.apk # Anysoft Keyboard
 echo "Installing Busybox Installer..."
 adb install ./apks/ru.meefik.busybox_*.apk # Busybox
@@ -683,7 +682,7 @@ echo "Google Services: microG"
 echo "Keyboard       : AnySoftKeyboard (Installed)"
 echo "Maps           : OsmAnd"
 echo "MP3 Player     : Vanilla Music"
-echo "Launcher       : Emerald Launcher (Installed)"
+echo "Launcher       : ZimLX (Installed)"
 echo "Weather        : WX"
 echo "Web Browser    : Icecat/Fennec/Privacy Browser"
 echo "YouTube        : SkyTube/NewPipe"
@@ -691,7 +690,6 @@ echo "${bold}Use the Busybox App to install it on your device.${normal}"
 echo "${bold}Remember to allow apps you want to use the internet through AFWall firewall.${normal}"
 _pause
 }
-
 # ----------------------------------------------
 # Stage #5: Xposed Framework Installer
 # ----------------------------------------------
@@ -700,6 +698,9 @@ echo "${bold}Welcome to Stage #5: Xposed Framework Installer${normal}"
 echo "${bold}This will install the Material Design Xposed Installer and give instructions on how to use it.${normal}"
 echo "${bold}You will need tablet Wifi connected for this process.${normal}"
 _pause
+echo "Waiting for Device..."
+adb wait-for-device
+echo "Installing Xposed Installer..."
 adb install ./apks/XposedInstaller*.apk
 echo "${bold}Please open the app, go to the official tab and install the latest ARM64 version.${normal}"
 echo "${bold}You will recieve an error during install. This is normal, continue only after this has happened.${normal}"
@@ -715,14 +716,12 @@ echo "${bold}Done. Your device will reboot.${normal}"
 echo "${bold}Check inside the app for a green checkmark and then you can install any modules you want to use.${normal}"
 _pause
 }
-
 # ----------------------------------------------
 # Stage #6:
 # ----------------------------------------------
 six(){
 adb logcat *:W
 }
-
 read_options(){
 	local choice
 	read -p "Enter choice [ 1 - 9] " choice
@@ -737,10 +736,8 @@ read_options(){
 		*) echo -e "${RED}Error...${STD}" && sleep 2
 	esac
 }
-
 while true
 do
- 
 	show_menus
 	read_options
 done
