@@ -7,13 +7,12 @@ I am not responsible for bricked devices, dead SD cards, thermonuclear war, or y
 
 Fire Autotools is a simple shell script that I made for myself to automate the process of recovering and setting up my device. I have made this script publicly avalible for anyone to use.
 
-### Goals
-* Easy Sideloading & Recovery
-* Obtain Root
-* Block all Amazon apps and services from spying.
-* Disable Amazon Bloat to minimize CPU usage, memory usage, and disk space.
-* Use Open Source alternatives when available.
-* Install Xposed Framework.
+### Features
+* Stage 1: Easy Sideloading & Recovery
+* Stage 2: Obtain Root, Install SuperSU
+* Stage 3: Install Hosts file blocking for known Amazon domains, install AFWall+ firewall.
+* Stage 4: Remove and replace Amazon apps and services to minimize CPU usage, memory usage, and disk space. Install F-Droid and Busybox.
+* Stage 5: Install Xposed Framework.
 
 ## Quick Usage Guide
 ### Dependencies
@@ -70,6 +69,6 @@ Reboot. See this page for a list of timezones: https://en.wikipedia.org/wiki/Lis
 ### Unable to use Widgets
 Widgets are unfunctional, here's the fix:
 
-```adb shell appwidget grantbind --package com.launcher.name --user 0 ```
+```adb shell appwidget grantbind --package com.launcher.name --user 0```
 
 Replace "com.launcher.name" with the name of your launcher.
