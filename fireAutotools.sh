@@ -166,10 +166,10 @@ adb shell su -c rm -r /system/priv-app/com.amazon.h2clientservice
 #adb shell su -c rm -r /system/priv-app/marketplace_service_receiver
 # Application Compatibility Enforcer
 #adb shell su -c pm disable com.amazon.application.compatibility.enforcer
-#adb shell su -c rm -r /system/priv-app/FireApplicationCompatibilityEnforcer
+adb shell su -c rm -r /system/priv-app/FireApplicationCompatibilityEnforcer
 # Fire Application Compatibility Enforcer SDK
 #adb shell su -c pm disable com.amazon.application.compatibility.enforcer.sdk.library
-#adb shell su -c rm -r /system/priv-app/FireApplicationCompatibilityEnforcerSDK
+adb shell su -c rm -r /system/priv-app/FireApplicationCompatibilityEnforcerSDK
 # AssetSyncService
 #adb shell su -c pm disable com.amazon.assetsync.service
 adb shell su -c rm -r /system/priv-app/com.amazon.assetsync.service
