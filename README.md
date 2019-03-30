@@ -72,3 +72,15 @@ Widgets are unfunctional, here's the fix:
 ```adb shell appwidget grantbind --package com.launcher.name --user 0```
 
 Replace "com.launcher.name" with the name of your launcher.
+
+### Disable Lockscreen
+Amazon has made disabling the lockscreen harder in recent versions, you can still do it but there's some side effects:
+* Developer options are no longer accessible.
+* Notifications and quick controls are no longer accessible.
+
+```adb shell settings set global device_provisioned 0```
+
+### Setting Lockscreen Wallpaper
+You can set a custom lockscreen wallpaper image by placing it in this folder:
+
+```/data/securedStorageLocation/com.android.systemui/ls_wallpaper/0```
