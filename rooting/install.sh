@@ -11,7 +11,7 @@
 #
 echo "Remounting /system read/write..."
 mount -o remount -rw /system
-echo "Copying files..."
+[ -w /system ] && echo "Mounted. Copying files..." || echo "Rooting failed..." && exit
 cp /data/local/tmp/su /system/xbin/su
 cp /data/local/tmp/su /system/xbin/daemonsu
 cp /data/local/tmp/supolicy /system/xbin/
@@ -22,6 +22,6 @@ chmod 0755 /system/xbin/su
 chcon u:object_r:system_file:s0 /system/xbin/su
 chmod 0755 /system/xbin/daemonsu
 chcon u:object_r:system_file:s0 /system/xbin/daemonsu
-daemonsu --auto-daemon
-echo "Done, exiting shell..."
+daemonsu --auto-daemon &
+echo "Success..."
 exit

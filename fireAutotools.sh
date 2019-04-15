@@ -89,10 +89,8 @@ adb push ./rooting/arm64/su ./rooting/arm64/supolicy ./rooting/arm64/libsupol.so
 echo "Setting permissions..."
 adb shell chmod 0755 /data/local/tmp/mtk-su /data/local/tmp/install.sh
 echo "Attempting to root..."
-echo "${bold}You should end up at a root command prompt, execute this command:${normal}"
-echo "${bold}exec /data/local/tmp/install.sh${normal}"
-adb shell ./data/local/tmp/mtk-su
-echo "${bold}If this command hangs or you see permission errors, rooting failed. Try again from Stage 2.${normal}"
+adb shell ./data/local/tmp/mtk-su -c 'sh /data/local/tmp/install.sh'
+echo "${bold}If rooting failed, try again from Stage 2.${normal}"
 echo "${bold}We're about to install the SuperSU app, exit at this point if you want to install something yourself.${normal}"
 _pause
 echo "Installing SuperSU..."
