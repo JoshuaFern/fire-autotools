@@ -11,7 +11,7 @@
 #
 echo "Remounting /system read/write..."
 mount -o remount -rw /system
-[ -w /system ] && echo "Mounted. Copying files..." || echo "Rooting failed..." && exit
+[ -w /system ] && echo "Mounted. Copying files..." || exit
 cp /data/local/tmp/su /system/xbin/su
 cp /data/local/tmp/su /system/xbin/daemonsu
 cp /data/local/tmp/supolicy /system/xbin/
