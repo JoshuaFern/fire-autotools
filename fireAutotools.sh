@@ -9,6 +9,17 @@
 # MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 # GNU General Public License for more details.
 #
+#   (                                                         
+#   )\ )                 (             )       )        (     
+#  (()/( (  (     (      )\      (  ( /(    ( /(        )\    
+#   /(_)))\ )(   ))\  ((((_)(   ))\ )\())(  )\())(   ( ((_(   
+#  (_))_((_(()\ /((_)  )\ _ )\ /((_(_))/ )\(_))/ )\  )\ _ )\  
+#  | |_  (_)((_(_))    (_)_\(_(_))(| |_ ((_| |_ ((_)((_| ((_) 
+#  | __| | | '_/ -_)    / _ \ | || |  _/ _ |  _/ _ / _ | (_-< 
+#  |_|   |_|_| \___|   /_/ \_\ \_,_|\__\___/\__\___\___|_/__/ 
+#                                                             
+# A simple shell script for setting up Amazon Fire devices.
+#
 #!/bin/bash
 _pause(){
     read -n1 -rsp $'Press any key to continue or Ctrl+C to exit...\n'
@@ -30,7 +41,6 @@ show_menus() {
 	echo "Stage #6: Lockscreen Wallpaper"
 	echo "Stage #7: Additional Settings"
 	echo " "
-	echo "Debug #6: logcat"
 	echo "       9: Exit"
 	echo " "
 }
