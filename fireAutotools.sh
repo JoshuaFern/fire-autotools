@@ -119,8 +119,7 @@ adb shell su -c mount -o remount -rw /system
 adb shell su -c mv /data/local/tmp/hosts /etc/hosts
 echo "Installing AFWall..."
 adb install ./apks/dev.ukanth.ufirewall_*.apk
-adb shell su -c svc power reboot
-echo "${bold}Rebooting... Enable the firewall and it's now safe to connect to wifi.${normal}"
+echo "${bold)Enable the firewall and it's now safe to connect to wifi.${normal}"
 echo "${bold}Remember to allow applications you wish to use through the firewall.${normal}"
 echo "${bold}Done. Continue to Stage 4: Bloat Removal.${normal}"
 }
@@ -176,7 +175,7 @@ adb shell su -c rm -r /system/priv-app/com.amazon.alexa.externalmediaplayer.fire
 adb shell su -c rm -r /system/priv-app/com.amazon.h2clientservice
 # Marketplace Service Receiver
 #adb shell su -c pm disable com.amazon.android.marketplace
-#adb shell su -c rm -r /system/priv-app/marketplace_service_receiver
+adb shell su -c rm -r /system/priv-app/marketplace_service_receiver
 # Application Compatibility Enforcer
 #adb shell su -c pm disable com.amazon.application.compatibility.enforcer
 adb shell su -c rm -r /system/priv-app/FireApplicationCompatibilityEnforcer
@@ -191,7 +190,7 @@ adb shell su -c rm -r /system/priv-app/com.amazon.assetsync.service
 adb shell su -c rm -r /system/priv-app/com.amazon.avod
 # Amazon - Bluetooth Internals
 #adb shell su -c pm disable com.amazon.bluetoothinternals
-#adb shell su -c rm -r /system/priv-app/BluetoothInternals
+adb shell su -c rm -r /system/priv-app/BluetoothInternals
 # Calculator
 #adb shell su -c pm disable com.amazon.calculator
 adb shell su -c rm -r /system/priv-app/com.amazon.calculator
@@ -203,9 +202,9 @@ adb shell su -c rm -r /system/priv-app/Camera
 adb shell su -c rm -r /system/priv-app/com.amazon.cardinal
 # Amazon Metrics Service Application
 #adb shell su -c pm disable com.amazon.client.metrics
-#adb shell su -c rm -r /system/priv-app/MetricsService
-# com.amazon.client.metrics.api
-#adb shell su -c pm disable com.amazon.client.metrics.api
+adb shell su -c rm -r /system/priv-app/MetricsService
+# com.amazon.client.metrics.api (Do not delete, only disable.)
+adb shell su -c pm disable com.amazon.client.metrics.api
 #adb shell su -c rm -r /system/priv-app/MetricsApi
 # Silk Browser
 #adb shell su -c pm disable com.amazon.cloud9

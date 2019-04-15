@@ -52,7 +52,7 @@ Run: ```./fireAutotools.sh```
 ├── other
 |   ├── autotools_readme.txt
 |   ├── hosts
-|   └── wallpaper.jpg // Replace to your liking.
+|   └── wallpaper.png // Replace to your liking.
 ├── rooting
 |   ├── arm64
 |   |   ├── libsupol.so
@@ -75,7 +75,7 @@ Sometimes you may be unable to change the timezone in the settings. We can do it
 Reboot. See this page for a list of timezones: https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
 
 ### Unable to use Widgets
-Widgets are unfunctional, here's the fix:
+If you change the launcher, widgets are unfunctional. Here's the fix:
 
 ```adb shell appwidget grantbind --package com.launcher.name --user 0```
 
@@ -87,8 +87,3 @@ Amazon has made disabling the lockscreen harder in recent versions, you can stil
 * Notifications and quick controls are no longer accessible.
 
 ```adb shell settings set global device_provisioned 0```
-
-### Setting Lockscreen Wallpaper
-You can set a custom lockscreen wallpaper image by placing it in this folder:
-
-```/data/securedStorageLocation/com.android.systemui/ls_wallpaper/0```
