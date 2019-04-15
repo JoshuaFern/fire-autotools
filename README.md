@@ -21,6 +21,9 @@ Fire Autotools assumes you have ADB installed already.
 
 To install ADB on Arch Linux: ```sudo pacman -S android-tools```
 
+### Downloading
+Click the cloud icon on the top right of the page, click "Download zip"
+
 ### Setup
 If you wish to use sideloading / recovery, please place the correct ROM for your device in the ./image folder.
 
