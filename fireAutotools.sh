@@ -669,7 +669,7 @@ echo "Installing Busybox Installer..."
 adb install ./apks/ru.meefik.busybox_*.apk # Busybox
 echo "Installing WebView..."
 adb push ./apks/webview.apk /data/local/tmp
-adb shell chmod 0644 /data/local/tmp/webview.apk
+adb shell su -c chmod 0644 /data/local/tmp/webview.apk
 adb shell su -c mkdir /system/app/webview
 adb shell su -c mv /data/local/tmp/webview.apk /system/app/webview
 adb install ./apks/webview.apk # Bromite Webview
@@ -736,6 +736,7 @@ _pause
 adb shell su -c rm /data/securedStorageLocation/com.android.systemui/ls_wallpaper/0/*
 adb push ./other/wallpaper.png /data/local/tmp
 adb shell su -c mv /data/local/tmp/wallpaper.png /data/securedStorageLocation/com.android.systemui/ls_wallpaper/0
+adb shell su -c chmod 0644 /data/securedStorageLocation/com.android.systemui/ls_wallpaper/0/wallpaper.png
 echo "${bold}Done.${normal}"
 _pause
 }
