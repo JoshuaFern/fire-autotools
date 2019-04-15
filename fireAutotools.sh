@@ -119,7 +119,7 @@ adb shell su -c mount -o remount -rw /system
 adb shell su -c mv /data/local/tmp/hosts /etc/hosts
 echo "Installing AFWall..."
 adb install ./apks/dev.ukanth.ufirewall_*.apk
-echo "${bold)Enable the firewall and it's now safe to connect to wifi.${normal}"
+echo "${bold}Enable the firewall and it's now safe to connect to wifi.${normal}"
 echo "${bold}Remember to allow applications you wish to use through the firewall.${normal}"
 echo "${bold}Done. Continue to Stage 4: Bloat Removal.${normal}"
 }
