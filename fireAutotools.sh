@@ -80,8 +80,6 @@ echo "${bold}This will likely take multiple attempts to be successful.${normal}"
 _pause
 echo "Waiting for Device..."
 adb wait-for-device
-echo "Making sure wifi is disabled..."
-adb shell su -c svc wifi disable
 echo "Copying root files..."
 adb shell rm /data/local/tmp/mtk-su /data/local/tmp/install.sh
 adb push ./rooting/arm64/su ./rooting/arm64/supolicy ./rooting/arm64/libsupol.so ./rooting/arm64/mtk-su ./rooting/install.sh /data/local/tmp
