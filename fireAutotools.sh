@@ -62,7 +62,6 @@ echo "${bold}3. Select 'apply update from ADB'.${normal}"
 _pause
 echo "Attempting to sideload..."
 adb sideload ./image/update-kindle-*.bin
-speaker-test -t sine -f 1000 -l 1 # Small beep to let the user know it's done.
 echo "${bold}Complete, select 'reboot system now'.${normal}"
 echo "${bold}Do not connect to wifi on reboot.${normal}"
 echo "${bold}Select 'Add Network', select 'CANCEL', select 'NOT NOW' and 'SKIP' to continue without wifi.${normal}"
@@ -272,8 +271,8 @@ adb shell su -c rm -r /system/priv-app/FireTvSaleService
 #adb shell su -c pm disable com.amazon.device.settings
 adb shell su -c rm -r /system/priv-app/RemoteSettingsAndroid
 # Amazon Device Settings Internal SDK
-#adb shell su -c pm disable com.amazon.device.settings.sdk.internal.library
-adb shell su -c rm -r /system/priv-app/RemoteSettingsInternalSDK
+adb shell su -c pm disable com.amazon.device.settings.sdk.internal.library
+#adb shell su -c rm -r /system/priv-app/RemoteSettingsInternalSDK
 # DeviceSoftwareOTA
 #adb shell su -c pm disable com.amazon.device.software.ota
 adb shell su -c rm -r /system/priv-app/DeviceSoftwareOTA
