@@ -62,6 +62,7 @@ echo "${bold}3. Select 'apply update from ADB'.${normal}"
 _pause
 echo "Attempting to sideload..."
 adb sideload ./image/update-kindle-*.bin
+speaker-test -t sine -f 1000 -l 1 # Small beep to let the user know it's done.
 echo "${bold}Complete, select 'reboot system now'.${normal}"
 echo "${bold}Do not connect to wifi on reboot.${normal}"
 echo "${bold}Select add, click cancel, and select 'NOT NOW' to continue without wifi.${normal}"
@@ -138,7 +139,7 @@ echo "Removing Amazon Apps..."
 # Alexa Cards
 #adb shell su -c pm disable amazon.alexa.tablet
 adb shell su -c rm -r /system/priv-app/amazon.alexa.tablet
-# amazon.fireos (Do not disable.)
+# amazon.fireos (Do not disable or delete.)
 ##adb shell su -c pm disable amazon.fireos
 ##adb shell su -c rm -r /system/framework/fireos-res/fireos-res.apk
 # amazon.jackson19
@@ -147,7 +148,7 @@ adb shell su -c rm -r /system/priv-app/amazon.jackson-19
 # SpeechInteractionManager
 #adb shell su -c pm disable amazon.speech.sim
 adb shell su -c rm -r /system/priv-app/SpeechInteractionManager
-# System (Do not disable.)
+# System (Do not disable or delete.)
 ##adb shell su -c pm disable android
 ##adb shell su -c rm -r /system/framework/framework-res.apk
 # Fire
@@ -201,7 +202,7 @@ adb shell su -c rm -r /system/priv-app/com.amazon.cardinal
 # Amazon Metrics Service Application
 #adb shell su -c pm disable com.amazon.client.metrics
 adb shell su -c rm -r /system/priv-app/MetricsService
-# com.amazon.client.metrics.api (Do not delete, only disable.)
+# com.amazon.client.metrics.api (Disable, don't delete.)
 adb shell su -c pm disable com.amazon.client.metrics.api
 #adb shell su -c rm -r /system/priv-app/MetricsApi
 # Silk Browser
@@ -218,34 +219,34 @@ adb shell su -c rm -r /system/priv-app/com.amazon.cloud9.kids-stub
 adb shell su -c rm -r /system/priv-app/com.amazon.cloud9.systembrowserprovider
 # com.amazon.communication.discovery
 #adb shell su -c pm disable com.amazon.communication.discovery
-#adb shell su -c rm -r /system/priv-app/com.amazon.communication.discovery
+adb shell su -c rm -r /system/priv-app/com.amazon.communication.discovery
 # com.amazon.connectivitydiag
 #adb shell su -c pm disable com.amazon.connectivitydiag
-#adb shell su -c rm -r /system/priv-app/ConnectivityDiag
+adb shell su -c rm -r /system/priv-app/ConnectivityDiag
 # Help
 #adb shell su -c pm disable com.amazon.csapp
 adb shell su -c rm -r /system/priv-app/com.amazon.csapp
 # Amazon Device Middleware Debugging Tool
 #adb shell su -c pm disable com.amazon.dcp
-#adb shell su -c rm -r /system/priv-app/FireOsMiddlewareDebugApp
+adb shell su -c rm -r /system/priv-app/FireOsMiddlewareDebugApp
 # DCP Contracts Framework
 #adb shell su -c pm disable com.amazon.dcp.contracts.framework.library
-#adb shell su -c rm -r /system/priv-app/DeviceClientPlatformContractsFramework
+adb shell su -c rm -r /system/priv-app/DeviceClientPlatformContractsFramework
 # DCP Platform Contracts
 #adb shell su -c pm disable com.amazon.dcp.contracts.library
-#adb shell su -c rm -r /system/priv-app/DeviceSoftwareOTAContracts
+adb shell su -c rm -r /system/priv-app/DeviceSoftwareOTAContracts
 # Amazon Alexa
 #adb shell su -c pm disable com.amazon.dee.app
 adb shell su -c rm -r /system/priv-app/com.amazon.dee.app
 # Backup and Restore
 #adb shell su -c pm disable com.amazon.device.backup
-#adb shell su -c rm -r /system/priv-app/DeviceBackupAndRestore-release
+adb shell su -c rm -r /system/priv-app/DeviceBackupAndRestore-release
 # Amazon Backup and Restore Internal SDK
 #adb shell su -c pm disable com.amazon.device.backup.sdk.internal.library
-#adb shell su -c rm -r /system/priv-app/DeviceBackupAndRestoreInternalSDK-release
+adb shell su -c rm -r /system/priv-app/DeviceBackupAndRestoreInternalSDK-release
 # Amazon Bluetooth DFU
 #adb shell su -c pm disable com.amazon.device.bluetoothdfu
-#adb shell su -c rm -r /system/priv-app/com.amazon.device.bluetoothdfu
+adb shell su -c rm -r /system/priv-app/com.amazon.device.bluetoothdfu
 # CrashManager
 #adb shell su -c pm disable com.amazon.device.crashmanager
 adb shell su -c rm -r /system/priv-app/CrashManager
@@ -254,25 +255,25 @@ adb shell su -c rm -r /system/priv-app/CrashManager
 adb shell su -c rm -r /system/priv-app/LogManager-logd
 # Amazon Device Messaging (ADM)
 #adb shell su -c pm disable com.amazon.device.messaging
-#adb shell su -c rm -r /system/priv-app/DeviceMessagingAndroid
+adb shell su -c rm -r /system/priv-app/DeviceMessagingAndroid
 # Amazon Device Messaging Internal SDK
 #adb shell su -c pm disable com.amazon.device.messaging.sdk.internal.library
-#adb shell su -c rm -r /system/priv-app/DeviceMessagingAndroidInternalSDK
-# Amazon Device Messaging SDK
-#adb shell su -c pm disable com.amazon.device.messaging.sdk.library
+adb shell su -c rm -r /system/priv-app/DeviceMessagingAndroidInternalSDK
+# Amazon Device Messaging SDK (Disable, don't delete.)
+adb shell su -c pm disable com.amazon.device.messaging.sdk.library
 #adb shell su -c rm -r /system/priv-app/DeviceMessagingAndroidSDK
 # AmazonDeviceMetrics
 #adb shell su -c pm disable com.amazon.device.metrics
 adb shell su -c rm -r /system/app/AmazonDeviceMetrics
 # Local Recommendations Service
 #adb shell su -c pm disable com.amazon.device.sale.service
-#adb shell su -c rm -r /system/priv-app/FireTvSaleService
+adb shell su -c rm -r /system/priv-app/FireTvSaleService
 # Amazon Device Settings
 #adb shell su -c pm disable com.amazon.device.settings
-#adb shell su -c rm -r /system/priv-app/RemoteSettingsAndroid
+adb shell su -c rm -r /system/priv-app/RemoteSettingsAndroid
 # Amazon Device Settings Internal SDK
 #adb shell su -c pm disable com.amazon.device.settings.sdk.internal.library
-#adb shell su -c rm -r /system/priv-app/RemoteSettingsInternalSDK
+adb shell su -c rm -r /system/priv-app/RemoteSettingsInternalSDK
 # DeviceSoftwareOTA
 #adb shell su -c pm disable com.amazon.device.software.ota
 adb shell su -c rm -r /system/priv-app/DeviceSoftwareOTA
