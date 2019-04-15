@@ -270,7 +270,7 @@ adb shell su -c rm -r /system/priv-app/FireTvSaleService
 # Amazon Device Settings
 #adb shell su -c pm disable com.amazon.device.settings
 adb shell su -c rm -r /system/priv-app/RemoteSettingsAndroid
-# Amazon Device Settings Internal SDK
+# Amazon Device Settings Internal SDK  (Disable, don't delete.)
 adb shell su -c pm disable com.amazon.device.settings.sdk.internal.library
 #adb shell su -c rm -r /system/priv-app/RemoteSettingsInternalSDK
 # DeviceSoftwareOTA
