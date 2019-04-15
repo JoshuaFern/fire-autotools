@@ -76,25 +76,24 @@ _pause
 two(){
 echo "${bold}Welcome to Stage #2: Automated Rooting${normal}"
 echo "${bold}Thanks to diplomatic on XDA for this method.${normal}"
-echo "${bold}This will likely take multiple attempts to be successful.${normal}"
 _pause
 echo "Waiting for Device..."
 adb wait-for-device
-echo "Copying root files..."
+echo "Installing SuperSU..."
+adb install ./rooting/eu.chainfire.supersu.*.apk
+echo "Copying files..."
 adb shell rm /data/local/tmp/mtk-su /data/local/tmp/install.sh
 adb push ./rooting/arm64/su ./rooting/arm64/supolicy ./rooting/arm64/libsupol.so ./rooting/arm64/mtk-su ./rooting/install.sh /data/local/tmp
 echo "Setting permissions..."
 adb shell chmod 0755 /data/local/tmp/mtk-su /data/local/tmp/install.sh
 echo "Attempting to root..."
+retry_(){
+rm ./retry_ 2>/dev/null
 adb shell ./data/local/tmp/mtk-su -c 'sh /data/local/tmp/install.sh'
-echo "${bold}If rooting failed, try again from Stage 2.${normal}"
-echo "${bold}We're about to install the SuperSU app, exit at this point if you want to install something yourself.${normal}"
-_pause
-echo "Installing SuperSU..."
-adb install ./rooting/eu.chainfire.supersu.*.apk
-echo "${bold}Open SuperSU app and update the binary using normal mode, you don't have to reboot when prompted.${normal}"
-echo "${bold}Set SuperSU default access mode to 'Grant' the prompt mode doesn't work on FireOS.${normal}"
-echo "${bold}Done. Continue to Stage 3: Disable Spying.${normal}"
+adb pull /sdcard/retry_ . 2>/dev/null
+[ -f "./retry_" ] && retry_ || echo "${bold}Rooting successful.${normal}"
+}
+retry_
 _pause
 }
 # ----------------------------------------------
@@ -120,6 +119,7 @@ adb install ./apks/dev.ukanth.ufirewall_*.apk
 echo "${bold}Enable the firewall and it's now safe to connect to wifi.${normal}"
 echo "${bold}Remember to allow applications you wish to use through the firewall.${normal}"
 echo "${bold}Done. Continue to Stage 4: Bloat Removal.${normal}"
+_pause
 }
 # ----------------------------------------------
 # Stage #4: Disable Amazon Apps & Install F-Droid
