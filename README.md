@@ -5,7 +5,7 @@ I am not responsible for bricked devices, dead SD cards, thermonuclear war, or y
 
 ## Description
 
-Fire Autotools is a simple shell script that I made for myself to automate the process of recovering and setting up my device. I have made this script publicly avalible for anyone to use.
+Fire Autotools is a simple bash shell script that I made for myself to automate the process of recovering and setting up my device. I have made this script publicly avalible for anyone to use, but I haven't tested it on any device but my own. The script should be fairly easy to edit and tailor for your specific device and use case.
 
 ### Features
 * Stage 1: Easy Sideloading & Recovery
@@ -26,7 +26,7 @@ If you wish to use sideloading / recovery, please place the correct ROM for your
 
 You can find the image for your device here: https://www.amazon.com/gp/help/customer/display.html/ref=hp_bc_nav?ie=UTF8&nodeId=200529680
 
-Do not use a lower version than your currently installed version or try to use an image from the wrong device. Be aware the current root method may not work on upcoming versions.
+Do not use a lower version than your currently installed version or try to use an image from the wrong device. Be aware the current root method may not work on upcoming FireOS versions.
 
 If you wish to change your background wallpaper, replace ./other/wallpaper.jpg with your preferred image.
 
@@ -45,11 +45,11 @@ Run: ```./fireAutotools.sh```
 |   └── *.apk
 ├── image
 |   ├── autotools_readme.txt
-|   └── update-kindle-*.bin
+|   └── update-kindle-*.bin // User supplied.
 ├── other
 |   ├── autotools_readme.txt
 |   ├── hosts
-|   └── wallpaper.jpg
+|   └── wallpaper.jpg // Replace to your liking.
 ├── rooting
 |   ├── arm64
 |   |   ├── libsupol.so
