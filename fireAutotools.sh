@@ -65,9 +65,9 @@ adb sideload ./image/update-kindle-*.bin
 speaker-test -t sine -f 1000 -l 1 # Small beep to let the user know it's done.
 echo "${bold}Complete, select 'reboot system now'.${normal}"
 echo "${bold}Do not connect to wifi on reboot.${normal}"
-echo "${bold}Select add, click cancel, and select 'NOT NOW' to continue without wifi.${normal}"
+echo "${bold}Select 'Add Network', select 'CANCEL', select 'NOT NOW' and 'SKIP' to continue without wifi.${normal}"
 echo "${bold}Open Settings > Device Options and tap repeatedly on Serial Number until 'Developer Options' appears.${normal}"
-echo "${bold}Enable ADB and check 'Always allow from this computer.' and 'OK' when prompted.${normal}"
+echo "${bold}Enable ADB and check 'Always allow from this computer' and 'OK' when prompted.${normal}"
 echo "${bold}Done. Continue to Stage 2: Rooting.${normal}"
 _pause
 }

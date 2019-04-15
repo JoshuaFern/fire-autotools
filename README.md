@@ -86,4 +86,4 @@ Amazon has made disabling the lockscreen harder in recent versions, you can stil
 * Developer options are no longer accessible.
 * Notifications and quick controls are no longer accessible.
 
-```adb shell settings set global device_provisioned 0```
+```adb shell settings put global device_provisioned 0```
