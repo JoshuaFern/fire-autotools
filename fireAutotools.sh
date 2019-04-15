@@ -27,6 +27,8 @@ show_menus() {
 	echo "Stage #3: Block Amazon Spying"
 	echo "Stage #4: Disable Amazon Apps & Install F-Droid"
 	echo "Stage #5: Xposed Framework Installer"
+	echo "Stage #6: Lockscreen Wallpaper"
+	echo "Stage #7: Additional Settings"
 	echo " "
 	echo "Debug #6: logcat"
 	echo "       9: Exit"
@@ -40,7 +42,12 @@ echo "${bold}Welcome to Stage #1: Automated Recovery${normal}"
 echo "${bold}https://www.amazon.com/gp/help/customer/display.html/ref=hp_bc_nav?ie=UTF8&nodeId=200529680${normal}"
 echo "${bold}Place the image for your device in the ./image/ folder. Do not attempt to downgrade to an older version.${normal}"
 echo "${bold}Be warned that the rooting method could be patched in future versions. 5.3.6.4 is the current version.${normal}"
-echo "${bold}1. Enter recovery from shutdown with the power button and left volume held down with USB plugged in.${normal}"
+echo "${bold}We'll attempt to enter recovery for you with ADB.${normal}"
+_pause
+echo "Attempting to automatically enter recovery..."
+adb reboot recovery
+_pause
+echo "${bold}1. If you're not in recovery, shutdown. Power on with the power button and left volume held.${normal}"
 echo "${bold}2. Select 'wipe data/factory reset' (suggested)${normal}"
 echo "${bold}3. Select 'apply update from ADB'.${normal}"
 _pause
@@ -163,7 +170,7 @@ adb shell su -c rm -r /system/priv-app/com.amazon.alexa.externalmediaplayer.fire
 adb shell su -c rm -r /system/priv-app/com.amazon.h2clientservice
 # Marketplace Service Receiver
 #adb shell su -c pm disable com.amazon.android.marketplace
-#adb shell su -c rm -r /system/priv-app/marketplace_service_receiver
+adb shell su -c rm -r /system/priv-app/marketplace_service_receiver
 # Application Compatibility Enforcer
 #adb shell su -c pm disable com.amazon.application.compatibility.enforcer
 adb shell su -c rm -r /system/priv-app/FireApplicationCompatibilityEnforcer
@@ -178,7 +185,7 @@ adb shell su -c rm -r /system/priv-app/com.amazon.assetsync.service
 adb shell su -c rm -r /system/priv-app/com.amazon.avod
 # Amazon - Bluetooth Internals
 #adb shell su -c pm disable com.amazon.bluetoothinternals
-#adb shell su -c rm -r /system/priv-app/BluetoothInternals
+adb shell su -c rm -r /system/priv-app/BluetoothInternals
 # Calculator
 #adb shell su -c pm disable com.amazon.calculator
 adb shell su -c rm -r /system/priv-app/com.amazon.calculator
@@ -190,10 +197,10 @@ adb shell su -c rm -r /system/priv-app/Camera
 adb shell su -c rm -r /system/priv-app/com.amazon.cardinal
 # Amazon Metrics Service Application
 #adb shell su -c pm disable com.amazon.client.metrics
-#adb shell su -c rm -r /system/priv-app/MetricsService
+adb shell su -c rm -r /system/priv-app/MetricsService
 # com.amazon.client.metrics.api
 #adb shell su -c pm disable com.amazon.client.metrics.api
-#adb shell su -c rm -r /system/priv-app/MetricsApi
+adb shell su -c rm -r /system/priv-app/MetricsApi
 # Silk Browser
 #adb shell su -c pm disable com.amazon.cloud9
 adb shell su -c rm -r /system/priv-app/com.amazon.cloud9
@@ -717,10 +724,26 @@ echo "${bold}Check inside the app for a green checkmark and then you can install
 _pause
 }
 # ----------------------------------------------
-# Stage #6:
+# Stage #6: Lockscreen Wallpaper
 # ----------------------------------------------
 six(){
-adb logcat *:W
+echo "${bold}Welcome to Stage #6: Lockscreen Wallpaper${normal}"
+echo "${bold}This will setup lockscreen wallpaper for you, please replace ./other/wallpaper.png with your background.${normal}"
+_pause
+adb push ./other/wallpaper.png /data/local/tmp
+adb shell su -c mv /data/local/tmp/wallpaper.jpg /data/securedStorageLocation/com.android.systemui/ls_wallpaper/0
+echo "${bold}Done.${normal}"
+}
+# ----------------------------------------------
+# Stage #7: Additional Settings
+# ----------------------------------------------
+seven(){
+echo "${bold}Welcome to Stage #7: Additional Settings${normal}"
+echo "${bold}This can automatically apply settings like .${normal}"
+echo "${bold}You can edit this section of fireAutotools.sh to your prefered settings and apply them automatically.${normal}"
+_pause
+
+echo "${bold}Done.${normal}"
 }
 read_options(){
 	local choice
@@ -732,6 +755,7 @@ read_options(){
 		4) four ;;
 		5) five ;;
 		6) six ;;
+		6) seven ;;
 		9) exit 0;;
 		*) echo -e "${RED}Error...${STD}" && sleep 2
 	esac
