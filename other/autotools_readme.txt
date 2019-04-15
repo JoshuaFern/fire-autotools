@@ -1,0 +1,1 @@
+Replace wallpaper.jpg with the Lockscreen Background picture you wish to use.

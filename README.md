@@ -27,6 +27,8 @@ You can find the image for your device here: https://www.amazon.com/gp/help/cust
 
 Do not use a lower version than your currently installed version or try to use an image from the wrong device. Be aware the current root method may not work on upcoming versions.
 
+If you wish to change your background wallpaper, replace ./other/wallpaper.jpg with your preferred image.
+
 
 ### Running
 
@@ -44,7 +46,9 @@ Run: ```./fireAutotools.sh```
 |   ├── autotools_readme.txt
 |   └── update-kindle-*.bin
 ├── other
-|   └── hosts
+|   ├── autotools_readme.txt
+|   ├── hosts
+|   └── wallpaper.jpg
 ├── rooting
 |   ├── arm64
 |   |   ├── libsupol.so
