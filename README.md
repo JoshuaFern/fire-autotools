@@ -12,7 +12,8 @@ Fire Autotools is a simple shell script that I made for myself to automate the p
 * Stage 2: Obtain Root, Install SuperSU
 * Stage 3: Install Hosts file blocking for known Amazon domains, install AFWall+ firewall.
 * Stage 4: Remove and replace Amazon apps and services to minimize CPU usage, memory usage, and disk space. Install F-Droid and Busybox.
-* Stage 5: Install Xposed Framework.
+* Stage 5: Install Xposed Framework
+* Stage 6: Set Lockscreen Wallpaper
 
 ## Quick Usage Guide
 ### Dependencies
