@@ -56,9 +56,8 @@ echo "${bold}We'll attempt to enter recovery for you with ADB.${normal}"
 _pause
 echo "Attempting to automatically enter recovery..."
 adb reboot recovery
-_pause
-echo "${bold}1. If you're not in recovery, shutdown. Power on with the power button and left volume held.${normal}"
-echo "${bold}2. Select 'wipe data/factory reset' (suggested)${normal}"
+echo "${bold}1. To enter recovery manually, turn on the device with the power button and left volume held.${normal}"
+echo "${bold}2. Select 'wipe data/factory reset' (YOU WILL LOSE YOUR DATA)${normal}"
 echo "${bold}3. Select 'apply update from ADB'.${normal}"
 _pause
 echo "Attempting to sideload..."
@@ -122,8 +121,7 @@ echo "Installing AFWall..."
 adb install ./apks/dev.ukanth.ufirewall_*.apk
 adb shell su -c svc power reboot
 echo "${bold}Rebooting... Enable the firewall and it's now safe to connect to wifi.${normal}"
-echo "${bold}Beware that data may leak to servers not in the hosts file during a narrow timeframe between booting and the firewall starting.${normal}"
-echo "${bold}You can mitigate this by turning off wifi before rebooting.${normal}"
+echo "${bold}Remember to allow applications you wish to use through the firewall.${normal}"
 echo "${bold}Done. Continue to Stage 4: Bloat Removal.${normal}"
 }
 # ----------------------------------------------
@@ -738,9 +736,11 @@ six(){
 echo "${bold}Welcome to Stage #6: Lockscreen Wallpaper${normal}"
 echo "${bold}This will setup lockscreen wallpaper for you, please replace ./other/wallpaper.png with your background.${normal}"
 _pause
+adb shell su -c rm /data/securedStorageLocation/com.android.systemui/ls_wallpaper/0/*
 adb push ./other/wallpaper.png /data/local/tmp
-adb shell su -c mv /data/local/tmp/wallpaper.jpg /data/securedStorageLocation/com.android.systemui/ls_wallpaper/0
+adb shell su -c mv /data/local/tmp/wallpaper.png /data/securedStorageLocation/com.android.systemui/ls_wallpaper/0
 echo "${bold}Done.${normal}"
+_pause
 }
 # ----------------------------------------------
 # Stage #7: Additional Settings
@@ -752,6 +752,7 @@ echo "${bold}You can edit this section of fireAutotools.sh to your prefered sett
 _pause
 
 echo "${bold}Done.${normal}"
+_pause
 }
 read_options(){
 	local choice
@@ -763,7 +764,7 @@ read_options(){
 		4) four ;;
 		5) five ;;
 		6) six ;;
-		6) seven ;;
+		7) seven ;;
 		9) exit 0;;
 		*) echo -e "${RED}Error...${STD}" && sleep 2
 	esac
