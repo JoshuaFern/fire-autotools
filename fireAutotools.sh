@@ -745,10 +745,141 @@ _pause
 # ----------------------------------------------
 seven(){
 echo "${bold}Welcome to Stage #7: Additional Settings${normal}"
-echo "${bold}This can automatically apply settings like .${normal}"
 echo "${bold}You can edit this section of fireAutotools.sh to your prefered settings and apply them automatically.${normal}"
 _pause
+#adb shell settings put system accelerometer_rotation 1
+#adb shell settings put secure accessibility_display_magnification_auto_update 1
+#adb shell settings put secure accessibility_display_magnification_enabled 0
+#adb shell settings put secure accessibility_display_magnification_scale 2.0
+#adb shell settings put secure accessibility_script_injection 0
+#adb shell settings put secure accessibility_script_injection_url https://ssl.gstatic.com/accessibility/javascript/android/AndroidVox_v1.js
+#adb shell settings put secure accessibility_web_content_key_bindings 0x13=0x01000100; 0x14=0x01010100; 0x15=0x02000001; 0x16=0x02010001; 0x200000013=0x02000601; 0x200000014=0x02010601; 0x200000015=0x03020101; 0x200000016=0x03010201; 0x200000023=0x02000301; 0x200000024=0x02010301; 0x200000037=0x03070201; 0x200000038=0x03000701:0x03010701:0x03020701;
+#adb shell settings put global adb_enabled 1
+#adb shell settings put global airplane_mode_on 0
+#adb shell settings put global airplane_mode_radios cell,bluetooth,wifi,nfc,wimax
+#adb shell settings put global airplane_mode_toggleable_radios bluetooth,wifi,nfc
+#adb shell settings put system alarm_alert content://media/internal/audio/media/9
+#adb shell settings put system alarm_alert_set 1
+#adb shell settings put secure android_id 0000000000000000
+#adb shell settings put global assisted_gps_enabled 1
+#adb shell settings put global audio_safe_volume_state 3
+#adb shell settings put global auto_time 1
+#adb shell settings put global auto_time_zone 1
+#adb shell settings put secure backup_enabled 0
+#adb shell settings put secure backup_transport com.amazon.device.backup/.transport.BackupTransportService
+#adb shell settings put secure bluetooth_addr_valid 1
+#adb shell settings put secure bluetooth_address 00:00:00:00:00:00
+#adb shell settings put secure bluetooth_name Fire
+#adb shell settings put global bluetooth_on 1
+#adb shell settings put global call_auto_retry 0
+#adb shell settings put global car_dock_sound /system/media/audio/ui/Dock.ogg
+#adb shell settings put global car_undock_sound /system/media/audio/ui/Undock.ogg
+#adb shell settings put global cdma_cell_broadcast_sms 1
+#adb shell settings put global data_roaming 0
+#adb shell settings put secure default_input_method com.menny.android.anysoftkeyboard/.SoftKeyboard
+#adb shell settings put global default_install_location 0
+#adb shell settings put global desk_dock_sound /system/media/audio/ui/Dock.ogg
+#adb shell settings put global desk_undock_sound /system/media/audio/ui/Undock.ogg
+#adb shell settings put global device_name KFGIWI
+#adb shell settings put global device_provisioned 1 # Disable to remove the lockscreen but developer options & notifications/quick controls are also no longer accessible.
+#adb shell settings put system dim_screen 1
+#adb shell settings put global dock_audio_media_enabled 1
+#adb shell settings put global dock_sounds_enabled 0
+#adb shell settings put system dtmf_tone 1
+#adb shell settings put system dtmf_tone_type 0
+#adb shell settings put global emergency_tone 0
+#adb shell settings put secure enabled_input_methods com.menny.android.anysoftkeyboard/.SoftKeyboard
+#adb shell settings put secure enabled_on_first_boot_system_print_services org.mopria.printplugin/org.mopria.printplugin.MopriaPrintService
+#adb shell settings put secure enabled_print_services org.mopria.printplugin/org.mopria.printplugin.MopriaPrintService
+#adb shell settings put system font_scale 1.25
+#adb shell settings put global guest_user_enabled 1
+#adb shell settings put system haptic_feedback_enabled 1
+#adb shell settings put global heads_up_notifications_enabled 1
+#adb shell settings put system hearing_aid 0
+#adb shell settings put secure immersive_mode_confirmations confirmed
+#adb shell settings put secure input_methods_subtype_history com.menny.android.anysoftkeyboard/.SoftKeyboard;1912895432
+adb shell settings put secure install_non_market_apps 1
+#adb shell settings put secure lock_screen_allow_private_notifications 1
+#adb shell settings put secure lock_screen_owner_info_enabled 0
+#adb shell settings put secure lock_screen_show_notifications 1
+#adb shell settings put global lock_sound /system/media/audio/ui/Lock.ogg
+#adb shell settings put secure lockscreen.disabled 0 # Doesn't do anything.
+#adb shell settings put system lockscreen_sounds_enabled 1
+#adb shell settings put secure long_press_timeout 500
+#adb shell settings put global low_battery_sound /system/media/audio/ui/LowBattery.ogg
+#adb shell settings put global low_battery_sound_timeout 0
+#adb shell settings put global mobile_data 1
+#adb shell settings put secure mock_location 0
+#adb shell settings put global mode_ringer 2
+#adb shell settings put system mode_ringer_streams_affected 166
+#adb shell settings put secure mount_play_not_snd 1
+#adb shell settings put secure mount_ums_autostart 0
+#adb shell settings put secure mount_ums_notify_enabled 1
+#adb shell settings put secure mount_ums_prompt 1
+#adb shell settings put system mute_streams_affected 46
+#adb shell settings put global netstats_enabled 1
+#adb shell settings put global network_scoring_provisioned 1
+#adb shell settings put system notification_light_pulse 1
+#adb shell settings put system notification_sound content://media/internal/audio/media/43
+#adb shell settings put system notification_sound_set 1
+#adb shell settings put global package_verifier_enable 1
+#adb shell settings put system pointer_speed 0
+#adb shell settings put global power_sounds_enabled 1
+#adb shell settings put global preferred_network_mode 0
+#adb shell settings put secure print_service_search_uri amzn://apps/android?
+#adb shell settings put system screen_auto_brightness_adj 1.0
+#adb shell settings put system screen_brightness 168
+#adb shell settings put system screen_brightness_mode 1
+#adb shell settings put system screen_off_timeout 300000
+#adb shell settings put secure screensaver_activate_on_dock 1
+#adb shell settings put secure screensaver_activate_on_sleep 0
+#adb shell settings put secure screensaver_components com.google.android.deskclock/com.android.deskclock.Screensaver
+#adb shell settings put secure screensaver_default_component com.google.android.deskclock/com.android.deskclock.Screensaver
+#adb shell settings put secure screensaver_enabled 1
+#adb shell settings put secure selected_input_method_subtype 1912895432
+#adb shell settings put secure selected_spell_checker com.amazon.redstone/com.amazon.inputmethod.spellcheck.FireSpellCheckerService
+#adb shell settings put secure selected_spell_checker_subtype 0
+#adb shell settings put global set_install_location 0
+#adb shell settings put secure show_note_about_notification_hiding 0
+#adb shell settings put system show_touches 0
+#adb shell settings put secure sleep_timeout -1
+#adb shell settings put system sound_effects_enabled 0
+#adb shell settings put secure speak_password 1
+#adb shell settings put global stay_on_while_plugged_in 0
+#adb shell settings put global subscription_mode 1
+#adb shell settings put global theater_mode_on 0
+#adb shell settings put secure touch_exploration_enabled 0
+#adb shell settings put system transition_animation_scale 1.0
+#adb shell settings put secure trust_agents_initialized 1
+#adb shell settings put global trusted_sound /system/media/audio/ui/Trusted.ogg
+#adb shell settings put system tty_mode 0
+#adb shell settings put global unlock_sound /system/media/audio/ui/Unlock.ogg
+#adb shell settings put global usb_mass_storage_enabled 1
+#adb shell settings put secure user_setup_complete 1
+#adb shell settings put system vibrate_when_ringing 0
+#adb shell settings put global volte_vt_enabled 1
+#adb shell settings put system volume_alarm 6
+#adb shell settings put system volume_music 11
+#adb shell settings put system volume_music_headphone 10
+#adb shell settings put system volume_music_headset 10
+#adb shell settings put system volume_music_speaker 15
+#adb shell settings put system volume_notification 5
+#adb shell settings put system volume_ring 5
+#adb shell settings put system volume_system 7
+#adb shell settings put system volume_voice 4
+#adb shell settings put secure wake_gesture_enabled 1
+#adb shell settings put global wifi_display_on 0
+#adb shell settings put global wifi_max_dhcp_retry_count 4
+#adb shell settings put global wifi_networks_available_notification_on 1
+#adb shell settings put global wifi_on 1
+#adb shell settings put global wifi_scan_always_enabled 0
+#adb shell settings put global wifi_sleep_policy 2
+#adb shell settings put global wifi_watchdog_on 1
+#adb shell settings put system window_animation_scale 1.0
+#adb shell settings put global wireless_charging_started_sound /system/media/audio/ui/WirelessChargingStarted.ogg
 
+#adb shell su -c setprop persist.sys.timezone "America/Los_Angeles" # Set Time Zone (https://en.wikipedia.org/wiki/List_of_tz_database_time_zones)
+adb shell wm density 160 # Set LCD Density (Default 213)
 echo "${bold}Done.${normal}"
 _pause
 }
