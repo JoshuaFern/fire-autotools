@@ -4,9 +4,7 @@
 I am not responsible for bricked devices, dead SD cards, thermonuclear war, or you getting fired because the alarm app failed. Please do some research if you have any concerns about features included in this script BEFORE using it! YOU are choosing to make these modifications, and if you point the finger at me for messing up your device, I will laugh at you.
 
 ## Description
-
 Fire Autotools is a simple bash shell script that I made for myself to automate the process of recovering and setting up my device. I have made this script publicly avalible for anyone to use, but I haven't tested it on any device but my own. The script should be fairly easy to edit and tailor for your specific device and use case.
-
 ### Features
 * Stage 1: Easy Sideloading & Recovery
 * Stage 2: Obtain Root, Install SuperSU
@@ -21,17 +19,17 @@ Fire Autotools assumes you have ADB installed already.
 
 To install ADB on Arch Linux: ```sudo pacman -S android-tools```
 
+To install ADB on NixOS: ```programs.adb.enable = true;``` and add your user to the "adbusers" group.
+
 ### Downloading
-Click the cloud icon on the top right of the page, click "Download zip"
+Click the cloud icon near the top right of the page, click "Download zip"
 
 ### Setup
-If you wish to use sideloading / recovery, please place the correct ROM for your device in the ./image folder.
+* If you wish to use sideloading / recovery, please place the correct ROM for your device in the ./image folder. You can find the image for your device [here](https://www.amazon.com/gp/help/customer/display.html/ref=hp_bc_nav?ie=UTF8&nodeId=200529680). Do not use a lower version than your currently installed version or try to use an image from the wrong device. Be aware the current root method may not work on upcoming FireOS versions. Do not post bug reports for issues caused by the script if you didn't apply it after fully wiping your device, this is how it's intended to be used.
 
-You can find the image for your device here: https://www.amazon.com/gp/help/customer/display.html/ref=hp_bc_nav?ie=UTF8&nodeId=200529680
+* If you wish to change your lockscreen wallpaper, replace ./other/wallpaper.png with your preferred image.
 
-Do not use a lower version than your currently installed version or try to use an image from the wrong device. Be aware the current root method may not work on upcoming FireOS versions.
-
-If you wish to change your background wallpaper, replace ./other/wallpaper.jpg with your preferred image.
+* By default, the script attempts to remove as many FireOS app packages as possible. This WILL break certain features of your device such as printing, proxy, and VPN support. If you need these features you can edit ./fireAutotools.sh and comment out the sections for the packages you want to keep, but the ultimate goal is to find open source alternatives to replace them with.
 
 
 ### Running
