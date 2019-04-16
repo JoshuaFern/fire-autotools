@@ -31,6 +31,6 @@ clear
 echo "Congratulations! Rooting successful!"
 echo "Open SuperSU app and update the binary using normal mode, you don't have to reboot when prompted.${normal}"
 echo "Set SuperSU default access mode to 'Grant' the prompt mode doesn't work on FireOS.${normal}"
-echo "Done. Press CTRL+C to exit and start Stage 3: Block Amazon Spying."
+echo "Done. Press CTRL+C to exit and start Stage 3: Block Amazon Spying"
 daemonsu --auto-daemon
 exit

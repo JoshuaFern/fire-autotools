@@ -67,7 +67,7 @@ echo "${bold}Do not connect to wifi on reboot.${normal}"
 echo "${bold}Select 'Add Network', select 'CANCEL', select 'NOT NOW' and 'SKIP' to continue without wifi.${normal}"
 echo "${bold}Open Settings > Device Options and tap repeatedly on Serial Number until 'Developer Options' appears.${normal}"
 echo "${bold}Enable ADB and check 'Always allow from this computer' and 'OK' when prompted.${normal}"
-echo "${bold}Done. Continue to Stage 2: Rooting.${normal}"
+echo "${bold}Done. Continue to Stage 2: Automated Rooting.${normal}"
 _pause
 }
 # ----------------------------------------------
@@ -118,7 +118,7 @@ echo "Installing AFWall..."
 adb install ./apks/dev.ukanth.ufirewall_*.apk
 echo "${bold}Enable the firewall and it's now safe to connect to wifi.${normal}"
 echo "${bold}Remember to allow applications you wish to use through the firewall.${normal}"
-echo "${bold}Done. Continue to Stage 4: Bloat Removal.${normal}"
+echo "${bold}Done. Continue to Stage 4: Disable Amazon Apps & Install F-Droid${normal}"
 _pause
 }
 # ----------------------------------------------
