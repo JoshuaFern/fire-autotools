@@ -566,7 +566,7 @@ adb shell su -c rm -r /system/app/HTMLViewer
 #adb shell su -c rm -r /system/app/KeyChain
 # Fused Location
 #adb shell su -c pm disable com.android.location.fused
-#adb shell su -c rm -r /system/priv-app/FusedLocation
+adb shell su -c rm -r /system/priv-app/FusedLocation
 # Device Provisioner
 #adb shell su -c pm disable com.android.managedprovisioning
 adb shell su -c rm -r /system/priv-app/ManagedProvisioning
@@ -662,18 +662,20 @@ adb shell su -c rm -r /system/app/jp.co.omronsoft.iwnnime.mlaz
 adb shell su -c rm -r /system/app/MopriaPlugin
 echo "Installing Launcher..."
 adb install ./apks/org.zimmob.zimlx_*.apk # ZimLX
-adb shell appwidget grantbind --package org.zimmob.zimlx --user 0
+adb shell appwidget grantbind --package org.zimmob.zimlx --user 0 # Enable Widgets for ZimLX
 echo "Installing Keyboard..."
 adb install ./apks/com.menny.android.anysoftkeyboard_*.apk # Anysoft Keyboard
 echo "Installing Busybox Installer..."
-adb install ./apks/ru.meefik.busybox_*.apk # Busybox
+adb install ./apks/ru.meefik.busybox_*.apk # Busybox Installer
 echo "Installing WebView..."
+# This is Bromite SystemWebView, it needs to be installed twice, once as a system app and once more as a normal app.
 adb push ./apks/webview.apk /data/local/tmp
 adb shell su -c chmod 0644 /data/local/tmp/webview.apk
 adb shell su -c mkdir /system/app/webview
 adb shell su -c mv /data/local/tmp/webview.apk /system/app/webview
 adb install ./apks/webview.apk # Bromite Webview
 echo "Installing F-Droid..."
+# Installs F-Droid and the privileged extension to let it install apps automatically.
 adb install ./apks/org.fdroid.fdroid_*.apk # F-Droid
 adb push ./apks/org.fdroid.fdroid.privileged_2090.apk /data/local/tmp
 adb shell su -c mv /data/local/tmp/org.fdroid.fdroid.privileged_2090.apk /system/priv-app
