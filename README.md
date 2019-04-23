@@ -25,7 +25,7 @@ To install ADB on NixOS: ```programs.adb.enable = true;``` and add your user to 
 Click the cloud icon near the top right of the page, click "Download zip"
 
 ### Setup
-* If you wish to use sideloading / recovery, please place the correct ROM for your device in the ./image folder. You can find the image for your device [here](https://www.amazon.com/gp/help/customer/display.html/ref=hp_bc_nav?ie=UTF8&nodeId=200529680). Do not use a lower version than your currently installed version or try to use an image from the wrong device. Be aware the current root method may not work on upcoming FireOS versions. Please note in your bug report if you applied it to a device without wiping it first.
+* If you wish to use sideloading / recovery, please place the correct ROM for your device in the ./image folder. You can find the image for your device [here](https://www.amazon.com/gp/help/customer/display.html/ref=hp_bc_nav?ie=UTF8&nodeId=200529680). Do not use a lower version than your currently installed version or try to use an image from the wrong device. Be aware the current root method may not work on upcoming FireOS versions.
 
 * If you wish to change your lockscreen wallpaper, replace ./other/wallpaper.png with your preferred image.
 
