@@ -64,7 +64,7 @@ Run: ```./fireAutotools.sh```
 └── README.md
 ```
 
-## Workarounds
+## Workarounds & Tweaks
 ### Unable to set Time Zone
 Sometimes you may be unable to change the timezone in the settings. We can do it manually with ADB.
 
@@ -85,3 +85,8 @@ Amazon has made disabling the lockscreen harder in recent versions, you can stil
 * Notifications and quick controls are no longer accessible.
 
 ```adb shell settings put global device_provisioned 0```
+
+### F-Droid Repos
+Some software is not included in the official F-Droid Repository, you may wish to add these additional repos:
+* Bromite/WebView: ```https://fdroid.bromite.org/fdroid/repo?fingerprint=E1EE5CD076D7B0DC84CB2B45FB78B86DF2EB39A3B6C56BA3DC292A5E0C3B9504```
+* Micro-G: ```https://microg.org/fdroid/repo?fingerprint=9BD06727E62796C0130EB6DAB39B73157451582CBD138E86C468ACC395D14165```
