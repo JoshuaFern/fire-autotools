@@ -756,7 +756,7 @@ _pause
 #adb shell settings put secure accessibility_script_injection 0
 #adb shell settings put secure accessibility_script_injection_url https://ssl.gstatic.com/accessibility/javascript/android/AndroidVox_v1.js
 #adb shell settings put secure accessibility_web_content_key_bindings 0x13=0x01000100; 0x14=0x01010100; 0x15=0x02000001; 0x16=0x02010001; 0x200000013=0x02000601; 0x200000014=0x02010601; 0x200000015=0x03020101; 0x200000016=0x03010201; 0x200000023=0x02000301; 0x200000024=0x02010301; 0x200000037=0x03070201; 0x200000038=0x03000701:0x03010701:0x03020701;
-#adb shell settings put global adb_enabled 1
+adb shell settings put global adb_enabled 1
 #adb shell settings put global airplane_mode_on 0
 #adb shell settings put global airplane_mode_radios cell,bluetooth,wifi,nfc,wimax
 #adb shell settings put global airplane_mode_toggleable_radios bluetooth,wifi,nfc
