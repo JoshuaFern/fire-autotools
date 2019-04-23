@@ -774,6 +774,7 @@ _pause
 #adb shell settings put secure bluetooth_name Fire
 #adb shell settings put global bluetooth_on 1
 #adb shell settings put global call_auto_retry 0
+adb shell settings put global captive_portal_detection_enabled 0
 #adb shell settings put global car_dock_sound /system/media/audio/ui/Dock.ogg
 #adb shell settings put global car_undock_sound /system/media/audio/ui/Undock.ogg
 #adb shell settings put global cdma_cell_broadcast_sms 1
