@@ -103,7 +103,6 @@ three(){
 echo "${bold}Stage #3: Block Amazon Spying${normal}"
 echo "${bold}Blocking Amazon services from the internet can be a bit tricky, so we'll take a multi-layered approach.${normal}"
 echo "${bold}1. Install a host file, this will block many of the domains that Amazon services usually connect to.${normal}"
-echo "${bold}   (One side effect of this process: Your wifi icon will have an exclamation mark even when connected correctly.)${normal}"
 echo "${bold}2. Install an iptables Firewall (AFWall+)${normal}"
 _pause
 echo "Waiting for Device..."
@@ -774,7 +773,7 @@ adb shell settings put global adb_enabled 1
 #adb shell settings put secure bluetooth_name Fire
 #adb shell settings put global bluetooth_on 1
 #adb shell settings put global call_auto_retry 0
-adb shell settings put global captive_portal_detection_enabled 0
+adb shell settings put global captive_portal_detection_enabled 0 # Fixes Wifi Issues
 #adb shell settings put global car_dock_sound /system/media/audio/ui/Dock.ogg
 #adb shell settings put global car_undock_sound /system/media/audio/ui/Undock.ogg
 #adb shell settings put global cdma_cell_broadcast_sms 1
