@@ -4,7 +4,7 @@
 I am not responsible for bricked devices, dead SD cards, thermonuclear war, or you getting fired because the alarm app failed. Please do some research if you have any concerns about features included in this script BEFORE using it! YOU are choosing to make these modifications, and if you point the finger at me for messing up your device, I will laugh at you.
 
 ## Description
-Fire Autotools is a simple bash shell script that I made for myself to automate the process of recovering and setting up my device. I have made this script publicly avalible for anyone to use, but I haven't tested it on any device but my own. The script should be fairly easy to edit and tailor for your specific device and use case.
+Fire Autotools is a simple bash shell script that I made for myself to automate the process of recovering and setting up my device. I have made this script publicly available for anyone to use, but I haven't tested it on any device but my own. The script should be fairly easy to edit and tailor for your specific device and use case.
 ### Features
 * Stage 1: Easy Sideloading & Recovery
 * Stage 2: Obtain Root, Install SuperSU
@@ -73,7 +73,7 @@ Sometimes you may be unable to change the timezone in the settings. We can do it
 Reboot. See this page for a list of timezones: https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
 
 ### Unable to use Widgets
-If you change the launcher, widgets are unfunctional. Here's the fix:
+If you change the launcher, widgets are nonfunctional. Here's the fix:
 
 ```adb shell appwidget grantbind --package com.launcher.name --user 0```
 
