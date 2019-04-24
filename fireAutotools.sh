@@ -23,14 +23,14 @@
 #!/bin/bash
 _pause(){
     read -n1 -rsp $'Press any key to continue or Ctrl+C to exit...\n'
-    }
+}
 _wait(){
     echo "Waiting for Device..."
     adb wait-for-device
-    }
+}
 bold=$(tput bold)
 normal=$(tput sgr0)
-show_menus() {
+show_menus(){
 	clear
 	echo " "
 	echo "${bold}~~~~~~~~~~~~~~~~~~~~~~~~~~~~~${normal}"	
@@ -39,18 +39,21 @@ show_menus() {
 	echo "${bold}Please read all instructions carefully.${normal}"
 	echo "Stage #1: Automated Recovery"
 	echo "Stage #2: Automated Rooting"
-	echo "Stage #3: Block Amazon Spying"
-	echo "Stage #4: Disable Amazon Apps & Install Replacements"
-	echo "Stage #5: Xposed Framework Installer"
-	echo "Stage #6: Lockscreen Wallpaper & Bootanimation"
-	echo "Stage #7: Additional Settings"
+	echo "Stage #3: Automated Configuration"
+	echo "Stage #4: Xposed Framework Installer"
+	echo "Stage #5: "
+	echo "Stage #6: "
+	echo "Stage #7: "
+	echo "Stage #8: "
 	echo " "
 	echo "       9: Exit"
 	echo " "
 }
+#
 # ----------------------------------------------
 # Stage #1: Automated Recovery
 # ----------------------------------------------
+#
 one(){
 echo "${bold}Welcome to Stage #1: Automated Recovery${normal}"
 echo "${bold}https://www.amazon.com/gp/help/customer/display.html/ref=hp_bc_nav?ie=UTF8&nodeId=200529680${normal}"
@@ -74,9 +77,11 @@ echo "${bold}Enable ADB and check 'Always allow from this computer' and 'OK' whe
 echo "${bold}Done. Continue to Stage 2: Automated Rooting.${normal}"
 _pause
 }
+#
 # ----------------------------------------------
 # Stage #2: Automated Rooting
 # ----------------------------------------------
+#
 two(){
 echo "${bold}Welcome to Stage #2: Automated Rooting${normal}"
 echo "${bold}Thanks to diplomatic on XDA for this method.${normal}"
@@ -99,40 +104,26 @@ adb pull /sdcard/retry_ . 2>/dev/null
 retry_
 _pause
 }
+#
 # ----------------------------------------------
-# Stage #3: Block Amazon Spying
+# Stage #3: Automated Configuration
 # ----------------------------------------------
+#
 three(){
-echo "${bold}Stage #3: Block Amazon Spying${normal}"
-echo "${bold}Blocking Amazon services from the internet can be a bit tricky, so we'll take a multi-layered approach.${normal}"
-echo "${bold}1. Install a host file, this will block many of the domains that Amazon services usually connect to.${normal}"
-echo "${bold}2. Install an iptables Firewall (AFWall+)${normal}"
+echo "${bold}Welcome to Stage #3: Automated Configuration${normal}"
+echo "${bold}This stage does every action that doesn't require user intervention.${normal}"
+echo "${bold}You can edit this section of fireAutotools.sh to your prefered settings and apply them automatically.${normal}"
 _pause
 _wait
 echo "Making sure device wifi is disabled..."
 adb shell su -c svc wifi disable
-echo "Applying hosts file..."
-adb push ./other/hosts /data/local/tmp
-adb shell su -c mount -o remount -rw /system
-adb shell su -c mv /data/local/tmp/hosts /etc/hosts
-echo "Installing AFWall..."
-adb install ./apks/dev.ukanth.ufirewall_*.apk
-echo "${bold}Enable the firewall and it's now safe to connect to wifi.${normal}"
-echo "${bold}Remember to allow applications you wish to use through the firewall.${normal}"
-echo "${bold}Done. Continue to Stage 4: Disable Amazon Apps & Install Replacements${normal}"
-_pause
-}
-# ----------------------------------------------
-# Stage #4: Disable Amazon Apps & Install Replacements
-# ----------------------------------------------
-four(){
-echo "${bold}Welcome to Stage #4: Disable Amazon Apps & Install Replacements${normal}"
-echo "${bold}This will attempt to agressively remove and replace as much as possible without breaking core functionality.${normal}"
-echo "${bold}It will also install an open source Launcher and Keyboard so you're not left with an unusable device.${normal}"
-_pause
-_wait
 echo "Remounting /system..."
 adb shell su -c mount -o remount -rw /system
+echo "Applying hosts file..." # Blocks many of the domains that Amazon services usually connect to.
+adb push ./other/hosts /data/local/tmp
+adb shell su -c mv /data/local/tmp/hosts /etc/hosts
+echo "Installing AFWall..." # iptables Firewall
+adb install ./apks/dev.ukanth.ufirewall_*.apk #Enable the firewall and it's now safe to connect to wifi.
 echo "Removing Amazon Apps..."
 # Many services will continue starting even when disabled, we can delete them directly from system.
 # Alexa Cards
@@ -187,8 +178,8 @@ adb shell su -c rm -r /system/priv-app/com.amazon.assetsync.service
 #adb shell su -c pm disable com.amazon.avod
 adb shell su -c rm -r /system/priv-app/com.amazon.avod
 # Amazon - Bluetooth Internals
-#adb shell su -c pm disable com.amazon.bluetoothinternals
-adb shell su -c rm -r /system/priv-app/BluetoothInternals
+adb shell su -c pm disable com.amazon.bluetoothinternals
+#adb shell su -c rm -r /system/priv-app/BluetoothInternals
 # Calculator
 #adb shell su -c pm disable com.amazon.calculator
 adb shell su -c rm -r /system/priv-app/com.amazon.calculator
@@ -243,7 +234,7 @@ adb shell su -c rm -r /system/priv-app/DeviceBackupAndRestore-release
 # Amazon Backup and Restore Internal SDK
 #adb shell su -c pm disable com.amazon.device.backup.sdk.internal.library
 adb shell su -c rm -r /system/priv-app/DeviceBackupAndRestoreInternalSDK-release
-# Amazon Bluetooth DFU
+# Amazon Bluetooth DFU (Device Firmware Update)
 #adb shell su -c pm disable com.amazon.device.bluetoothdfu
 adb shell su -c rm -r /system/priv-app/com.amazon.device.bluetoothdfu
 # CrashManager
@@ -679,89 +670,19 @@ echo "Installing F-Droid..."
 adb install ./apks/org.fdroid.fdroid_*.apk # F-Droid
 adb push ./apks/org.fdroid.fdroid.privileged_2090.apk /data/local/tmp
 adb shell su -c mv /data/local/tmp/org.fdroid.fdroid.privileged_2090.apk /system/priv-app
-adb shell su -c svc power reboot
-echo "${bold}Done. Your device will reboot.${normal}"
-echo "${bold}You can now install some applications from F-Droid, here's some ideas:${normal}"
-echo "AppStore       : Yalp Store/Aurora Store (Play Store Alternatives)"
-echo "Backup         : oandbackup"
-echo "Books          : Book Reader"
-echo "Calculator     : Equate"
-echo "Camera         : Open Camera/Simple Camera"
-echo "Clock          : Simple Clock"
-echo "Email          : FairEmail/K9/Tutanota"
-echo "File Manager   : Ghost Commander"
-echo "Google Services: microG"
-echo "Keyboard       : AnySoftKeyboard (Installed)"
-echo "Maps           : OsmAnd"
-echo "MP3 Player     : Vanilla Music"
-echo "Launcher       : ZimLX (Installed)"
-echo "Weather        : WX"
-echo "Web Browser    : Icecat/Fennec/Privacy Browser"
-echo "YouTube        : SkyTube/NewPipe"
-echo "${bold}Use the Busybox App to install it on your device.${normal}"
-echo "${bold}Remember to allow apps you want to use the internet through AFWall firewall.${normal}"
-_pause
-}
-# ----------------------------------------------
-# Stage #5: Xposed Framework Installer
-# ----------------------------------------------
-five(){
-echo "${bold}Welcome to Stage #5: Xposed Framework Installer${normal}"
-echo "${bold}This will install the Material Design Xposed Installer and give instructions on how to use it.${normal}"
-echo "${bold}You will need tablet Wifi connected for this process.${normal}"
-_pause
-echo "Waiting for Device..."
-adb wait-for-device
-echo "Installing Xposed Installer..."
-adb install ./apks/XposedInstaller*.apk
-echo "${bold}Please open the app, go to the official tab and install the latest ARM64 version.${normal}"
-echo "${bold}You will recieve an error during install. This is normal, continue only after this has happened.${normal}"
-_pause
-echo "Disabling wifi..."
-adb shell su -c svc wifi disable
-echo "Mounting /system read/write..."
-adb shell su -c mount -o remount -rw /system
-echo "Fixing xposed..."
-adb shell su -c rm /system/bin/app_process64_xposed
-adb shell su -c svc power reboot
-echo "${bold}Done. Your device will reboot.${normal}"
-echo "${bold}Check inside the app for a green checkmark and then you can install any modules you want to use.${normal}"
-_pause
-}
-# ----------------------------------------------
-# Stage #6: Lockscreen Wallpaper & Bootanimation
-# ----------------------------------------------
-six(){
-echo "${bold}Welcome to Stage #6: Lockscreen Wallpaper & Bootanimation${normal}"
-echo "${bold}This will setup lockscreen wallpaper & bootanimation for you.${normal}"
-echo "${bold}Please replace ./other/wallpaper.png with your background and ./other/bootanimation.zip with your animation.${normal}"
-_pause
-_wait
 echo "Setting Wallpaper..."
 adb shell su -c rm /data/securedStorageLocation/com.android.systemui/ls_wallpaper/0/*
 adb push ./other/wallpaper.png /data/local/tmp
 adb shell su -c mv /data/local/tmp/wallpaper.png /data/securedStorageLocation/com.android.systemui/ls_wallpaper/0
 adb shell su -c chmod 0644 /data/securedStorageLocation/com.android.systemui/ls_wallpaper/0/wallpaper.png
 echo "Setting Bootanimation..."
-adb shell su -c mount -o remount -rw /system
 adb push ./other/bootanimation /data/local/tmp
 adb mv /data/local/tmp/bootanimation /system/bin #rwxr-xr-x
 adb push ./other/bootanimation.zip /data/local/tmp
 adb mv /data/local/tmp/bootanimation.zip /system/media #rw-r--r--
-echo "Setting permissions..."
 adb shell chmod 0755 /system/bin/bootanimation
 adb shell chmod 0644 /system/media/bootanimation.zip
-echo "${bold}Done.${normal}"
-_pause
-}
-# ----------------------------------------------
-# Stage #7: Additional Settings
-# ----------------------------------------------
-seven(){
-echo "${bold}Welcome to Stage #7: Additional Settings${normal}"
-echo "${bold}You can edit this section of fireAutotools.sh to your prefered settings and apply them automatically.${normal}"
-_pause
-_wait
+echo "Configuring settings..."
 #adb shell settings put system accelerometer_rotation 1
 #adb shell settings put secure accessibility_display_magnification_auto_update 1
 #adb shell settings put secure accessibility_display_magnification_enabled 0
@@ -893,10 +814,57 @@ adb shell settings put secure install_non_market_apps 1
 #adb shell settings put global wifi_watchdog_on 1
 #adb shell settings put system window_animation_scale 1.0
 #adb shell settings put global wireless_charging_started_sound /system/media/audio/ui/WirelessChargingStarted.ogg
-
 #adb shell su -c setprop persist.sys.timezone "America/Los_Angeles" # Set Time Zone (https://en.wikipedia.org/wiki/List_of_tz_database_time_zones)
 adb shell wm density 160 # Set LCD Density (Default 213)
-echo "${bold}Done.${normal}"
+adb shell su -c svc power reboot
+echo "${bold}Done. Your device will reboot.${normal}"
+echo "${bold}You can now install some applications from F-Droid, here's some ideas:${normal}"
+echo "AppStore       : Yalp Store/Aurora Store (Play Store Alternatives)"
+echo "Backup         : oandbackup"
+echo "Books          : Book Reader"
+echo "Calculator     : Equate"
+echo "Camera         : Open Camera/Simple Camera"
+echo "Clock          : Simple Clock"
+echo "Email          : FairEmail/K9/Tutanota"
+echo "File Manager   : Ghost Commander"
+echo "Google Services: microG"
+echo "Keyboard       : AnySoftKeyboard (Installed)"
+echo "Maps           : OsmAnd"
+echo "MP3 Player     : Vanilla Music"
+echo "Launcher       : ZimLX (Installed)"
+echo "Weather        : WX"
+echo "Web Browser    : Icecat/Fennec/Privacy Browser"
+echo "YouTube        : SkyTube/NewPipe"
+echo "${bold}Use the Busybox App to install it on your device.${normal}"
+echo "${bold}Remember to enable AFWall firewall and allow apps you want to use the internet through it.${normal}"
+_pause
+}
+#
+# ----------------------------------------------
+# Stage #4: Xposed Framework Installer
+# ----------------------------------------------
+#
+four(){
+echo "${bold}Welcome to Stage #4: Xposed Framework Installer${normal}"
+echo "${bold}This will install the Material Design Xposed Installer and give instructions on how to use it.${normal}"
+echo "${bold}You will need Wifi connected for this process.${normal}"
+_pause
+echo "Waiting for Device..."
+adb wait-for-device
+echo "Installing Xposed Installer..."
+adb install ./apks/XposedInstaller*.apk
+echo "${bold}Please open the app, go to the official tab and install the latest ARM64 version.${normal}"
+echo "${bold}You will recieve an error during install. This is normal, continue only after this has happened.${normal}"
+_pause
+echo "Disabling wifi..."
+adb shell su -c svc wifi disable
+echo "Mounting /system read/write..."
+adb shell su -c mount -o remount -rw /system
+echo "Fixing xposed..."
+adb shell su -c rm /system/bin/app_process64_xposed
+adb shell su -c svc power reboot
+echo "${bold}Done. Your device will reboot.${normal}"
+echo "${bold}Check inside the app for a green checkmark and then you can install any modules you want to use.${normal}"
 _pause
 }
 read_options(){
@@ -910,6 +878,7 @@ read_options(){
 		5) five ;;
 		6) six ;;
 		7) seven ;;
+		8) eight ;;
 		9) exit 0;;
 		*) echo -e "${RED}Error...${STD}" && sleep 2
 	esac
