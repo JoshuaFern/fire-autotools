@@ -677,11 +677,11 @@ adb shell su -c mv /data/local/tmp/wallpaper.png /data/securedStorageLocation/co
 adb shell su -c chmod 0644 /data/securedStorageLocation/com.android.systemui/ls_wallpaper/0/wallpaper.png
 echo "Setting Bootanimation..."
 adb push ./other/bootanimation /data/local/tmp
-adb mv /data/local/tmp/bootanimation /system/bin #rwxr-xr-x
+adb shell su -c mv /data/local/tmp/bootanimation /system/bin #rwxr-xr-x
 adb push ./other/bootanimation.zip /data/local/tmp
-adb mv /data/local/tmp/bootanimation.zip /system/media #rw-r--r--
-adb shell chmod 0755 /system/bin/bootanimation
-adb shell chmod 0644 /system/media/bootanimation.zip
+adb shell su -c mv /data/local/tmp/bootanimation.zip /system/media #rw-r--r--
+adb shell su -c chmod 0755 /system/bin/bootanimation
+adb shell su -c chmod 0644 /system/media/bootanimation.zip
 echo "Configuring settings..."
 #adb shell settings put system accelerometer_rotation 1
 #adb shell settings put secure accessibility_display_magnification_auto_update 1
