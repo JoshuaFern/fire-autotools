@@ -24,6 +24,10 @@
 _pause(){
     read -n1 -rsp $'Press any key to continue or Ctrl+C to exit...\n'
     }
+_wait(){
+    echo "Waiting for Device..."
+    adb wait-for-device
+    }
 bold=$(tput bold)
 normal=$(tput sgr0)
 show_menus() {
@@ -36,9 +40,9 @@ show_menus() {
 	echo "Stage #1: Automated Recovery"
 	echo "Stage #2: Automated Rooting"
 	echo "Stage #3: Block Amazon Spying"
-	echo "Stage #4: Disable Amazon Apps & Install F-Droid"
+	echo "Stage #4: Disable Amazon Apps & Install Replacements"
 	echo "Stage #5: Xposed Framework Installer"
-	echo "Stage #6: Lockscreen Wallpaper"
+	echo "Stage #6: Lockscreen Wallpaper & Bootanimation"
 	echo "Stage #7: Additional Settings"
 	echo " "
 	echo "       9: Exit"
@@ -54,9 +58,9 @@ echo "${bold}Place the image for your device in the ./image/ folder. Do not atte
 echo "${bold}Be warned that the rooting method could be patched in future versions. 5.3.6.4 is the current version.${normal}"
 echo "${bold}We'll attempt to enter recovery for you with ADB.${normal}"
 _pause
+echo "${bold}1. To enter recovery manually, turn on the device with the power button and left volume held.${normal}"
 echo "Attempting to automatically enter recovery..."
 adb reboot recovery
-echo "${bold}1. To enter recovery manually, turn on the device with the power button and left volume held.${normal}"
 echo "${bold}2. Select 'wipe data/factory reset' (YOU WILL LOSE YOUR DATA)${normal}"
 echo "${bold}3. Select 'apply update from ADB'.${normal}"
 _pause
@@ -77,8 +81,7 @@ two(){
 echo "${bold}Welcome to Stage #2: Automated Rooting${normal}"
 echo "${bold}Thanks to diplomatic on XDA for this method.${normal}"
 _pause
-echo "Waiting for Device..."
-adb wait-for-device
+_wait
 echo "Installing SuperSU..."
 adb install ./rooting/eu.chainfire.supersu.*.apk
 echo "Copying files..."
@@ -105,8 +108,7 @@ echo "${bold}Blocking Amazon services from the internet can be a bit tricky, so 
 echo "${bold}1. Install a host file, this will block many of the domains that Amazon services usually connect to.${normal}"
 echo "${bold}2. Install an iptables Firewall (AFWall+)${normal}"
 _pause
-echo "Waiting for Device..."
-adb wait-for-device
+_wait
 echo "Making sure device wifi is disabled..."
 adb shell su -c svc wifi disable
 echo "Applying hosts file..."
@@ -117,19 +119,18 @@ echo "Installing AFWall..."
 adb install ./apks/dev.ukanth.ufirewall_*.apk
 echo "${bold}Enable the firewall and it's now safe to connect to wifi.${normal}"
 echo "${bold}Remember to allow applications you wish to use through the firewall.${normal}"
-echo "${bold}Done. Continue to Stage 4: Disable Amazon Apps & Install F-Droid${normal}"
+echo "${bold}Done. Continue to Stage 4: Disable Amazon Apps & Install Replacements${normal}"
 _pause
 }
 # ----------------------------------------------
-# Stage #4: Disable Amazon Apps & Install F-Droid
+# Stage #4: Disable Amazon Apps & Install Replacements
 # ----------------------------------------------
 four(){
-echo "${bold}Welcome to Stage #4: Disable Amazon Apps & Install F-Droid${normal}"
+echo "${bold}Welcome to Stage #4: Disable Amazon Apps & Install Replacements${normal}"
 echo "${bold}This will attempt to agressively remove and replace as much as possible without breaking core functionality.${normal}"
 echo "${bold}It will also install an open source Launcher and Keyboard so you're not left with an unusable device.${normal}"
 _pause
-echo "Waiting for Device..."
-adb wait-for-device
+_wait
 echo "Remounting /system..."
 adb shell su -c mount -o remount -rw /system
 echo "Removing Amazon Apps..."
@@ -728,16 +729,28 @@ echo "${bold}Check inside the app for a green checkmark and then you can install
 _pause
 }
 # ----------------------------------------------
-# Stage #6: Lockscreen Wallpaper
+# Stage #6: Lockscreen Wallpaper & Bootanimation
 # ----------------------------------------------
 six(){
-echo "${bold}Welcome to Stage #6: Lockscreen Wallpaper${normal}"
-echo "${bold}This will setup lockscreen wallpaper for you, please replace ./other/wallpaper.png with your background.${normal}"
+echo "${bold}Welcome to Stage #6: Lockscreen Wallpaper & Bootanimation${normal}"
+echo "${bold}This will setup lockscreen wallpaper & bootanimation for you.${normal}"
+echo "${bold}Please replace ./other/wallpaper.png with your background and ./other/bootanimation.zip with your animation.${normal}"
 _pause
+_wait
+echo "Setting Wallpaper..."
 adb shell su -c rm /data/securedStorageLocation/com.android.systemui/ls_wallpaper/0/*
 adb push ./other/wallpaper.png /data/local/tmp
 adb shell su -c mv /data/local/tmp/wallpaper.png /data/securedStorageLocation/com.android.systemui/ls_wallpaper/0
 adb shell su -c chmod 0644 /data/securedStorageLocation/com.android.systemui/ls_wallpaper/0/wallpaper.png
+echo "Setting Bootanimation..."
+adb shell su -c mount -o remount -rw /system
+adb push ./other/bootanimation /data/local/tmp
+adb mv /data/local/tmp/bootanimation /system/bin #rwxr-xr-x
+adb push ./other/bootanimation.zip /data/local/tmp
+adb mv /data/local/tmp/bootanimation.zip /system/media #rw-r--r--
+echo "Setting permissions..."
+adb shell chmod 0755 /system/bin/bootanimation
+adb shell chmod 0644 /system/media/bootanimation.zip
 echo "${bold}Done.${normal}"
 _pause
 }
@@ -748,6 +761,7 @@ seven(){
 echo "${bold}Welcome to Stage #7: Additional Settings${normal}"
 echo "${bold}You can edit this section of fireAutotools.sh to your prefered settings and apply them automatically.${normal}"
 _pause
+_wait
 #adb shell settings put system accelerometer_rotation 1
 #adb shell settings put secure accessibility_display_magnification_auto_update 1
 #adb shell settings put secure accessibility_display_magnification_enabled 0
